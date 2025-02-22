@@ -1,10 +1,10 @@
-# [Name of the Project] : [Team Number]
+# [Laika Lunar Landing] : [22]
 # Members
-Project Manager: [Name] ([GitHub Name])\
-Communications Lead: [Name] ([GitHub Name])\
-Git Master: [Name] ([GitHub Name])\
-Design Lead: [Name] ([GitHub Name])\
-Quality Assurance Tester: [Name] ([GitHub Name])
+Project Manager: [Emery Jones] ([elj174])\
+Communications Lead: [Caleb Wycoff] ([crusewycoff1])\
+Git Master: [Khoa Vu] ([kvu21])\
+Design Lead: [Katherine Winchester] ([kwinch])\
+Quality Assurance Tester: [Christian Frazier] ([cfraz18])
 
 # About Our Software
 
@@ -16,7 +16,7 @@ Describe a little about what the project is about here.
 - Linux
 - Windows
 # Important Links
-Kanban Board: [link]\
+Kanban Board: Jira [https://3108team22.atlassian.net/jira/software/projects/LLL/boards/1?atlOrigin=eyJpIjoiYjFkYzc5NmEwNGNjNDkwMTk4OWQyNTNiOTc4MWJjNDgiLCJwIjoiaiJ9]\
 Designs: [link]\
 Styles Guide(s): [link]
 
