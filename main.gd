@@ -12,24 +12,36 @@ const CURRENT_HEALTH = MAX_HEALTH
 #Declare sprite node reference
 var laika_health: Sprite2D
 
+#Health bar frame set up
+var health_bar_texture_path = "res://Healthbar/pixil-frame-"
+
 #Beginning health value
 func _ready() -> void:
 	laika_health = $laika_health/Laika
 	set_health_label()
-	$CanvasLayer/HealthBar.max_value = MAX_HEALTH
 	set_health_bar()
 
 #Updating health label / death annoucement
 func set_health_label() -> void:
 	if health > DEATH:
 		$CanvasLayer/HealthLabel.text = "Health: %s" % health
-	if health <= DEATH:
+	else:
 		$CanvasLayer/HealthLabel.text = "GAME OVER"
 
-#Setting health bar
+#Setting health bar texture based on health
 func set_health_bar() -> void:
-	$CanvasLayer/HealthBar.value= health
-
+	var health_percentage = health / MAX_HEALTH
+	var frame_index = clamp(0 + health, 0, 20)
+	
+	#Load correct texture for health bar frame
+	var texture_path = health_bar_texture_path +str(frame_index) + ".png"
+	
+	#Set the texture of the HealthBar TextureRect
+	$CanvasLayer/HealthBar.texture = load(texture_path)
+	
+	print("Health: %d" % health)
+	print("Texture Path: %s" % texture_path)
+	
 #Player input keys
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
@@ -38,9 +50,10 @@ func _input(event: InputEvent) -> void:
 #
 func damage() -> void:
 	health -= 1
+	
 	if health < DEATH:
 		health = DEATH
-		set_health_label()
+		
 
 	set_health_label()
 	set_health_bar()
