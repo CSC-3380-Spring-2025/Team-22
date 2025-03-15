@@ -13,7 +13,7 @@ const CURRENT_HEALTH = MAX_HEALTH
 var laika_health: Sprite2D
 
 #Health bar frame set up
-var health_bar_texture_path = "res://Healthbar/pixil-frame-"
+var health_bar_texture_path = "res://Healthbar/laika_healthbar_frames/pixil-frame-"
 
 #Beginning health value
 func _ready() -> void:
@@ -24,7 +24,7 @@ func _ready() -> void:
 #Updating health label / death annoucement
 func set_health_label() -> void:
 	if health > DEATH:
-		$CanvasLayer/HealthLabel.text = "Health: %s" % health
+		$CanvasLayer/HealthLabel.text = "HEALTH: %s" % health
 	else:
 		$CanvasLayer/HealthLabel.text = "GAME OVER"
 
@@ -44,10 +44,10 @@ func set_health_bar() -> void:
 	
 #Player input keys
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_accept"): #placeholder to show movement but needs to be synced with alien attack
 		damage()	
 
-#
+#Damage implementation
 func damage() -> void:
 	health -= 1
 	
