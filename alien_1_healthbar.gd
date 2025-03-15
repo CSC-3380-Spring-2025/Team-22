@@ -7,7 +7,12 @@ const MAX_HEALTH = 20
 var health = MAX_HEALTH
 const DEATH = 0
 var empty_bar = DEATH
-const CURRENT_HEALTH = MAX_HEALTH
+var CURRENT_HEALTH = MAX_HEALTH
+const scratch = 3
+const bite = 3
+const lick = 3
+const fire_blast = 3
+
 
 #Health bar frame set up
 var health_bar_texture_path = "res://Healthbar/alien1_healthbar_frames/pixil-frame-"
@@ -22,7 +27,7 @@ func set_health_label() -> void:
 	if health > DEATH:
 		$CanvasLayer/HealthAlien1.text = "HEALTH: %s" % health
 	else:
-		$CanvasLayer/HealthAlien1.text = "VICTORY"
+		$CanvasLayer/HealthAlien1.text = "VICTORY!"
 
 #Setting health bar texture based on health
 func set_health_bar() -> void:
