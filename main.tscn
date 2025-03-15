@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://61n5pjlc6g2h"]
+[gd_scene load_steps=6 format=3 uid="uid://cqsr8nie5dvhu"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_7ifj4"]
-[ext_resource type="Texture2D" uid="uid://cpflpqtx6s0gw" path="res://icon.svg" id="2_77m5b"]
-[ext_resource type="FontFile" uid="uid://di6lwkyrmuu6y" path="res://Healthbar/poco/Poco.ttf" id="3_ngxks"]
+[ext_resource type="Script" path="res://main.gd" id="1_ea0eg"]
+[ext_resource type="Texture2D" uid="uid://mgs8kiv264fc" path="res://icon.svg" id="2_sh6r6"]
+[ext_resource type="FontFile" uid="uid://di6lwkyrmuu6y" path="res://Healthbar/poco/Poco.ttf" id="3_0c6xj"]
 
 [sub_resource type="FontVariation" id="FontVariation_e56eo"]
-base_font = ExtResource("3_ngxks")
+base_font = ExtResource("3_0c6xj")
 
 [sub_resource type="LabelSettings" id="LabelSettings_reorn"]
 font = SubResource("FontVariation_e56eo")
@@ -14,15 +14,15 @@ font_color = Color(0.215686, 0.631373, 0.972549, 0.792157)
 outline_size = 7
 outline_color = Color(0.556863, 0, 0, 0.298039)
 
-[node name="Main" type="Node2D"]
+[node name="laika_healthbar" type="Node2D"]
 position = Vector2(552, 341)
-script = ExtResource("1_7ifj4")
+script = ExtResource("1_ea0eg")
 
 [node name="laika_health" type="Node2D" parent="."]
 
 [node name="Laika" type="Sprite2D" parent="laika_health"]
-position = Vector2(-3, 3)
-texture = ExtResource("2_77m5b")
+position = Vector2(-3, 9)
+texture = ExtResource("2_sh6r6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
