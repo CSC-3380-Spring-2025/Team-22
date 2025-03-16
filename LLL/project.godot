@@ -12,8 +12,12 @@ config_version=5
 
 config/name="LLL"
 run/main_scene="res://Scenes/Main_Stage.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="LLL"
 
 [input]
 

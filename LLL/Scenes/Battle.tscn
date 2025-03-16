@@ -1,19 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8cfe0cdf53sp"]
+[gd_scene load_steps=5 format=3 uid="uid://b8cfe0cdf53sp"]
 
+[ext_resource type="Script" uid="uid://dxuyifr3xaq4l" path="res://Battle.cs" id="1_2h7oj"]
 [ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://laikaBattle.png" id="1_lul25"]
-[ext_resource type="Script" uid="uid://cbsnvsn0b6eha" path="res://Battle.cs" id="1_yh5fh"]
 [ext_resource type="Texture2D" uid="uid://dvnk36jq5nkx5" path="res://type_1_alien.png" id="2_yh5fh"]
+[ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://backdrop.png" id="4_1samx"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_yh5fh")
+script = ExtResource("1_2h7oj")
 
 [node name="LaikaBattle" type="Sprite2D" parent="."]
-position = Vector2(165, 497)
+position = Vector2(165, 412)
 scale = Vector2(0.322469, 0.322469)
 texture = ExtResource("1_lul25")
 
 [node name="Alien1Battle" type="Sprite2D" parent="."]
-position = Vector2(1006, 498)
+position = Vector2(1006, 413)
 scale = Vector2(0.437143, 0.437143)
 texture = ExtResource("2_yh5fh")
 
@@ -67,6 +68,36 @@ offset_right = 1150.0
 offset_bottom = 85.0
 theme_override_font_sizes/font_size = 32
 text = "[FLEE]"
+
+[node name="Backdrop" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 322)
+scale = Vector2(0.800568, 0.800568)
+texture = ExtResource("4_1samx")
+
+[node name="Text" type="RichTextLabel" parent="."]
+offset_left = 3.0
+offset_top = 536.0
+offset_right = 1154.0
+offset_bottom = 646.0
+theme_override_font_sizes/normal_font_size = 35
+
+[node name="LaikaStats" type="RichTextLabel" parent="."]
+offset_top = 222.0
+offset_right = 263.0
+offset_bottom = 298.0
+theme_override_font_sizes/normal_font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlienStats" type="RichTextLabel" parent="."]
+offset_left = 888.0
+offset_top = 222.0
+offset_right = 1151.0
+offset_bottom = 298.0
+theme_override_font_sizes/normal_font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Defend" to="." method="_Defend"]
 [connection signal="pressed" from="Flee" to="." method="_Flee"]
