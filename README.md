@@ -8,17 +8,13 @@ Quality Assurance Tester: [Christian Frazier] ([cfraz18])
 
 # About Our Software
 
-Describe a little about what the project is about here.
+Survival Turn-based RPG Game based on the historical events of Laika, the first dog to be sent to the moon. Stranded on the moon, fight your way through aliens and build a base to survive until you make it home.
 ## Platforms Tested on
-- MacOS
-- Android
-- iOS
-- Linux
 - Windows
 # Important Links
-Kanban Board: Jira [https://3108team22.atlassian.net/jira/software/projects/LLL/boards/1?atlOrigin=eyJpIjoiYjFkYzc5NmEwNGNjNDkwMTk4OWQyNTNiOTc4MWJjNDgiLCJwIjoiaiJ9]\
+Kanban Board: [Jira](https://3108team22.atlassian.net/jira/software/projects/LLL/boards/1?atlOrigin=eyJpIjoiYjFkYzc5NmEwNGNjNDkwMTk4OWQyNTNiOTc4MWJjNDgiLCJwIjoiaiJ9)\
 Designs: [link]\
-Styles Guide(s): [link]
+Styles Guide(s): [C# Style Guide](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_style_guide.html)
 
 # How to Run Dev and Test Environment
 
