@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds3flv80260gt"]
+
+[ext_resource type="Script" path="res://alien_1_healthbar.gd" id="1_ksk4i"]
+[ext_resource type="FontFile" uid="uid://di6lwkyrmuu6y" path="res://Healthbar/poco/Poco.ttf" id="2_ibx0m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6q5p3"]
+font = ExtResource("2_ibx0m")
+font_size = 25
+font_color = Color(0, 0.886275, 0, 0.560784)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Alien1Healthbar" type="Node2D"]
+script = ExtResource("1_ksk4i")
+
+[node name="alien1_health" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthAlien1" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.633
+anchor_top = 0.5
+anchor_right = 0.633
+anchor_bottom = 0.5
+offset_left = -330.216
+offset_top = -53.0
+offset_right = 49.784
+offset_bottom = 63.0
+text = "HEALTH:"
+label_settings = SubResource("LabelSettings_6q5p3")
+horizontal_alignment = 1
+
+[node name="HealthBar2" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.626
+anchor_right = 0.5
+anchor_bottom = 0.626
+offset_left = -163.0
+offset_top = -178.648
+offset_right = 189.0
+offset_bottom = -35.648
+expand_mode = 5
