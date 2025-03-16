@@ -12,14 +12,6 @@ region = Rect2(867, 719, 867, 719)
 atlas = ExtResource("3_h0i4a")
 region = Rect2(1734, 719, 867, 719)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yopou"]
-atlas = ExtResource("3_h0i4a")
-region = Rect2(0, 0, 867, 719)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a3bko"]
-atlas = ExtResource("3_h0i4a")
-region = Rect2(867, 0, 867, 719)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_umsaw"]
 atlas = ExtResource("3_h0i4a")
 region = Rect2(1734, 0, 867, 719)
@@ -35,6 +27,14 @@ region = Rect2(0, 1438, 867, 719)
 [sub_resource type="AtlasTexture" id="AtlasTexture_gku5e"]
 atlas = ExtResource("3_h0i4a")
 region = Rect2(867, 1438, 867, 719)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yopou"]
+atlas = ExtResource("3_h0i4a")
+region = Rect2(0, 0, 867, 719)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3bko"]
+atlas = ExtResource("3_h0i4a")
+region = Rect2(867, 0, 867, 719)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tac1k"]
 atlas = ExtResource("3_h0i4a")
@@ -67,17 +67,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yopou")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a3bko")
-}],
-"loop": true,
-"name": &"WalkingLeft",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_umsaw")
 }, {
 "duration": 1.0,
@@ -96,6 +85,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"WalkingUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yopou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3bko")
+}],
+"loop": true,
+"name": &"Walkingleft",
 "speed": 5.0
 }, {
 "frames": [{
@@ -133,13 +133,14 @@ animations = [{
 
 [node name="Laika" type="CharacterBody2D"]
 script = ExtResource("1_u6r1e")
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_rvi5o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-[node name="AnimationPlayer" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_n6xtr")
-animation = &"idleRight"
+animation = &"WalkingRight"
