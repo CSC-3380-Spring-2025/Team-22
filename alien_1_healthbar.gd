@@ -1,32 +1,33 @@
 extends Node2D
 
-class_name Laika_health
+class_name Alien1_health
 
 #Declaring variables for health
 const MAX_HEALTH = 20
 var health = MAX_HEALTH
 const DEATH = 0
 var empty_bar = DEATH
-const CURRENT_HEALTH = MAX_HEALTH
+var CURRENT_HEALTH = MAX_HEALTH
+const scratch = 3
+const bite = 3
+const lick = 3
+const fire_blast = 3
 
-#Declare sprite node reference
-var laika_health: Sprite2D
 
 #Health bar frame set up
-var health_bar_texture_path = "res://Healthbar/laika_healthbar_frames/pixil-frame-"
+var health_bar_texture_path = "res://Healthbar/alien1_healthbar_frames/pixil-frame-"
 
 #Beginning health value
 func _ready() -> void:
-	laika_health = $laika_health/Laika
 	set_health_label()
 	set_health_bar()
 
 #Updating health label / death annoucement
 func set_health_label() -> void:
 	if health > DEATH:
-		$CanvasLayer/HealthLabel.text = "HEALTH: %s" % health
+		$CanvasLayer/HealthAlien1.text = "HEALTH: %s" % health
 	else:
-		$CanvasLayer/HealthLabel.text = "GAME OVER"
+		$CanvasLayer/HealthAlien1.text = "VICTORY!"
 
 #Setting health bar texture based on health
 func set_health_bar() -> void:
@@ -37,7 +38,7 @@ func set_health_bar() -> void:
 	var texture_path = health_bar_texture_path +str(frame_index) + ".png"
 	
 	#Set the texture of the HealthBar TextureRect
-	$CanvasLayer/HealthBar.texture = load(texture_path)
+	$CanvasLayer/HealthBar2.texture = load(texture_path)
 	
 	print("Health: %d" % health)
 	print("Texture Path: %s" % texture_path)
@@ -54,6 +55,5 @@ func damage() -> void:
 	if health < DEATH:
 		health = DEATH
 		
-
 	set_health_label()
 	set_health_bar()
