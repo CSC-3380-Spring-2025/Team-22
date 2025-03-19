@@ -229,8 +229,7 @@ public partial class Battle : Node2D
 	}
 	
 	public void _Flee() {		//Flee function (will change to move scene to Overworld)
-		GD.Print("Fleeing!");
-		alienMove();
+		GetTree().ChangeSceneToFile("res://Scenes/Overworld.tscn");
 	}
 	
 	public void afterTurn() {	//Runs after every Laika/Alien turn
