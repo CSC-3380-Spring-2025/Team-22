@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvnk36jq5nkx5"
-path="res://.godot/imported/type_1_alien.png-1840bb8b6ffa378b49a1927f90a5e47b.ctex"
+uid="uid://dn16yjiap4rh5"
+path="res://.godot/imported/laika.png-047eb0cb040d139b915d67c2e758537c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://type_1_alien.png"
-dest_files=["res://.godot/imported/type_1_alien.png-1840bb8b6ffa378b49a1927f90a5e47b.ctex"]
+source_file="res://Art+Font/laika.png"
+dest_files=["res://.godot/imported/laika.png-047eb0cb040d139b915d67c2e758537c.ctex"]
 
 [params]
 

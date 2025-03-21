@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhn53k27qf58j"
-path="res://.godot/imported/backdrop.png-c0d547890a108dbaf0e4a556ec710c56.ctex"
+uid="uid://cocmyyj28e3ui"
+path="res://.godot/imported/laika_4_menu.png-0f43c07e37539e655019c7921bcc132a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://backdrop.png"
-dest_files=["res://.godot/imported/backdrop.png-c0d547890a108dbaf0e4a556ec710c56.ctex"]
+source_file="res://Art+Font/laika_4_menu.png"
+dest_files=["res://.godot/imported/laika_4_menu.png-0f43c07e37539e655019c7921bcc132a.ctex"]
 
 [params]
 

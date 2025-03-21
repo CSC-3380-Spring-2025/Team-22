@@ -1,0 +1,65 @@
+[gd_scene load_steps=13 format=3 uid="uid://bc08we8r3jkhp"]
+
+[ext_resource type="Texture2D" uid="uid://blqbotctbyt7r" path="res://Art+Font/main_menu.png" id="1_cr70x"]
+[ext_resource type="Texture2D" uid="uid://cocmyyj28e3ui" path="res://Art+Font/laika_4_menu.png" id="2_osd73"]
+[ext_resource type="Script" path="res://Scripts/laika_menu.gd" id="3_ci4je"]
+[ext_resource type="Texture2D" uid="uid://cyrxip25l5vld" path="res://Art+Font/alien_4_menu.png" id="4_qq75v"]
+[ext_resource type="Script" path="res://Scripts/alien_menu.gd" id="5_4t1h1"]
+[ext_resource type="Texture2D" uid="uid://mww130o7q055" path="res://Art+Font/moon.png" id="6_503u2"]
+[ext_resource type="Script" path="res://Scripts/moon_menu.gd" id="7_lukkp"]
+[ext_resource type="Texture2D" uid="uid://ck8m7b2nqv3u6" path="res://Art+Font/earth.png" id="8_ejups"]
+[ext_resource type="Script" path="res://Scripts/earth_menu.gd" id="8_foibd"]
+[ext_resource type="Texture2D" uid="uid://c6d1oemlp1mnf" path="res://Art+Font/start_button.png" id="10_p5wy3"]
+[ext_resource type="Texture2D" uid="uid://do3kfr4gjx12k" path="res://Art+Font/start_button_pressed.png" id="11_q5d8a"]
+[ext_resource type="AudioStream" uid="uid://vhq46qwvamfq" path="res://Audio/Philip Aldous - RPG Title Screen Music Pack - 14 A World Of Snow.mp3" id="12_a684q"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 42.0
+offset_bottom = 40.0
+scale = Vector2(0.722209, 0.647346)
+texture = ExtResource("1_cr70x")
+
+[node name="laika_menu" type="Sprite2D" parent="."]
+position = Vector2(509, 346)
+scale = Vector2(0.708932, 0.601726)
+texture = ExtResource("2_osd73")
+script = ExtResource("3_ci4je")
+
+[node name="alien_menu" type="Sprite2D" parent="."]
+position = Vector2(543, 240)
+rotation = -0.350803
+scale = Vector2(0.68, 0.709952)
+texture = ExtResource("4_qq75v")
+script = ExtResource("5_4t1h1")
+
+[node name="moon_menu" type="Sprite2D" parent="."]
+position = Vector2(498, 218)
+scale = Vector2(1.12, 1.16)
+texture = ExtResource("6_503u2")
+script = ExtResource("7_lukkp")
+
+[node name="earth_menu" type="Sprite2D" parent="."]
+position = Vector2(954, -40)
+texture = ExtResource("8_ejups")
+script = ExtResource("8_foibd")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 481.0
+offset_top = 401.0
+offset_right = 2081.0
+offset_bottom = 1401.0
+scale = Vector2(0.144345, 0.151793)
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("10_p5wy3")
+texture_pressed = ExtResource("11_q5d8a")
+stretch_mode = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_a684q")

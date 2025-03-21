@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4potrwr6ctgr"
-path="res://.godot/imported/placeholderbkg.jpg-3b9961e3cbf1bf3213ef2abd5820bfb7.ctex"
+uid="uid://b54hubeghgcef"
+path="res://.godot/imported/placeholderbkgN.png-0d21eaaffbc90c92cadb9f06f922477c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://placeholderbkg.jpg"
-dest_files=["res://.godot/imported/placeholderbkg.jpg-3b9961e3cbf1bf3213ef2abd5820bfb7.ctex"]
+source_file="res://Art+Font/placeholderbkgN.png"
+dest_files=["res://.godot/imported/placeholderbkgN.png-0d21eaaffbc90c92cadb9f06f922477c.ctex"]
 
 [params]
 

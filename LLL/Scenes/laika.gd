@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 @export var speed = 400
 @onready var _animation_player = $AnimationPlayer
 const msScript = preload("res://Scenes/main_stage.gd") #mainstage script
