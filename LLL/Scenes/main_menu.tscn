@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bc08we8r3jkhp"]
+[gd_scene load_steps=15 format=3 uid="uid://n3ubcxs5mmw"]
 
 [ext_resource type="Texture2D" uid="uid://blqbotctbyt7r" path="res://Art+Font/main_menu.png" id="1_cr70x"]
 [ext_resource type="Texture2D" uid="uid://cocmyyj28e3ui" path="res://Art+Font/laika_4_menu.png" id="2_osd73"]
@@ -12,10 +12,25 @@
 [ext_resource type="Texture2D" uid="uid://c6d1oemlp1mnf" path="res://Art+Font/start_button.png" id="10_p5wy3"]
 [ext_resource type="Texture2D" uid="uid://do3kfr4gjx12k" path="res://Art+Font/start_button_pressed.png" id="11_q5d8a"]
 [ext_resource type="AudioStream" uid="uid://vhq46qwvamfq" path="res://Audio/Philip Aldous - RPG Title Screen Music Pack - 14 A World Of Snow.mp3" id="12_a684q"]
+[ext_resource type="AudioStream" uid="uid://5ku3cob83oj5" path="res://Audio/rocket_blast.mp3" id="12_yhl1u"]
+
+[sub_resource type="GDScript" id="GDScript_qdvli"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+func _on_texture_button_pressed() -> void:
+	$TextureButton/start_rocket_launch.play()
+"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = SubResource("GDScript_qdvli")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -59,7 +74,16 @@ scale = Vector2(0.144345, 0.151793)
 size_flags_stretch_ratio = 0.0
 texture_normal = ExtResource("10_p5wy3")
 texture_pressed = ExtResource("11_q5d8a")
+texture_hover = ExtResource("11_q5d8a")
 stretch_mode = 4
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="start_rocket_launch" type="AudioStreamPlayer" parent="TextureButton"]
+stream = ExtResource("12_yhl1u")
+volume_db = 0.937
+
+[node name="main_menu_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_a684q")
+autoplay = true
+parameters/looping = false
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
