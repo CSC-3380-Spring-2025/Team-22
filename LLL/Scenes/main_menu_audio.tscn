@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bplms6bjgkjd"]
-
-[ext_resource type="AudioStream" uid="uid://vhq46qwvamfq" path="res://Audio/Philip Aldous - RPG Title Screen Music Pack - 14 A World Of Snow.mp3" id="1_g7cdf"]
-
-[node name="MainMenuAudio" type="AudioStreamPlayer"]
-stream = ExtResource("1_g7cdf")

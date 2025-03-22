@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c1n53jshbr0lo"
-path="res://.godot/imported/LLLfont.otf-c9e1c957f4dbf38edc4a0410c299f827.fontdata"
+path="res://.godot/imported/LLLFONT.OTF-66219487a7b1d0d18fab68b69f7599bc.fontdata"
 
 [deps]
 
-source_file="res://Art+Font/LLLfont.otf"
-dest_files=["res://.godot/imported/LLLfont.otf-c9e1c957f4dbf38edc4a0410c299f827.fontdata"]
+source_file="res://Art+Font/LLLFONT.OTF"
+dest_files=["res://.godot/imported/LLLFONT.OTF-66219487a7b1d0d18fab68b69f7599bc.fontdata"]
 
 [params]
 
