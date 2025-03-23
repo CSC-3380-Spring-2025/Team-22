@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/main_stage.gd" id="1_bypp8"]
 [ext_resource type="PackedScene" uid="uid://bijuc5ocuq6tk" path="res://Scenes/laika.tscn" id="1_risgw"]
-[ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art/backdrop.png" id="2_d8i2a"]
+[ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art+Font/backdrop.png" id="2_d8i2a"]
 [ext_resource type="PackedScene" uid="uid://86nt2o5g41vp" path="res://Scenes/enemy.tscn" id="4_qbrth"]
 
 [node name="Main Stage" type="Node2D"]
