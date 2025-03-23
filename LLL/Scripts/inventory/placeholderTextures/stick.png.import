@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cju6vv3nldsie"
-path="res://.godot/imported/rock.png-8a9a2fd1a89615b0ee63a2cd636a2800.ctex"
+uid="uid://d3eb78y6exrt3"
+path="res://.godot/imported/stick.png-f5b6a8d9439f476ce084f743a4b33bee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://placeholderTextures/rock.png"
-dest_files=["res://.godot/imported/rock.png-8a9a2fd1a89615b0ee63a2cd636a2800.ctex"]
+source_file="res://Scripts/inventory/placeholderTextures/stick.png"
+dest_files=["res://.godot/imported/stick.png-f5b6a8d9439f476ce084f743a4b33bee.ctex"]
 
 [params]
 
