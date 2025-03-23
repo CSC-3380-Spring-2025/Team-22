@@ -5,6 +5,9 @@ extends CharacterBody2D
 @onready var _animation_player = $AnimationPlayer
 const msScript = preload("res://Scenes/main_stage.gd") #mainstage script
 var mainstage = msScript.new()
+var weapon = 0
+var health_potion = 0
+var mana_potion = 0
 
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down") # uses the input map found int he project 
@@ -24,3 +27,12 @@ func get_input():
 func _physics_process(delta):
 	get_input() # gets the current input
 	move_and_slide() # moves the actual icon
+	
+func add_item(item):
+	if(item == "weapon"):
+		weapon += 1
+	if(item == "health_potion"):
+		health_potion += 1
+	if(item == "mana_potion"):
+		mana_potion += 1
+	pass
