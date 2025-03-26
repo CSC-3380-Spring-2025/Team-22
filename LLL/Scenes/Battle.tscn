@@ -1,7 +1,7 @@
 
 
 
-[ext_resource type="Script" uid="uid://dxuyifr3xaq4l" path="res://Battle.cs" id="1_2h7oj"]
+[ext_resource type="Script" path="res://Battle.cs" id="1_2h7oj"]
 [ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://laikaBattle.png" id="1_lul25"]
 [ext_resource type="Texture2D" uid="uid://dvnk36jq5nkx5" path="res://type_1_alien.png" id="2_yh5fh"]
 [ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://backdrop.png" id="4_1samx"]
@@ -86,8 +86,6 @@ offset_top = 222.0
 offset_right = 263.0
 offset_bottom = 298.0
 theme_override_font_sizes/normal_font_size = 20
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="AlienStats" type="RichTextLabel" parent="."]
 offset_left = 888.0
@@ -95,8 +93,6 @@ offset_top = 222.0
 offset_right = 1151.0
 offset_bottom = 298.0
 theme_override_font_sizes/normal_font_size = 20
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="Defend" to="." method="_Defend"]
 [connection signal="pressed" from="Flee" to="." method="_Flee"]
