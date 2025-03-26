@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-MainMenuAudio="*res://Scenes/main_menu_audio.tscn"
+MainMenuMusic="*res://Scenes/main_menu_music.tscn"
 
 [display]
 

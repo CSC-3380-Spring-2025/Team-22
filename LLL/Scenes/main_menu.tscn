@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://n3ubcxs5mmw"]
+[gd_scene load_steps=17 format=3 uid="uid://n3ubcxs5mmw"]
 
 [ext_resource type="Texture2D" uid="uid://blqbotctbyt7r" path="res://Art+Font/main_menu.png" id="1_cr70x"]
 [ext_resource type="Texture2D" uid="uid://cocmyyj28e3ui" path="res://Art+Font/laika_4_menu.png" id="2_osd73"]
@@ -11,64 +11,30 @@
 [ext_resource type="Script" path="res://Scenes/earth_menu.gd" id="8_foibd"]
 [ext_resource type="Texture2D" uid="uid://c6d1oemlp1mnf" path="res://Art+Font/start_button.png" id="10_p5wy3"]
 [ext_resource type="Texture2D" uid="uid://do3kfr4gjx12k" path="res://Art+Font/start_button_pressed.png" id="11_q5d8a"]
-[ext_resource type="AudioStream" uid="uid://vhq46qwvamfq" path="res://Audio/Philip Aldous - RPG Title Screen Music Pack - 14 A World Of Snow.mp3" id="12_a684q"]
 [ext_resource type="AudioStream" uid="uid://5ku3cob83oj5" path="res://Audio/rocket_blast.mp3" id="12_yhl1u"]
 [ext_resource type="Texture2D" uid="uid://debrxvpm4kce3" path="res://Art+Font/tutorial_button.png" id="14_hl0iy"]
+[ext_resource type="AudioStream" uid="uid://d0n1cw4ykptrq" path="res://Audio/Menu Selection Click.mp3" id="15_08tv7"]
 [ext_resource type="Texture2D" uid="uid://jisuvgsi6cke" path="res://Art+Font/tutorial_button_pressed.png" id="15_tdnaq"]
-[ext_resource type="FontFile" uid="uid://c1n53jshbr0lo" path="res://Art+Font/LLLfont.otf" id="16_saw7e"]
 
 [sub_resource type="GDScript" id="GDScript_qdvli"]
 script/source = "extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	#$main_menu_music.play()
+	pass
+	
 func _process(delta: float) -> void:
 	pass 
 
-func _on_texture_button_pressed() -> void:
-	$play_button/start_rocket_launch.play()
-
 func _on_tutorial_button_pressed() -> void:
-	$tutorial_button/rocket_launch.play()
-	var popup = $tutorial_button/PopupPanel
-	popup.popup_centered()
-	
-	
+	$tutorial_button/click_tutorial.play()
+	get_tree().change_scene_to_file(\"res://Scenes/tutorial.tscn\")
+
+func _on_play_button_pressed() -> void:
+	$play_button/start_rocket_launch.play()
+	get_tree().change_scene_to_file(\"res://Scenes/Main_Stage.tscn\")
 "
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_058ua"]
-bg_color = Color(0.0117647, 0.0666667, 0.113725, 1)
-border_width_left = 20
-border_width_top = 50
-border_width_right = 20
-border_width_bottom = 50
-border_color = Color(0, 0, 0.631373, 1)
-border_blend = true
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="FontVariation" id="FontVariation_e5s7m"]
-base_font = ExtResource("16_saw7e")
-spacing_glyph = 4
-spacing_space = 6
-spacing_top = 13
-spacing_bottom = 14
-baseline_offset = 0.14
-
-[sub_resource type="LabelSettings" id="LabelSettings_d6mo8"]
-line_spacing = 5.0
-font = SubResource("FontVariation_e5s7m")
-font_size = 27
-font_color = Color(0.6, 0.776471, 0.85098, 0.690196)
-outline_size = 7
-outline_color = Color(0.368627, 0.54902, 0.164706, 0.513726)
-shadow_size = 20
-shadow_color = Color(0.157748, 0.4293, 0, 0)
-shadow_offset = Vector2(10, 10)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -81,11 +47,6 @@ offset_top = 20.736
 offset_right = -102.528
 offset_bottom = -103.68
 script = SubResource("GDScript_qdvli")
-
-[node name="main_menu_music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_a684q")
-autoplay = true
-parameters/looping = false
 
 [node name="mainmenu_background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -148,45 +109,9 @@ texture_normal = ExtResource("14_hl0iy")
 texture_pressed = ExtResource("15_tdnaq")
 texture_hover = ExtResource("15_tdnaq")
 
-[node name="rocket_launch" type="AudioStreamPlayer" parent="tutorial_button"]
-stream = ExtResource("12_yhl1u")
-
-[node name="PopupPanel" type="PopupPanel" parent="tutorial_button"]
-canvas_item_default_texture_filter = 0
-gui_embed_subwindows = true
-size = Vector2i(300, 1992)
-visible = true
-min_size = Vector2i(200, 300)
-max_size = Vector2i(100, 500)
-content_scale_mode = 1
-content_scale_aspect = 1
-
-[node name="MarginContainer2" type="MarginContainer" parent="tutorial_button/PopupPanel"]
-custom_minimum_size = Vector2(100, 100)
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 296.0
-offset_bottom = 1988.0
-scale = Vector2(2.3027, 1.53496)
-
-[node name="Panel" type="Panel" parent="tutorial_button/PopupPanel/MarginContainer2"]
-clip_contents = true
-custom_minimum_size = Vector2(100, 500)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_058ua")
-
-[node name="Label" type="Label" parent="tutorial_button/PopupPanel/MarginContainer2"]
-custom_minimum_size = Vector2(100, 199)
-layout_mode = 2
-size_flags_vertical = 0
-text = "THE GREATEST ADVENTURE IS ABOUT TO COMMENCE!
-
-In order to successfully get Laika back home, she needs to fight the aliens she encounters and collect items
-"
-label_settings = SubResource("LabelSettings_d6mo8")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 50
+[node name="click_tutorial" type="AudioStreamPlayer" parent="tutorial_button"]
+stream = ExtResource("15_08tv7")
 
 [connection signal="pressed" from="play_button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="tutorial_button" to="." method="_on_tutorial_button_pressed"]
