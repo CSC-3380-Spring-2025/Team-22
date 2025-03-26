@@ -1,4 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8cfe0cdf53sp"]
+
+
 
 [ext_resource type="Script" path="res://Battle.cs" id="1_2h7oj"]
 [ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://laikaBattle.png" id="1_lul25"]

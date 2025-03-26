@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1tpwnxcnkhei"]
+[gd_scene load_steps=11 format=3 uid="uid://be52tlp3pcmy5"]
 
-[ext_resource type="Texture2D" uid="uid://dn16yjiap4rh5" path="res://laika.png" id="1_k4g30"]
-[ext_resource type="Script" path="res://Move.cs" id="2_rl45k"]
+[ext_resource type="Texture2D" uid="uid://dn16yjiap4rh5" path="res://Art/laika.png" id="1_k4g30"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rl45k"]
 atlas = ExtResource("1_k4g30")
@@ -85,7 +84,6 @@ animations = [{
 [node name="Node2D" type="Node2D"]
 
 [node name="Laika" type="CharacterBody2D" parent="."]
-script = ExtResource("2_rl45k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Laika"]
 position = Vector2(589, 337)

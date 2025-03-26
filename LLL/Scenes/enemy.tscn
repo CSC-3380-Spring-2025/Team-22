@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://86nt2o5g41vp"]
+[gd_scene load_steps=3 format=3 uid="uid://86nt2o5g41vp"]
 
-[node name="Enemy" type="Node2D"]
+[ext_resource type="Script" path="res://Scenes/alien1.gd" id="1_nt3ox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyyta"]
+size = Vector2(527, 576)
+
+[node name="Alien1" type="Area2D"]
+position = Vector2(564, 307)
+scale = Vector2(0.70621, 0.84331)
+script = ExtResource("1_nt3ox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10.5, 5)
+shape = SubResource("RectangleShape2D_xyyta")

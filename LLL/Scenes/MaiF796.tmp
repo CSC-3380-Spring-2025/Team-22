@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://yw7h7xmeb0x5"]
+
+[ext_resource type="Script" path="res://Scenes/main_stage.gd" id="1_bypp8"]
+[ext_resource type="PackedScene" uid="uid://bijuc5ocuq6tk" path="res://Scenes/laika.tscn" id="1_risgw"]
+[ext_resource type="Texture2D" uid="uid://c4potrwr6ctgr" path="res://placeholderbkg.jpg" id="2_f52sv"]
+
+[node name="Main Stage" type="Node2D"]
+script = ExtResource("1_bypp8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 648.0
+texture = ExtResource("2_f52sv")
+
+[node name="Laika" parent="." instance=ExtResource("1_risgw")]
