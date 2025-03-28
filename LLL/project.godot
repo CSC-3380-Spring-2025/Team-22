@@ -11,15 +11,13 @@ config_version=5
 [application]
 
 config/name="LLL"
-
 run/main_scene="res://Scenes/main_menu.tscn"
-
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-MainMenuAudio="*res://Scenes/main_menu_audio.tscn"
+MainMenuMusic="*res://AutoLoads/main_menu_music.tscn"
 
 [display]
 
