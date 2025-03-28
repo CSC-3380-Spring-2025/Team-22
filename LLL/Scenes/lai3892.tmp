@@ -1,8 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bijuc5ocuq6tk"]
 
 [ext_resource type="Script" path="res://Scenes/laika.gd" id="1_u6r1e"]
-
-[ext_resource type="Texture2D" uid="uid://dn16yjiap4rh5" path="res://Art/laika.png" id="3_h0i4a"]
+[ext_resource type="Texture2D" uid="uid://dn16yjiap4rh5" path="res://laika.png" id="3_h0i4a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_acco8"]
 atlas = ExtResource("3_h0i4a")
