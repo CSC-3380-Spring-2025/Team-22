@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://yw7h7xmeb0x5"]
+[gd_scene load_steps=11 format=3 uid="uid://yw7h7xmeb0x5"]
 
 [ext_resource type="Script" path="res://Scenes/main_stage.gd" id="1_bypp8"]
 [ext_resource type="PackedScene" uid="uid://bijuc5ocuq6tk" path="res://Scenes/laika.tscn" id="1_risgw"]
-[ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art/backdrop.png" id="2_d8i2a"]
+[ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art+Font/backdrop.png" id="2_d8i2a"]
 [ext_resource type="PackedScene" uid="uid://86nt2o5g41vp" path="res://Scenes/enemy.tscn" id="4_qbrth"]
+[ext_resource type="Texture2D" uid="uid://ddn357joo3plf" path="res://Art+Font/type_1_alien.png" id="5_hts6t"]
+[ext_resource type="Texture2D" uid="uid://dipjv27knn284" path="res://Art+Font/main__menu_button.png" id="5_i32bk"]
+[ext_resource type="Texture2D" uid="uid://biwq1hj4w7x3u" path="res://Art+Font/main_menu_button_pressed.png" id="6_n6808"]
+[ext_resource type="AudioStream" uid="uid://d0n1cw4ykptrq" path="res://Audio/Menu Selection Click.mp3" id="7_qivgc"]
+[ext_resource type="Texture2D" uid="uid://coqsqrmr3quwp" path="res://Art+Font/play.png" id="8_o62xe"]
+[ext_resource type="Texture2D" uid="uid://cxvcbsj706g03" path="res://Art+Font/pause.png" id="9_dv3q0"]
 
 [node name="Main Stage" type="Node2D"]
 position = Vector2(0, -1)
@@ -28,5 +34,49 @@ texture = ExtResource("2_d8i2a")
 position = Vector2(113, 9)
 
 [node name="Alien1" parent="." instance=ExtResource("4_qbrth")]
-position = Vector2(1006, 129)
+position = Vector2(1012, 182)
 scale = Vector2(0.375721, 0.447613)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Alien1"]
+texture = ExtResource("5_hts6t")
+
+[node name="main_menu_button" type="TextureButton" parent="."]
+process_mode = 3
+offset_top = 539.0
+offset_right = 269.0
+offset_bottom = 698.0
+scale = Vector2(0.712458, 0.68426)
+texture_normal = ExtResource("5_i32bk")
+texture_pressed = ExtResource("6_n6808")
+texture_hover = ExtResource("6_n6808")
+
+[node name="click" type="AudioStreamPlayer" parent="main_menu_button"]
+stream = ExtResource("7_qivgc")
+
+[node name="play" type="TextureButton" parent="."]
+process_mode = 3
+offset_left = 197.0
+offset_top = 615.0
+offset_right = 521.0
+offset_bottom = 819.0
+scale = Vector2(0.171, 0.174)
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("8_o62xe")
+
+[node name="click" type="AudioStreamPlayer" parent="play"]
+stream = ExtResource("7_qivgc")
+
+[node name="pause" type="TextureButton" parent="."]
+offset_left = 256.0
+offset_top = 618.0
+offset_right = 580.0
+offset_bottom = 822.0
+scale = Vector2(0.172092, 0.131278)
+texture_normal = ExtResource("9_dv3q0")
+
+[node name="click" type="AudioStreamPlayer" parent="pause"]
+stream = ExtResource("7_qivgc")
+
+[connection signal="pressed" from="main_menu_button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]

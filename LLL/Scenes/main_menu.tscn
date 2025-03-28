@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bpand6fcust5l"]
+[gd_scene load_steps=19 format=3 uid="uid://bpand6fcust5l"]
 
 [ext_resource type="Texture2D" uid="uid://blqbotctbyt7r" path="res://Art+Font/main_menu.png" id="1_cr70x"]
 [ext_resource type="Texture2D" uid="uid://cocmyyj28e3ui" path="res://Art+Font/laika_4_menu.png" id="2_osd73"]
@@ -15,6 +15,8 @@
 [ext_resource type="AudioStream" uid="uid://5ku3cob83oj5" path="res://Audio/rocket_blast.mp3" id="12_yhl1u"]
 [ext_resource type="Texture2D" uid="uid://debrxvpm4kce3" path="res://Art+Font/tutorial_button.png" id="14_hl0iy"]
 [ext_resource type="Texture2D" uid="uid://jisuvgsi6cke" path="res://Art+Font/tutorial_button_pressed.png" id="15_tdnaq"]
+[ext_resource type="Texture2D" uid="uid://bpgpqmbot36t2" path="res://Art+Font/settings_button.png" id="16_gub1e"]
+[ext_resource type="Texture2D" uid="uid://bsn62fo7hg2pl" path="res://Art+Font/settings_button_pressed.png" id="17_yhydb"]
 
 [sub_resource type="GDScript" id="GDScript_qdvli"]
 script/source = "extends Control
@@ -34,8 +36,9 @@ func _on_tutorial_button_pressed() -> void:
 	$tutorial_button/rocket_launch.play()
 	get_tree().change_scene_to_file(\"res://Scenes/tutorial.tscn\")
 
-	
-	
+func _on_settings_button_pressed() -> void:
+	$settings_button/rocket_launch.play()
+	get_tree().change_scene_to_file(\"res://Scenes/settings.tscn\")
 "
 
 [node name="MainMenu" type="Control"]
@@ -84,11 +87,11 @@ script = ExtResource("8_foibd")
 
 [node name="play_button" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 481.0
-offset_top = 401.0
-offset_right = 2081.0
-offset_bottom = 1401.0
-scale = Vector2(0.144345, 0.151793)
+offset_left = 431.0
+offset_top = 382.0
+offset_right = 2031.0
+offset_bottom = 1382.0
+scale = Vector2(0.206071, 0.202826)
 size_flags_stretch_ratio = 0.0
 action_mode = 0
 texture_normal = ExtResource("10_p5wy3")
@@ -101,6 +104,7 @@ stream = ExtResource("12_yhl1u")
 volume_db = 0.937
 
 [node name="tutorial_button" type="TextureButton" parent="."]
+process_mode = 3
 layout_mode = 0
 offset_left = 916.0
 offset_top = 506.0
@@ -114,5 +118,21 @@ texture_hover = ExtResource("15_tdnaq")
 [node name="rocket_launch" type="AudioStreamPlayer" parent="tutorial_button"]
 stream = ExtResource("9_waa7l")
 
+[node name="settings_button" type="TextureButton" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 10.0
+offset_top = 529.0
+offset_right = 279.0
+offset_bottom = 688.0
+scale = Vector2(0.740412, 0.837777)
+texture_normal = ExtResource("16_gub1e")
+texture_pressed = ExtResource("17_yhydb")
+texture_hover = ExtResource("17_yhydb")
+
+[node name="rocket_launch" type="AudioStreamPlayer" parent="settings_button"]
+stream = ExtResource("9_waa7l")
+
 [connection signal="pressed" from="play_button" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="tutorial_button" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="settings_button" to="." method="_on_settings_button_pressed"]
