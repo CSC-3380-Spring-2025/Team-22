@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8cfe0cdf53sp"]
 
 [ext_resource type="Script" path="res://Battle.cs" id="1_2h7oj"]
-[ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://laikaBattle.png" id="1_lul25"]
-[ext_resource type="Texture2D" uid="uid://dvnk36jq5nkx5" path="res://type_1_alien.png" id="2_yh5fh"]
-[ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://backdrop.png" id="4_1samx"]
+[ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://Art+Font/laikaBattle.png" id="1_lul25"]
+[ext_resource type="Texture2D" uid="uid://mrueglhn2xyy" path="res://type_1_alien.png" id="2_yh5fh"]
+[ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art+Font/backdrop.png" id="4_1samx"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2h7oj")
