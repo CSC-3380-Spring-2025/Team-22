@@ -15,8 +15,8 @@
 [ext_resource type="AudioStream" uid="uid://5ku3cob83oj5" path="res://Audio/rocket_blast.mp3" id="12_yhl1u"]
 [ext_resource type="Texture2D" uid="uid://debrxvpm4kce3" path="res://Art+Font/tutorial_button.png" id="14_hl0iy"]
 [ext_resource type="Texture2D" uid="uid://jisuvgsi6cke" path="res://Art+Font/tutorial_button_pressed.png" id="15_tdnaq"]
-[ext_resource type="Texture2D" uid="uid://ccqqogjasm3v5" path="res://Art+Font/settings_button.png" id="16_gub1e"]
-[ext_resource type="Texture2D" uid="uid://c78656tblxqp7" path="res://Art+Font/settings_button_pressed.png" id="17_yhydb"]
+[ext_resource type="Texture2D" uid="uid://drtnfbneqc0i4" path="res://Art+Font/settings_button.png" id="16_gub1e"]
+[ext_resource type="Texture2D" uid="uid://uputya7pasdr" path="res://Art+Font/settings_button_pressed.png" id="17_yhydb"]
 
 [sub_resource type="GDScript" id="GDScript_qdvli"]
 script/source = "extends Control

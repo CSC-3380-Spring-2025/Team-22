@@ -8,11 +8,6 @@ func _ready() -> void:
 	
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.a
-func _process(delta: float) -> void:
-	pass
-
 func timepass():
 	time = time + 1 #makes the time increase every time the player moves
 	if (time < 1):
@@ -39,5 +34,6 @@ func _on_pause_pressed() -> void:
 	$pause/click.play()
 	$"/root/MainMenuMusic".stop()
 	get_tree().paused = true
-	
-	
+
+func _on_sleep_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/sleeping.tscn")
