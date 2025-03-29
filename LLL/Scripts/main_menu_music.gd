@@ -8,7 +8,3 @@ func _ready() -> void:
 func play_music(): 
 	$Music.stream = menu_music
 	$Music.play()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
