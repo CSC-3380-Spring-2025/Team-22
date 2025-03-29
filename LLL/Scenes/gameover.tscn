@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dh52fsj7trojy"]
+[gd_scene load_steps=15 format=3 uid="uid://dh52fsj7trojy"]
 
 [ext_resource type="Script" path="res://Scripts/gameover.gd" id="1_tjh16"]
 [ext_resource type="AudioStream" uid="uid://bi6l5o8qqtpqs" path="res://Audio/space rock (1).ogg" id="2_h4fgq"]

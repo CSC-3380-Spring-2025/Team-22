@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://dt751rvrdli3a"]
+
+[ext_resource type="Script" path="res://Scripts/settings.gd" id="1_2wcpt"]
+[ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art+Font/backdrop.png" id="1_wr63g"]
+[ext_resource type="Texture2D" uid="uid://bj4kwpedlmyft" path="res://Art+Font/back_button.png" id="3_2w5ah"]
+[ext_resource type="Texture2D" uid="uid://doytyj882tp2k" path="res://Art+Font/back_button_pressed.png" id="4_in5hx"]
+[ext_resource type="AudioStream" uid="uid://d0n1cw4ykptrq" path="res://Audio/Menu Selection Click.mp3" id="5_hakci"]
+[ext_resource type="Texture2D" uid="uid://fjukv17qcoeo" path="res://Art+Font/music_on.png" id="6_84184"]
+[ext_resource type="Texture2D" uid="uid://cmaay6rym3rq6" path="res://Art+Font/music_off.png" id="7_51f1x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bert"]
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0.152941, 0.65098)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.384314)
+shadow_size = 1
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2wcpt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.726773, 0.655884)
+texture = ExtResource("1_wr63g")
+
+[node name="settings" type="RichTextLabel" parent="."]
+offset_left = 407.0
+offset_top = 176.0
+offset_right = 707.0
+offset_bottom = 476.0
+scale = Vector2(1.06685, 1.06349)
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_7bert")
+bbcode_enabled = true
+text = "[font=res://Art+Font/Fredoka.ttf][font_size=80]SETTINGS [font=res://Art+Font/Fredoka.ttf][font_size=50]	Music:
+ [/font_size][/font]"
+scroll_active = false
+tab_size = 5
+
+[node name="back_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 363.0
+offset_right = 729.0
+offset_bottom = 522.0
+scale = Vector2(0.763887, 0.758801)
+texture_normal = ExtResource("3_2w5ah")
+texture_pressed = ExtResource("4_in5hx")
+texture_hover = ExtResource("4_in5hx")
+
+[node name="click_back" type="AudioStreamPlayer" parent="back_button"]
+stream = ExtResource("5_hakci")
+volume_db = 24.0
+
+[node name="music_off" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 291.0
+offset_right = 843.0
+offset_bottom = 495.0
+scale = Vector2(0.404825, 0.438004)
+texture_normal = ExtResource("7_51f1x")
+
+[node name="music_on" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 290.0
+offset_right = 931.0
+offset_bottom = 494.0
+scale = Vector2(0.404538, 0.462875)
+texture_normal = ExtResource("6_84184")
+
+[connection signal="pressed" from="back_button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="music_off" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="music_on" to="." method="_on_texture_button_3_pressed"]

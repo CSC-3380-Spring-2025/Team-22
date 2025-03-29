@@ -1,16 +1,20 @@
-extends Node2D
-
-var gameStarted : bool
+extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_node("res://Audio/game over bop.mp3")
+	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func _on_texture_button_pressed() -> void:
-	$play_again_button/music.play()
-	await get_tree().create_timer(0.5).timeout
+	$back_button/click_back.play()
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+
+func _on_texture_button_2_pressed() -> void:
+	$"/root/MainMenuMusic".stop()
+
+func _on_texture_button_3_pressed() -> void:
+	$"/root/MainMenuMusic".play()
