@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgo17wpslcxxe"
-path="res://.godot/imported/stick.png-f5b6a8d9439f476ce084f743a4b33bee.ctex"
+uid="uid://tt1n8276v7vv"
+path="res://.godot/imported/inventorySlot.png-7c82af11938ec77e8953aa0a3edd9c8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/inventory/placeholderTextures/stick.png"
-dest_files=["res://.godot/imported/stick.png-f5b6a8d9439f476ce084f743a4b33bee.ctex"]
+source_file="res://placeholderTextures/inventorySlot.png"
+dest_files=["res://.godot/imported/inventorySlot.png-7c82af11938ec77e8953aa0a3edd9c8f.ctex"]
 
 [params]
 

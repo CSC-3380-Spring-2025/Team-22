@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgo17wpslcxxe"
-path="res://.godot/imported/stick.png-f5b6a8d9439f476ce084f743a4b33bee.ctex"
+uid="uid://d2frhl67o8uqo"
+path="res://.godot/imported/inventoryBackground.png-138fb4ddec647124c918ebb7aa3601b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/inventory/placeholderTextures/stick.png"
-dest_files=["res://.godot/imported/stick.png-f5b6a8d9439f476ce084f743a4b33bee.ctex"]
+source_file="res://placeholderTextures/inventoryBackground.png"
+dest_files=["res://.godot/imported/inventoryBackground.png-138fb4ddec647124c918ebb7aa3601b5.ctex"]
 
 [params]
 
