@@ -87,11 +87,11 @@ script = ExtResource("8_foibd")
 
 [node name="play_button" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 450.0
-offset_top = 371.0
-offset_right = 2542.0
-offset_bottom = 1608.0
-scale = Vector2(0.144345, 0.151793)
+offset_left = 431.0
+offset_top = 382.0
+offset_right = 2031.0
+offset_bottom = 1382.0
+scale = Vector2(0.206071, 0.202826)
 size_flags_stretch_ratio = 0.0
 action_mode = 0
 texture_normal = ExtResource("10_p5wy3")
@@ -104,6 +104,7 @@ stream = ExtResource("12_yhl1u")
 volume_db = 0.937
 
 [node name="tutorial_button" type="TextureButton" parent="."]
+process_mode = 3
 layout_mode = 0
 offset_left = 927.0
 offset_top = 527.0
@@ -118,12 +119,13 @@ texture_hover = ExtResource("15_tdnaq")
 stream = ExtResource("9_waa7l")
 
 [node name="settings_button" type="TextureButton" parent="."]
+process_mode = 3
 layout_mode = 0
-offset_left = 13.0
-offset_top = 533.0
-offset_right = 282.0
-offset_bottom = 692.0
-scale = Vector2(0.748433, 0.821819)
+offset_left = 10.0
+offset_top = 529.0
+offset_right = 279.0
+offset_bottom = 688.0
+scale = Vector2(0.740412, 0.837777)
 texture_normal = ExtResource("16_gub1e")
 texture_pressed = ExtResource("17_yhydb")
 texture_hover = ExtResource("17_yhydb")
