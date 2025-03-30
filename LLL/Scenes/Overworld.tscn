@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://be52tlp3pcmy5"]
+[gd_scene load_steps=15 format=3 uid="uid://be52tlp3pcmy5"]
 
 [ext_resource type="Texture2D" uid="uid://dn16yjiap4rh5" path="res://Art+Font/laika.png" id="1_k4g30"]
-[ext_resource type="Script" path="res://Scenes/laika.gd" id="1_kmpr2"]
-[ext_resource type="Resource" uid="uid://b43ubqjy7jpcs" path="res://Scripts/inventory/playerInv.tres" id="2_glvaq"]
+[ext_resource type="Script" uid="uid://cbmnfwci3ycrn" path="res://Scenes/laika.gd" id="1_kmpr2"]
 [ext_resource type="PackedScene" uid="uid://bgtui3uwsfjxa" path="res://Scripts/inventory/inv_ui.tscn" id="4_rrsf3"]
 [ext_resource type="PackedScene" uid="uid://cmdy18dbjwgvq" path="res://Scripts/inventory/blank_collectible.tscn" id="5_8vtbk"]
 
@@ -101,7 +100,9 @@ position = Vector2(443, 524)
 
 [node name="Laika" type="CharacterBody2D" parent="."]
 script = ExtResource("1_kmpr2")
-inv = ExtResource("2_glvaq")
+
+[node name="Camera2D" type="Camera2D" parent="Laika"]
+position = Vector2(581, 326)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Laika"]
 position = Vector2(589, 337)

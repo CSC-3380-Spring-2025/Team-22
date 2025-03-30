@@ -1,10 +1,9 @@
-
-
+[gd_scene load_steps=5 format=3 uid="uid://b24ch16f77652"]
 
 [ext_resource type="Script" uid="uid://dxuyifr3xaq4l" path="res://Battle.cs" id="1_2h7oj"]
-[ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://laikaBattle.png" id="1_lul25"]
-[ext_resource type="Texture2D" uid="uid://dvnk36jq5nkx5" path="res://type_1_alien.png" id="2_yh5fh"]
-[ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://backdrop.png" id="4_1samx"]
+[ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://Art+Font/laikaBattle.png" id="1_lul25"]
+[ext_resource type="Texture2D" uid="uid://ddn357joo3plf" path="res://Art+Font/type_1_alien.png" id="2_yh5fh"]
+[ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art+Font/backdrop.png" id="4_1samx"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2h7oj")
@@ -29,6 +28,7 @@ text = "[FIGHT]"
 flat = false
 item_count = 3
 popup/item_0/text = "Scratch"
+popup/item_0/id = 0
 popup/item_1/text = "Bite"
 popup/item_1/id = 1
 popup/item_2/text = "Howl"
@@ -54,6 +54,7 @@ text = "[ITEMS]"
 flat = false
 item_count = 3
 popup/item_0/text = "Moon Rock"
+popup/item_0/id = 0
 popup/item_1/text = "Iron Rod"
 popup/item_1/id = 1
 popup/item_2/text = "Dog Treat"
@@ -86,8 +87,6 @@ offset_top = 222.0
 offset_right = 263.0
 offset_bottom = 298.0
 theme_override_font_sizes/normal_font_size = 20
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="AlienStats" type="RichTextLabel" parent="."]
 offset_left = 888.0
@@ -95,8 +94,6 @@ offset_top = 222.0
 offset_right = 1151.0
 offset_bottom = 298.0
 theme_override_font_sizes/normal_font_size = 20
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="Defend" to="." method="_Defend"]
 [connection signal="pressed" from="Flee" to="." method="_Flee"]

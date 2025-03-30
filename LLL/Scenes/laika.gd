@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 
 @export var speed = 400
-@export var inv: Inv
 @onready var _animation_player = $AnimatedSprite2D
 const msScript = preload("res://Scenes/main_stage.gd") #mainstage script
 var mainstage = msScript.new()
@@ -22,9 +21,6 @@ func get_input():
 		_animation_player.stop()
 	
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input() # gets the current input
 	move_and_slide() # moves the actual icon
-
-func collect(item):
-	inv.insert(item)
