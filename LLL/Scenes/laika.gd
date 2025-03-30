@@ -21,6 +21,6 @@ func get_input():
 		_animation_player.stop()
 	
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input() # gets the current input
 	move_and_slide() # moves the actual icon
