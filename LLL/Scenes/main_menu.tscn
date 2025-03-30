@@ -1,14 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://bpand6fcust5l"]
+[gd_scene load_steps=20 format=3 uid="uid://bpand6fcust5l"]
 
 [ext_resource type="Texture2D" uid="uid://blqbotctbyt7r" path="res://Art+Font/main_menu.png" id="1_cr70x"]
 [ext_resource type="Texture2D" uid="uid://cocmyyj28e3ui" path="res://Art+Font/laika_4_menu.png" id="2_osd73"]
-[ext_resource type="Script" path="res://Scripts/laika_menu.gd" id="3_ci4je"]
+[ext_resource type="Script" uid="uid://dgvquenesmccp" path="res://Scripts/laika_menu.gd" id="3_ci4je"]
 [ext_resource type="Texture2D" uid="uid://cyrxip25l5vld" path="res://Art+Font/alien_4_menu.png" id="4_qq75v"]
-[ext_resource type="Script" path="res://Scripts/alien_menu.gd" id="5_4t1h1"]
+[ext_resource type="Script" uid="uid://bw5pb26j1rni2" path="res://Scripts/alien_menu.gd" id="5_4t1h1"]
 [ext_resource type="Texture2D" uid="uid://mww130o7q055" path="res://Art+Font/moon.png" id="6_503u2"]
-[ext_resource type="Script" path="res://Scripts/moon_menu.gd" id="7_lukkp"]
+[ext_resource type="Script" uid="uid://cysh2gbf44or1" path="res://Scripts/moon_menu.gd" id="7_lukkp"]
 [ext_resource type="Texture2D" uid="uid://ck8m7b2nqv3u6" path="res://Art+Font/earth.png" id="8_ejups"]
-[ext_resource type="Script" path="res://Scenes/earth_menu.gd" id="8_foibd"]
+[ext_resource type="Script" uid="uid://cfo0pjbeq7xkw" path="res://Scenes/earth_menu.gd" id="8_foibd"]
 [ext_resource type="AudioStream" uid="uid://d0n1cw4ykptrq" path="res://Audio/Menu Selection Click.mp3" id="9_waa7l"]
 [ext_resource type="Texture2D" uid="uid://c6d1oemlp1mnf" path="res://Art+Font/start_button.png" id="10_p5wy3"]
 [ext_resource type="Texture2D" uid="uid://do3kfr4gjx12k" path="res://Art+Font/start_button_pressed.png" id="11_q5d8a"]
@@ -20,15 +20,22 @@
 script/source = "extends Control
 
 # Called when the node enters the scene tree for the first time.
+@onready var fade = get_node('transition/AnimationPlayer')
+@onready var black = get_node('transition/ColorRect')
+
 func _ready() -> void:
-	pass
+	black.visible = false
 
 func _process(delta: float) -> void:
 	pass 
 
 func _on_texture_button_pressed() -> void:
 	$play_button/start_rocket_launch.play()
-	get_tree().change_scene_to_file(\"res://Scenes/Main_Stage.tscn\")
+	black.visible = true
+	fade.play(\"fade\");
+	await fade.animation_finished
+	
+	get_tree().change_scene_to_file(\"res://Scenes/Overworld.tscn\")
 
 func _on_tutorial_button_pressed() -> void:
 	$tutorial_button/rocket_launch.play()
@@ -37,6 +44,43 @@ func _on_tutorial_button_pressed() -> void:
 	
 	
 "
+
+[sub_resource type="Animation" id="Animation_m3bi6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8dnnj"]
+resource_name = "fade"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.75, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wyh8j"]
+_data = {
+&"RESET": SubResource("Animation_m3bi6"),
+&"fade": SubResource("Animation_8dnnj")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -113,6 +157,19 @@ texture_hover = ExtResource("15_tdnaq")
 
 [node name="rocket_launch" type="AudioStreamPlayer" parent="tutorial_button"]
 stream = ExtResource("9_waa7l")
+
+[node name="transition" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="transition"]
+offset_right = 1160.0
+offset_bottom = 660.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="transition"]
+libraries = {
+&"": SubResource("AnimationLibrary_wyh8j")
+}
 
 [connection signal="pressed" from="play_button" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="tutorial_button" to="." method="_on_tutorial_button_pressed"]
