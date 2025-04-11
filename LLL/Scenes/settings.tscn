@@ -1,21 +1,12 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=9 format=3 uid="uid://c620tc26cpra2"]
-=======
 [gd_scene load_steps=9 format=3 uid="uid://bpyj3i840kmkk"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://Scripts/settings.gd" id="1_2wcpt"]
 [ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art+Font/backdrop.png" id="1_wr63g"]
 [ext_resource type="Texture2D" uid="uid://bvyi0hen57dp2" path="res://Art+Font/back_button.png" id="3_2w5ah"]
 [ext_resource type="Texture2D" uid="uid://d1n31qvvu36r6" path="res://Art+Font/back_button_pressed.png" id="4_in5hx"]
 [ext_resource type="AudioStream" uid="uid://d0n1cw4ykptrq" path="res://Audio/Menu Selection Click.mp3" id="5_hakci"]
-<<<<<<< Updated upstream
-[ext_resource type="Texture2D" uid="uid://cfj5kl6nd84vg" path="res://Art+Font/music_on.png" id="6_84184"]
-[ext_resource type="Texture2D" uid="uid://c8to0xq2judh0" path="res://Art+Font/music_off.png" id="7_51f1x"]
-=======
 [ext_resource type="Texture2D" path="res://Art+Font/music_on.png" id="6_84184"]
 [ext_resource type="Texture2D" path="res://Art+Font/music_off.png" id="7_51f1x"]
->>>>>>> Stashed changes
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bert"]
 content_margin_right = 0.0
@@ -51,10 +42,6 @@ scale = Vector2(0.726773, 0.655884)
 texture = ExtResource("1_wr63g")
 
 [node name="settings" type="RichTextLabel" parent="."]
-<<<<<<< Updated upstream
-layout_mode = 0
-=======
->>>>>>> Stashed changes
 offset_left = 407.0
 offset_top = 176.0
 offset_right = 707.0
@@ -70,10 +57,6 @@ scroll_active = false
 tab_size = 5
 
 [node name="back_button" type="TextureButton" parent="."]
-<<<<<<< Updated upstream
-process_mode = 3
-=======
->>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 460.0
 offset_top = 363.0
@@ -89,10 +72,6 @@ stream = ExtResource("5_hakci")
 volume_db = 24.0
 
 [node name="music_off" type="TextureButton" parent="."]
-<<<<<<< Updated upstream
-process_mode = 3
-=======
->>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 519.0
 offset_top = 291.0
