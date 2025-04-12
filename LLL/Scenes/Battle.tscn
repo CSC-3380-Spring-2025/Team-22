@@ -100,5 +100,9 @@ theme_override_font_sizes/normal_font_size = 20
 stream = ExtResource("5_gr70f")
 volume_db = -4.952
 
+[node name="battle_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_gr70f")
+volume_db = -4.952
+
 [connection signal="pressed" from="Defend" to="." method="_Defend"]
 [connection signal="pressed" from="Flee" to="." method="_Flee"]
