@@ -1,15 +1,26 @@
 extends Sprite2D
 
-@export var float_speed := 1.0        # how fast it floats
-@export var float_radius := 10.0      # how far it floats in each direction
+# Speed and height variables
+@export var float_speed: float = 0.09
+@export var float_height: float = 11.0
 
-var start_position := Vector2.ZERO
-var time := 0.0
+# Starting position of laika
+var start_y: float = 0.0
 
+# Tracks when laika is moving up or down
+var going_up: bool = true
+
+#  Declares starting position
 func _ready() -> void:
-	start_position = position
+	start_y = position.y
 
+# Moving up and down 
 func _process(delta: float) -> void:
-	time += delta
-	position.x = start_position.x + cos(time * float_speed) * float_radius
-	position.y = start_position.y + sin(time * float_speed) * float_radius
+	if going_up:
+		position.y -= float_speed
+		if position.y < start_y - float_height:
+			going_up = false
+	else:
+		position.y += float_speed
+		if position.y > start_y + float_height:
+			going_up = true

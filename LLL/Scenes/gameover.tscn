@@ -87,5 +87,5 @@ stream = ExtResource("7_v4imw")
 volume_db = 24.0
 
 [connection signal="ready" from="gameover_music" to="gameover_sprite" method="_on_audio_stream_player_ready"]
-[connection signal="pressed" from="play_again_button" to="." method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="play_again_button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="play_again_button" to="." method="_on_play_again_button_pressed"]
