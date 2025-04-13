@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vhq46qwvamfq"
+path="res://.godot/imported/Philip Aldous - RPG Title Screen Music Pack - 14 A World Of Snow.mp3-bac12dcc9af43aab3a9def8782d64c89.mp3str"
+
+[deps]
+
+source_file="res://Audio/Philip Aldous - RPG Title Screen Music Pack - 14 A World Of Snow.mp3"
+dest_files=["res://.godot/imported/Philip Aldous - RPG Title Screen Music Pack - 14 A World Of Snow.mp3-bac12dcc9af43aab3a9def8782d64c89.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

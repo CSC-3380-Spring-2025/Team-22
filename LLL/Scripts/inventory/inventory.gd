@@ -1,0 +1,22 @@
+extends Resource
+
+class_name Inv
+
+signal update
+
+@export var slots: Array[InvSlot] = []
+
+func insert(item: InvItem) -> void:
+	var itemslots: Array[InvSlot] = slots.filter(func(slot: InvSlot) -> bool:
+		return slot.item == item
+	)
+	if !itemslots.is_empty():
+		itemslots[0].amount += 1
+	else:
+		var emptyslots: Array[InvSlot] = slots.filter(func(slot: InvSlot) -> bool:
+			return slot.item == null
+		)
+		if !emptyslots.is_empty():
+			emptyslots[0].item = item
+			emptyslots[0].amount = 1
+	update.emit()

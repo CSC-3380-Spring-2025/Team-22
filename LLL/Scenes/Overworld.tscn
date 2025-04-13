@@ -1,0 +1,121 @@
+[gd_scene load_steps=16 format=3 uid="uid://be52tlp3pcmy5"]
+
+[ext_resource type="Texture2D" uid="uid://dn16yjiap4rh5" path="res://Art+Font/laika.png" id="1_k4g30"]
+[ext_resource type="Script" uid="uid://cbmnfwci3ycrn" path="res://Scenes/laika.gd" id="1_kmpr2"]
+[ext_resource type="Resource" uid="uid://b43ubqjy7jpcs" path="res://Scripts/inventory/playerInv.tres" id="3_s3goe"]
+[ext_resource type="PackedScene" uid="uid://bgtui3uwsfjxa" path="res://Scripts/inventory/inv_ui.tscn" id="4_rrsf3"]
+[ext_resource type="PackedScene" uid="uid://cmdy18dbjwgvq" path="res://Scripts/inventory/blank_collectible.tscn" id="5_8vtbk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl45k"]
+atlas = ExtResource("1_k4g30")
+region = Rect2(867, 719, 867, 719)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8dfh"]
+atlas = ExtResource("1_k4g30")
+region = Rect2(1734, 719, 867, 719)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgbce"]
+atlas = ExtResource("1_k4g30")
+region = Rect2(0, 0, 867, 719)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8q5d"]
+atlas = ExtResource("1_k4g30")
+region = Rect2(867, 0, 867, 719)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbq2x"]
+atlas = ExtResource("1_k4g30")
+region = Rect2(1734, 0, 867, 719)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4tub"]
+atlas = ExtResource("1_k4g30")
+region = Rect2(0, 719, 867, 719)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmrvc"]
+atlas = ExtResource("1_k4g30")
+region = Rect2(0, 1438, 867, 719)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o65s7"]
+atlas = ExtResource("1_k4g30")
+region = Rect2(867, 1438, 867, 719)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkx53"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl45k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8dfh")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgbce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8q5d")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbq2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4tub")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmrvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o65s7")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4rwi"]
+size = Vector2(173, 162)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="blank_collectible" parent="." instance=ExtResource("5_8vtbk")]
+position = Vector2(991, 149)
+
+[node name="blank_collectible2" parent="." instance=ExtResource("5_8vtbk")]
+position = Vector2(926, 417)
+
+[node name="blank_collectible3" parent="." instance=ExtResource("5_8vtbk")]
+position = Vector2(443, 524)
+
+[node name="Laika" type="CharacterBody2D" parent="."]
+script = ExtResource("1_kmpr2")
+inv = ExtResource("3_s3goe")
+
+[node name="Camera2D" type="Camera2D" parent="Laika"]
+position = Vector2(581, 326)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Laika"]
+position = Vector2(589, 337)
+scale = Vector2(0.240264, 0.240264)
+sprite_frames = SubResource("SpriteFrames_rkx53")
+animation = &"Down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laika"]
+position = Vector2(589.5, 334)
+shape = SubResource("RectangleShape2D_u4rwi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Laika"]
+
+[node name="inv_UI" parent="Laika/CanvasLayer" instance=ExtResource("4_rrsf3")]
