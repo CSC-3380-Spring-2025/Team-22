@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://blqbotctbyt7r" path="res://Art+Font/main_menu.png" id="1_cr70x"]
 [ext_resource type="Texture2D" uid="uid://cocmyyj28e3ui" path="res://Art+Font/laika_4_menu.png" id="2_osd73"]
-[ext_resource type="Script" uid="uid://dgvquenesmccp" path="res://Scripts/laika_menu.gd" id="3_ci4je"]
+[ext_resource type="Script" path="res://Scripts/laika_menu.gd" id="3_ci4je"]
 [ext_resource type="Texture2D" uid="uid://cyrxip25l5vld" path="res://Art+Font/alien_4_menu.png" id="4_qq75v"]
-[ext_resource type="Script" uid="uid://bw5pb26j1rni2" path="res://Scripts/alien_menu.gd" id="5_4t1h1"]
+[ext_resource type="Script" path="res://Scripts/alien_menu.gd" id="5_4t1h1"]
 [ext_resource type="Texture2D" uid="uid://mww130o7q055" path="res://Art+Font/moon.png" id="6_503u2"]
-[ext_resource type="Script" uid="uid://cysh2gbf44or1" path="res://Scripts/moon_menu.gd" id="7_lukkp"]
+[ext_resource type="Script" path="res://Scripts/moon_menu.gd" id="7_lukkp"]
 [ext_resource type="Texture2D" uid="uid://ck8m7b2nqv3u6" path="res://Art+Font/earth.png" id="8_ejups"]
-[ext_resource type="Script" uid="uid://cfo0pjbeq7xkw" path="res://Scenes/earth_menu.gd" id="8_foibd"]
+[ext_resource type="Script" path="res://Scenes/earth_menu.gd" id="8_foibd"]
 [ext_resource type="AudioStream" uid="uid://d0n1cw4ykptrq" path="res://Audio/Menu Selection Click.mp3" id="9_waa7l"]
 [ext_resource type="Texture2D" uid="uid://c6d1oemlp1mnf" path="res://Art+Font/start_button.png" id="10_p5wy3"]
 [ext_resource type="Texture2D" uid="uid://do3kfr4gjx12k" path="res://Art+Font/start_button_pressed.png" id="11_q5d8a"]
@@ -78,8 +78,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wyh8j"]
 _data = {
-&"RESET": SubResource("Animation_m3bi6"),
-&"fade": SubResource("Animation_8dnnj")
+"RESET": SubResource("Animation_m3bi6"),
+"fade": SubResource("Animation_8dnnj")
 }
 
 [node name="MainMenu" type="Control"]
@@ -168,7 +168,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="transition"]
 libraries = {
-&"": SubResource("AnimationLibrary_wyh8j")
+"": SubResource("AnimationLibrary_wyh8j")
 }
 
 [connection signal="pressed" from="play_button" to="." method="_on_texture_button_pressed"]

@@ -11,10 +11,8 @@ func _ready() -> void:
 func timepass():
 	time = time + 1 #makes the time increase every time the player moves
 	if (time < 1):
-		print("PMI")
 		$Background.texture = ResourceLoader.load("res://placeholderbkg.png")
 	if (time > 1):
-		print("PMI")
 		$Background.texture = ResourceLoader.load("res://placeholderbkgN.png")
 pass
 
