@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream:LLL/type_2_alien.png.import
 uid="uid://bq2ftae441ce2"
 path="res://.godot/imported/type_2_alien.png-1cb61f644e16b5647b8f712707bd92bc.ctex"
+=======
+uid="uid://b7d3ixheni1cq"
+path="res://.godot/imported/type_2_alien.png-ee9772f610bcf2a0d12fe55eb0c88193.ctex"
+>>>>>>> Stashed changes:LLL/Art+Font/type_2_alien.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< Updated upstream:LLL/type_2_alien.png.import
 source_file="res://type_2_alien.png"
 dest_files=["res://.godot/imported/type_2_alien.png-1cb61f644e16b5647b8f712707bd92bc.ctex"]
+=======
+source_file="res://Art+Font/type_2_alien.png"
+dest_files=["res://.godot/imported/type_2_alien.png-ee9772f610bcf2a0d12fe55eb0c88193.ctex"]
+>>>>>>> Stashed changes:LLL/Art+Font/type_2_alien.png.import
 
 [params]
 
