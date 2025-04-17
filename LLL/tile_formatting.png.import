@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://naplxulhqum7"
-path="res://.godot/imported/laika.png-8b9dc3c334e3877c5f03de82d0e2c0a7.ctex"
+uid="uid://duwh1jhaehsdf"
+path="res://.godot/imported/tile_formatting.png-5384cfe233c451cf12c36b5ddd7c4aa8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://laika.png"
-dest_files=["res://.godot/imported/laika.png-8b9dc3c334e3877c5f03de82d0e2c0a7.ctex"]
+source_file="res://tile_formatting.png"
+dest_files=["res://.godot/imported/tile_formatting.png-5384cfe233c451cf12c36b5ddd7c4aa8.ctex"]
 
 [params]
 
