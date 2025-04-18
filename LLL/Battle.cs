@@ -368,6 +368,7 @@ public partial class Battle : Node2D
 		if(enemyHealth <= 0) {
 			Text.Text = ("The alien attacking you falls over, unconscious...");
 			Text.Text = ("You win!");
+			GetTree().ChangeSceneToFile("res://Scenes/Overworld.tscn");
 		}
 		else if(enemyHealth > 0 && waiting == false) {
 			alienMove();
@@ -377,6 +378,7 @@ public partial class Battle : Node2D
 		if(laikaHealth <= 0) {
 			Text.Text = ("You collapse, the space's endless night consuming you...");
 			Text.Text = ("Game over!");
+			GetTree().ChangeSceneToFile("res://Scenes/gameover.tscn");
 		}
 		
 		if(waiting == true) {
