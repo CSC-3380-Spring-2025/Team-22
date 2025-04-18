@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://naplxulhqum7"
-path="res://.godot/imported/laika.png-8b9dc3c334e3877c5f03de82d0e2c0a7.ctex"
+uid="uid://cl2xv0wp7hnck"
+path="res://.godot/imported/laika_left_walk.png-e0f5752e9f68b01d7374ae0f4acf5c47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://laika.png"
-dest_files=["res://.godot/imported/laika.png-8b9dc3c334e3877c5f03de82d0e2c0a7.ctex"]
+source_file="res://laika_left_walk.png"
+dest_files=["res://.godot/imported/laika_left_walk.png-e0f5752e9f68b01d7374ae0f4acf5c47.ctex"]
 
 [params]
 
