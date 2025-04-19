@@ -1,16 +1,44 @@
 extends Node2D
 
-var gameStarted : bool
+# Constant variable for switching back to main menu
+const MAINMENU_SCN: String = "res://Scenes/main_menu.tscn"
 
-# Called when the node enters the scene tree for the first time.
+# Variables for music and sprite
+var main_music: AudioStreamPlayer
+var game_over_music: AudioStreamPlayer
+var gameover_sprite: AnimatedSprite2D
+var button_music: AudioStreamPlayer
+
 func _ready() -> void:
-	get_node("res://Audio/game over bop.mp3")
+	main_music = get_node("/root/MainMenuMusic") as AudioStreamPlayer
+	game_over_music = $gameover_music as AudioStreamPlayer
+	gameover_sprite = $gameover_sprite as AnimatedSprite2D
+	button_music = $play_again_button/music as AudioStreamPlayer
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	# Calls sprite animation 
+	start_sprite_animation()
+	
+	# Calls music function
+	play_music()
+
+# Stops main menu music and starts game over music
+func play_music() -> void:
+	main_music.stop()
+	game_over_music.play()
+
+# Button sounds play when button pressed and calls switch scene function
+func _on_play_again_button_pressed() -> void:
+	button_music.play()
+	switch_scenes()
+
+# Siwtches scene to main menu and starts main menu music again
+func switch_scenes() -> void:
+	main_music.play()
+	get_tree().change_scene_to_file(MAINMENU_SCN)
+
+# Starts sprite animation for game over screen
+func start_sprite_animation() -> void:
+	gameover_sprite.play("endgame")
+
 func _process(delta: float) -> void:
 	pass
-
-func _on_texture_button_pressed() -> void:
-	$play_again_button/music.play()
-	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

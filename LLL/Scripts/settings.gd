@@ -1,20 +1,29 @@
 extends Control
 
+const MAIN_MENU: String = "res://Scenes/main_menu.tscn"
+
+# Declare variable for sound 
+var back_sound: AudioStreamPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Saving node to variable for later use
 func _process(delta: float) -> void:
-	pass
+	back_sound = $back_button/click_back
 
-func _on_texture_button_pressed() -> void:
-	$back_button/click_back.play()
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+# Changes scene back to main menu when back button 
+func _on_back_button_pressed() -> void:
+	back_sound.play()
+	get_tree().change_scene_to_file(MAIN_MENU)
 
+# Turns off music when pressed
+func _on_music_off_pressed() -> void:
+	back_sound.play()
+	get_node("/root/MainMenuMusic").stop()
 
-func _on_texture_button_2_pressed() -> void:
-	$"/root/MainMenuMusic".stop()
-
-func _on_texture_button_3_pressed() -> void:
-	$"/root/MainMenuMusic".play()
+# Turns on music when pressed
+func _on_music_on_pressed() -> void:
+	back_sound.play()
+	get_node("/root/MainMenuMusic").play()

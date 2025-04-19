@@ -4,7 +4,3 @@
 
 [node name="MainMenuMusic" type="AudioStreamPlayer"]
 stream = ExtResource("1_s1hl0")
-<<<<<<< Updated upstream
-playback_type = 1
-=======
->>>>>>> Stashed changes
