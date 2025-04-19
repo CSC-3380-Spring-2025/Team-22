@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjh6nrp1irx8c"
-path="res://.godot/imported/laika.png-8b9dc3c334e3877c5f03de82d0e2c0a7.ctex"
+uid="uid://cya6f2euyog5a"
+path="res://.godot/imported/GAMEOVER message.png-1eb676caeadbb3bd72ae590c409be606.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://laika.png"
-dest_files=["res://.godot/imported/laika.png-8b9dc3c334e3877c5f03de82d0e2c0a7.ctex"]
+source_file="res://GAMEOVER message.png"
+dest_files=["res://.godot/imported/GAMEOVER message.png-1eb676caeadbb3bd72ae590c409be606.ctex"]
 
 [params]
 
