@@ -41,24 +41,37 @@ var ItemsPopup : PopupMenu
 var Text : RichTextLabel
 var LaikaStats : RichTextLabel
 var AlienStats : RichTextLabel
+var TimeText : RichTextLabel
 var LaikaSprite : Sprite2D
 var EnemySprite : Sprite2D
 var HealSound : AudioStreamPlayer
 var DamageSound : AudioStreamPlayer
 
 signal clicked
+var canClick : bool
+var time : int
+var day : int
+var mins : int
+var secs : int
 
 func _ready(): 
 	LaikaSprite = get_node("LaikaBattle")
 	EnemySprite = get_node("AlienBattle")
-	enemyLevel = 2;
-	if(enemyLevel == 1):
+	
+	var rand : RandomNumberGenerator = RandomNumberGenerator.new()
+	var levelDecider : int = 1
+	if(GlobalTimer.day > 2):
+		levelDecider = rand.randi_range(GlobalTimer.day, 20)
+	print(levelDecider)
+	if(levelDecider < 15):
+		enemyLevel = 1
 		var texture = load("res://Art+Font/type_1_alien.png")
 		EnemySprite.texture = texture;
 		enemyAttack = 4;
 		enemyHealth = 10;
 		enemyMaxHealth = 10;
-	if(enemyLevel == 2):
+	if(levelDecider >= 15):
+		enemyLevel = 2
 		var texture = load("res://Art+Font/type_2_alien.png")
 		EnemySprite.texture = texture;
 		enemyAttack = 10;
@@ -72,6 +85,7 @@ func _ready():
 	Text = get_node("Text")
 	LaikaStats = get_node("LaikaStats")
 	AlienStats = get_node("AlienStats")
+	TimeText = get_node("Time")
 	HealSound = get_node("HealSound")
 	DamageSound = get_node("DamageSound")
 	
@@ -89,6 +103,24 @@ func _ready():
 		FightPopup.add_item("Lick")
 	if(learnedBurn == true):
 		FightPopup.add_item("Burn")
+	
+	canClick = true
+
+func _process(delta: float) -> void:
+	time = GlobalTimer.timer.get_time_left()
+	if(time <= 3):
+		canClick = false
+		Fight.disabled = true
+		Defend.disabled = true
+		Items.disabled = true
+		Flee.disabled = true
+		Text.text = "Out of time for today!"
+	if(time <= 0):
+		get_tree().change_scene_to_file("res://Scenes/Overworld.tscn");
+	mins = time / 60
+	time -= mins * 60
+	secs = time
+	TimeText.text = "%02d:%02d" % [mins, secs]
 	
 func _Fight(id: int) -> void:
 	match id:
@@ -429,7 +461,7 @@ func alienMove() -> void:
 	afterTurn();
 
 func _input(event) -> void:
-	if event.is_action_pressed("click"):
+	if(event.is_action_pressed("click") && canClick):
 		clicked.emit()
 
 func laikaEffect(type: String) -> void:
