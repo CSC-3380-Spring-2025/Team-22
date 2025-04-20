@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://s1qtqrpgmusk"]
+
+[ext_resource type="Script" path="res://Scripts/Resource_scripts/rock.gd" id="1_8lxkh"]
+[ext_resource type="Texture2D" uid="uid://c4iy70kdc0b30" path="res://Art+Font/rock.png" id="2_bo3b1"]
+[ext_resource type="AudioStream" uid="uid://ponbo8d2i5db" path="res://Audio/game over bop.mp3" id="3_vkecx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7ppw"]
+size = Vector2(381, 287)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_8lxkh")
+
+[node name="Rock" type="Sprite2D" parent="."]
+texture = ExtResource("2_bo3b1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+position = Vector2(-1.5, -11.5)
+shape = SubResource("RectangleShape2D_y7ppw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vkecx")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
