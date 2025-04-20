@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2frhl67o8uqo"
-path="res://.godot/imported/inventoryBackground.png-a3fd5f30feead438f3dc118953d0927e.ctex"
+uid="uid://cm4p2vnlbbto0"
+path="res://.godot/imported/laika_up_walk.png-10a41fb307719a2201d2fdd786ab6cc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/inventory/placeholderTextures/inventoryBackground.png"
-dest_files=["res://.godot/imported/inventoryBackground.png-a3fd5f30feead438f3dc118953d0927e.ctex"]
+source_file="res://laika_up_walk.png"
+dest_files=["res://.godot/imported/laika_up_walk.png-10a41fb307719a2201d2fdd786ab6cc3.ctex"]
 
 [params]
 

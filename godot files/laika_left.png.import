@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tt1n8276v7vv"
-path="res://.godot/imported/inventorySlot.png-eab5ea01f2f89c00c2c81e5232ed6806.ctex"
+uid="uid://pvwr00ckm04w"
+path="res://.godot/imported/laika_left.png-16bfef6791ec6b60b1a01c602b3bcd7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/inventory/placeholderTextures/inventorySlot.png"
-dest_files=["res://.godot/imported/inventorySlot.png-eab5ea01f2f89c00c2c81e5232ed6806.ctex"]
+source_file="res://laika_left.png"
+dest_files=["res://.godot/imported/laika_left.png-16bfef6791ec6b60b1a01c602b3bcd7c.ctex"]
 
 [params]
 

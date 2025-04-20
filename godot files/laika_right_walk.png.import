@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgo17wpslcxxe"
-path="res://.godot/imported/stick.png-f5b6a8d9439f476ce084f743a4b33bee.ctex"
+uid="uid://djyvpj2p8sk14"
+path="res://.godot/imported/laika_right_walk.png-62d78bad71d1052f70942312d50e54e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/inventory/placeholderTextures/stick.png"
-dest_files=["res://.godot/imported/stick.png-f5b6a8d9439f476ce084f743a4b33bee.ctex"]
+source_file="res://laika_right_walk.png"
+dest_files=["res://.godot/imported/laika_right_walk.png-62d78bad71d1052f70942312d50e54e8.ctex"]
 
 [params]
 
