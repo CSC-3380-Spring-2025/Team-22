@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cbmnfwci3ycrn" path="res://Scenes/laika.gd" id="1_kmpr2"]
 [ext_resource type="Resource" uid="uid://b43ubqjy7jpcs" path="res://Scripts/inventory/playerInv.tres" id="3_s3goe"]
 [ext_resource type="PackedScene" uid="uid://bgtui3uwsfjxa" path="res://Scripts/inventory/inv_ui.tscn" id="4_rrsf3"]
-[ext_resource type="PackedScene" uid="uid://cmdy18dbjwgvq" path="res://Scripts/inventory/blank_collectible.tscn" id="5_8vtbk"]
+[ext_resource type="PackedScene" uid="uid://cmdy18dbjwgvq" path="res://Scripts/inventory/metal_collectible.tscn" id="5_8vtbk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rl45k"]
 atlas = ExtResource("1_k4g30")
@@ -90,15 +90,6 @@ size = Vector2(173, 162)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="blank_collectible" parent="." instance=ExtResource("5_8vtbk")]
-position = Vector2(991, 149)
-
-[node name="blank_collectible2" parent="." instance=ExtResource("5_8vtbk")]
-position = Vector2(926, 417)
-
-[node name="blank_collectible3" parent="." instance=ExtResource("5_8vtbk")]
-position = Vector2(443, 524)
-
 [node name="Laika" type="CharacterBody2D" parent="."]
 script = ExtResource("1_kmpr2")
 inv = ExtResource("3_s3goe")
@@ -119,3 +110,12 @@ shape = SubResource("RectangleShape2D_u4rwi")
 [node name="CanvasLayer" type="CanvasLayer" parent="Laika"]
 
 [node name="inv_UI" parent="Laika/CanvasLayer" instance=ExtResource("4_rrsf3")]
+
+[node name="metal_collectible3" parent="." instance=ExtResource("5_8vtbk")]
+position = Vector2(238, 477)
+
+[node name="metal_collectible2" parent="." instance=ExtResource("5_8vtbk")]
+position = Vector2(1008, 164)
+
+[node name="metal_collectible" parent="." instance=ExtResource("5_8vtbk")]
+position = Vector2(919, 538)
