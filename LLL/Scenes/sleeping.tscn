@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://dw7s1p8uja6cj"]
 
 [ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art+Font/backdrop.png" id="1_73ujf"]
-[ext_resource type="Script" uid="uid://ditgcaa01xqwy" path="res://Scripts/sleeping.gd" id="1_oj1eq"]
+[ext_resource type="Script" path="res://Scripts/sleeping.gd" id="1_oj1eq"]
 [ext_resource type="Texture2D" uid="uid://cincmm3s4uoji" path="res://Art+Font/den.png" id="2_shotj"]
 [ext_resource type="Texture2D" uid="uid://bijuvobmlgm3r" path="res://Art+Font/sleeping_laika.png" id="3_ipbdx"]
 [ext_resource type="AudioStream" uid="uid://c8f3rw5q8ar3c" path="res://Audio/introwavybgm.mp3" id="5_fd3y4"]
 [ext_resource type="Texture2D" uid="uid://doeq5emytjtso" path="res://Art+Font/zzz.png" id="6_6mpix"]
-[ext_resource type="Script" uid="uid://dffp3ff56qq8l" path="res://Scenes/zzz.gd" id="7_7ohm4"]
+[ext_resource type="Script" path="res://Scenes/zzz.gd" id="7_7ohm4"]
 [ext_resource type="Texture2D" uid="uid://cqpcpyrvm6447" path="res://Art+Font/lunar_lily.png" id="8_1aqwy"]
 
 [node name="Sleeping" type="Node2D"]
