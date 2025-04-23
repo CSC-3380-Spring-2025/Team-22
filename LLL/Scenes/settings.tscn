@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpyj3i840kmkk"]
+[gd_scene load_steps=9 format=3 uid="uid://c620tc26cpra2"]
 
 [ext_resource type="Script" uid="uid://pgfjehahyu7j" path="res://Scripts/settings.gd" id="1_2wcpt"]
 [ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art+Font/backdrop.png" id="1_wr63g"]
@@ -58,6 +58,7 @@ scroll_active = false
 tab_size = 5
 
 [node name="back_button" type="TextureButton" parent="."]
+process_mode = 3
 layout_mode = 0
 offset_left = 460.0
 offset_top = 363.0
@@ -73,6 +74,7 @@ stream = ExtResource("5_hakci")
 volume_db = 24.0
 
 [node name="music_off" type="TextureButton" parent="."]
+process_mode = 3
 layout_mode = 0
 offset_left = 519.0
 offset_top = 291.0

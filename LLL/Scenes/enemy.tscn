@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://86nt2o5g41vp"]
+[gd_scene load_steps=3 format=3 uid="uid://86nt2o5g41vp"]
 
 [ext_resource type="Script" uid="uid://dsd7q4mr6k3a4" path="res://Scenes/alien1.gd" id="1_nt3ox"]
 [ext_resource type="Texture2D" uid="uid://ddn357joo3plf" path="res://Art+Font/type_1_alien.png" id="2_b2iv8"]
@@ -12,7 +12,6 @@ scale = Vector2(0.70621, 0.84331)
 script = ExtResource("1_nt3ox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_b2iv8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(10.5, 5)
