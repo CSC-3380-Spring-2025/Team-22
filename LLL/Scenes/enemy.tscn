@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://86nt2o5g41vp"]
 
 [ext_resource type="Script" uid="uid://dsd7q4mr6k3a4" path="res://Scenes/alien1.gd" id="1_nt3ox"]
+[ext_resource type="Texture2D" uid="uid://ddn357joo3plf" path="res://Art+Font/type_1_alien.png" id="2_b2iv8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyyta"]
 size = Vector2(527, 576)

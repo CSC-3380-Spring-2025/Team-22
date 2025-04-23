@@ -49,19 +49,19 @@ scale = Vector2(1.31088, 2.06749)
 texture = ExtResource("6_6mpix")
 script = ExtResource("7_7ohm4")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 70.0
-offset_top = 379.0
-offset_right = 420.0
-offset_bottom = 729.0
-scale = Vector2(0.663553, 0.692277)
-texture = ExtResource("8_1aqwy")
-
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="spacelily" type="TextureRect" parent="."]
 offset_left = 1034.0
 offset_top = 402.0
 offset_right = 1384.0
 offset_bottom = 752.0
 rotation = 0.39619
 scale = Vector2(0.42111, 0.350171)
+texture = ExtResource("8_1aqwy")
+
+[node name="spacelily2" type="TextureRect" parent="."]
+offset_left = 70.0
+offset_top = 379.0
+offset_right = 420.0
+offset_bottom = 729.0
+scale = Vector2(0.663553, 0.692277)
 texture = ExtResource("8_1aqwy")
