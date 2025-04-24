@@ -1,23 +1,21 @@
 [gd_scene load_steps=7 format=3 uid="uid://b24ch16f77652"]
 
-[ext_resource type="Script" uid="uid://bp430044h68is" path="res://Scripts/inventory/Battle.gd" id="1_1samx"]
+[ext_resource type="Script" path="res://Battle.cs" id="1_2h7oj"]
 [ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://Art+Font/laikaBattle.png" id="1_lul25"]
 [ext_resource type="Texture2D" uid="uid://ddn357joo3plf" path="res://Art+Font/type_1_alien.png" id="2_yh5fh"]
 [ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art+Font/backdrop.png" id="4_1samx"]
-[ext_resource type="AudioStream" uid="uid://nhpxmrt617vf" path="res://Audio/heal.mp3" id="5_p46lj"]
-[ext_resource type="AudioStream" uid="uid://b0mwhm4r3el4i" path="res://Audio/damage.mp3" id="6_8teo4"]
 [ext_resource type="Texture2D" uid="uid://c6d1oemlp1mnf" path="res://Art+Font/start_button.png" id="4_i786v"]
 [ext_resource type="AudioStream" uid="uid://xbi2wj51gcrl" path="res://Audio/n-Dimensions (Main Theme - Retro Ver.mp3" id="5_gr70f"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_1samx")
+script = ExtResource("1_2h7oj")
 
 [node name="LaikaBattle" type="Sprite2D" parent="."]
 position = Vector2(165, 412)
 scale = Vector2(0.322469, 0.322469)
 texture = ExtResource("1_lul25")
 
-[node name="AlienBattle" type="Sprite2D" parent="."]
+[node name="Alien1Battle" type="Sprite2D" parent="."]
 position = Vector2(1006, 413)
 scale = Vector2(0.437143, 0.437143)
 texture = ExtResource("2_yh5fh")
@@ -105,19 +103,6 @@ volume_db = -4.952
 [node name="battle_music2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_gr70f")
 volume_db = -4.952
-
-[node name="Time" type="RichTextLabel" parent="."]
-offset_left = 535.0
-offset_right = 615.0
-offset_bottom = 40.0
-text = "00:00"
-horizontal_alignment = 1
-
-[node name="HealSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_p46lj")
-
-[node name="DamageSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_8teo4")
 
 [connection signal="pressed" from="Defend" to="." method="_Defend"]
 [connection signal="pressed" from="Flee" to="." method="_Flee"]

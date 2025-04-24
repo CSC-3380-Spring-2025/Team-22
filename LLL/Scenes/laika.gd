@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var inv: Inv
 @onready var _animation_player = $AnimatedSprite2D
 const msScript = preload("res://Scenes/main_stage.gd") #mainstage script
-var mainstage : msScript = msScript.new()
+var mainstage = msScript.new()
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down") # uses the input map found int he project 
