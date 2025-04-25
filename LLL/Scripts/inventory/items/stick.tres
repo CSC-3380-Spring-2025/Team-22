@@ -1,9 +1,12 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://do2yu3d637bkf"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://do2yu3d637bkf"]
 
-[ext_resource type="Script" uid="uid://pv5pwg086vgq" path="res://Scripts/inventory/inventory_item.gd" id="1_ttc53"]
 [ext_resource type="Texture2D" uid="uid://d3eb78y6exrt3" path="res://Scripts/inventory/placeholderTextures/stick.png" id="2_3ybl5"]
+[ext_resource type="Script" uid="uid://d3k2ypvcy3het" path="res://Scripts/inventory/Item.gd" id="2_mbwol"]
 
 [resource]
-script = ExtResource("1_ttc53")
+script = ExtResource("2_mbwol")
+icon = ExtResource("2_3ybl5")
 name = "stick"
-texture = ExtResource("2_3ybl5")
+recipe = Array[ExtResource("2_mbwol")]([])
+type = "Material"
+description = ""

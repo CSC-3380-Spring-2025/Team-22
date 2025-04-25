@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://dh52fsj7trojy"]
 
-[ext_resource type="Script" uid="uid://dknmxxyfkvt2n" path="res://Scripts/gameover.gd" id="1_tjh16"]
+[ext_resource type="Script" path="res://Scripts/gameover.gd" id="1_tjh16"]
 [ext_resource type="AudioStream" uid="uid://bi6l5o8qqtpqs" path="res://Audio/space rock (1).ogg" id="2_h4fgq"]
 [ext_resource type="Texture2D" uid="uid://cnwrenilyx5k" path="res://Art+Font/gameover_stars.png" id="2_mde64"]
 [ext_resource type="Texture2D" uid="uid://cxbskt170krga" path="res://Art+Font/play_again_button.png" id="4_6ri11"]
@@ -70,7 +70,7 @@ position = Vector2(587, 325)
 scale = Vector2(6.53657, 6.56676)
 sprite_frames = SubResource("SpriteFrames_6kk3s")
 animation = &"endgame"
-frame_progress = 0.0789288
+frame_progress = 0.960382
 
 [node name="play_again_button" type="TextureButton" parent="."]
 offset_left = 337.0
