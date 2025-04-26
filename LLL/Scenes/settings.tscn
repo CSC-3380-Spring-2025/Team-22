@@ -96,9 +96,8 @@ texture_normal = ExtResource("6_84184")
 [node name="click_back" type="AudioStreamPlayer" parent="music_on"]
 stream = ExtResource("5_hakci")
 
-[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="back_button" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="music_off" to="." method="_on_music_off_pressed"]
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="music_off" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="music_on" to="." method="_on_music_on_pressed"]
 [connection signal="pressed" from="music_on" to="." method="_on_texture_button_3_pressed"]
