@@ -7,13 +7,12 @@ var back_sound: AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
-# Saving node to variable for later use
 func _process(delta: float) -> void:
 	back_sound = $back_button/click_back
 
-# Changes scene back to main menu when back button 
+# Changes scene back to main menu when back button clicked
 func _on_back_button_pressed() -> void:
 	back_sound.play()
 	get_tree().change_scene_to_file(MAIN_MENU)
@@ -26,4 +25,4 @@ func _on_music_off_pressed() -> void:
 # Turns on music when pressed
 func _on_music_on_pressed() -> void:
 	back_sound.play()
-	get_node("/root/MainMenuMusic").play()
+	#get_node("/root/MainMenuMusic").play()
