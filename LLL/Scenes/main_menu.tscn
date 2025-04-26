@@ -21,24 +21,35 @@
 [sub_resource type="GDScript" id="GDScript_qdvli"]
 script/source = "extends Control
 
+
 #Constants for switching scenes
 const OVERWORLD_SCN := \"res://Scenes/Overworld.tscn\"
 const TUTORIAL_SCN := \"res://Scenes/tutorial.tscn\"
 const SETTINGS_SCN := \"res://Scenes/settings.tscn\"
 
+var rocket: AudioStreamPlayer
+var click: AudioStreamPlayer
+
 # Called when the node enters the scene tree for the first time.
 #@onready var fade = get_node('transition/AnimationPlayer')
 #@onready var black = get_node('transition/ColorRect')
 
-#func _ready() -> void:
-#	black.visible = false
+func _ready() -> void:
+	$\"/root/MainMenuMusic\".volume_db = -20
+	$\"/root/MainMenuMusic\".play()
+	
+	rocket = $play_button/start_rocket_launch
+	click = $tutorial_button/click
+	#black.visible = false
 
 func _process(delta: float) -> void:
-	pass 
-
+	pass
+	
 # Plays button sound and switches to the overworld scene
 func _on_texture_button_pressed() -> void:
-	$play_button/start_rocket_launch.play()
+	rocket.play()
+	await get_tree().create_timer(2.5).timeout
+	$\"/root/MainMenuMusic\".stop()
 	#black.visible = true
 	#fade.play(\"fade\");
 	#await fade.animation_finished
@@ -47,12 +58,12 @@ func _on_texture_button_pressed() -> void:
 
 # Changes scene to tutorial scene when pressed
 func _on_tutorial_button_pressed() -> void:
-	$tutorial_button/rocket_launch.play()
+	click.play()
 	get_tree().change_scene_to_file(TUTORIAL_SCN)
 
 # Changes scene to the settings scene when pressed
 func _on_settings_button_pressed() -> void:
-	$settings_button/rocket_launch.play()
+	click.play()
 	get_tree().change_scene_to_file(SETTINGS_SCN)
 "
 
@@ -129,7 +140,7 @@ texture_normal = ExtResource("14_hl0iy")
 texture_pressed = ExtResource("15_tdnaq")
 texture_hover = ExtResource("15_tdnaq")
 
-[node name="rocket_launch" type="AudioStreamPlayer" parent="tutorial_button"]
+[node name="click" type="AudioStreamPlayer" parent="tutorial_button"]
 stream = ExtResource("9_waa7l")
 
 [node name="settings_button" type="TextureButton" parent="."]
@@ -143,7 +154,7 @@ texture_normal = ExtResource("16_gub1e")
 texture_pressed = ExtResource("17_yhydb")
 texture_hover = ExtResource("17_yhydb")
 
-[node name="rocket_launch" type="AudioStreamPlayer" parent="settings_button"]
+[node name="click" type="AudioStreamPlayer" parent="settings_button"]
 stream = ExtResource("9_waa7l")
 
 [connection signal="pressed" from="play_button" to="." method="_on_texture_button_pressed"]

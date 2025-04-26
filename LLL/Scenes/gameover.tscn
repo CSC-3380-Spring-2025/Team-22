@@ -73,11 +73,11 @@ animation = &"endgame"
 frame_progress = 0.960382
 
 [node name="play_again_button" type="TextureButton" parent="."]
-offset_left = 337.0
-offset_top = 402.0
-offset_right = 606.0
-offset_bottom = 561.0
-scale = Vector2(1.77581, 1.78467)
+offset_left = 45.0
+offset_top = 546.0
+offset_right = 330.0
+offset_bottom = 705.0
+scale = Vector2(0.838379, 0.759742)
 texture_normal = ExtResource("4_6ri11")
 texture_pressed = ExtResource("5_iaysl")
 texture_hover = ExtResource("5_iaysl")
@@ -87,4 +87,4 @@ stream = ExtResource("7_v4imw")
 volume_db = 24.0
 
 [connection signal="ready" from="gameover_music" to="gameover_sprite" method="_on_audio_stream_player_ready"]
-[connection signal="pressed" from="play_again_button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="play_again_button" to="." method="_on_play_again_button_pressed"]

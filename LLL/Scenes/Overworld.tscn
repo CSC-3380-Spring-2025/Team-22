@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://be52tlp3pcmy5"]
+[gd_scene load_steps=18 format=3 uid="uid://be52tlp3pcmy5"]
 
 [ext_resource type="Texture2D" uid="uid://dn16yjiap4rh5" path="res://Art+Font/laika.png" id="1_k4g30"]
 [ext_resource type="Script" path="res://Scenes/laika.gd" id="1_kmpr2"]
+[ext_resource type="Script" path="res://Scenes/overworld.gd" id="1_w18bo"]
 [ext_resource type="Resource" uid="uid://b43ubqjy7jpcs" path="res://Scripts/inventory/playerInv.tres" id="3_s3goe"]
 [ext_resource type="PackedScene" uid="uid://q3bepshshj86" path="res://Scripts/inventory/inv_ui.tscn" id="4_rrsf3"]
 [ext_resource type="PackedScene" uid="uid://cmdy18dbjwgvq" path="res://Scripts/inventory/blank_collectible.tscn" id="5_8vtbk"]
+[ext_resource type="AudioStream" uid="uid://dmuam0cvr4wbb" path="res://Audio/through space.ogg" id="7_5x6cl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rl45k"]
 atlas = ExtResource("1_k4g30")
@@ -89,6 +91,7 @@ animations = [{
 size = Vector2(173, 162)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_w18bo")
 
 [node name="blank_collectible" parent="." instance=ExtResource("5_8vtbk")]
 position = Vector2(991, 149)
@@ -119,3 +122,6 @@ shape = SubResource("RectangleShape2D_u4rwi")
 [node name="CanvasLayer" type="CanvasLayer" parent="Laika"]
 
 [node name="inv_UI" parent="Laika/CanvasLayer" instance=ExtResource("4_rrsf3")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_5x6cl")
