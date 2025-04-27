@@ -1,16 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://b24ch16f77652"]
+[gd_scene load_steps=13 format=3 uid="uid://b24ch16f77652"]
 
 [ext_resource type="Script" uid="uid://bp430044h68is" path="res://Scripts/inventory/Battle.gd" id="1_1samx"]
 [ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://Art+Font/laikaBattle.png" id="1_lul25"]
+[ext_resource type="Resource" uid="uid://b43ubqjy7jpcs" path="res://Scripts/inventory/playerInv.tres" id="2_qxnh6"]
 [ext_resource type="Texture2D" uid="uid://ddn357joo3plf" path="res://Art+Font/type_1_alien.png" id="2_yh5fh"]
+[ext_resource type="Resource" uid="uid://kmpmgtb0is6w" path="res://Scripts/inventory/items/goo.tres" id="3_262jj"]
+[ext_resource type="Resource" uid="uid://do2yu3d637bkf" path="res://Scripts/inventory/items/stick.tres" id="3_l0uqe"]
 [ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art+Font/backdrop.png" id="4_1samx"]
+[ext_resource type="Resource" uid="uid://ysxt37he7j37" path="res://Scripts/inventory/items/rock.tres" id="4_xmk5i"]
+[ext_resource type="Resource" uid="uid://c2i8tbytjauel" path="res://Scripts/inventory/items/metal.tres" id="5_262jj"]
+[ext_resource type="AudioStream" uid="uid://xbi2wj51gcrl" path="res://Audio/n-Dimensions (Main Theme - Retro Ver.mp3" id="5_gr70f"]
 [ext_resource type="AudioStream" uid="uid://nhpxmrt617vf" path="res://Audio/heal.mp3" id="5_p46lj"]
 [ext_resource type="AudioStream" uid="uid://b0mwhm4r3el4i" path="res://Audio/damage.mp3" id="6_8teo4"]
-[ext_resource type="Texture2D" uid="uid://c6d1oemlp1mnf" path="res://Art+Font/start_button.png" id="4_i786v"]
-[ext_resource type="AudioStream" uid="uid://xbi2wj51gcrl" path="res://Audio/n-Dimensions (Main Theme - Retro Ver.mp3" id="5_gr70f"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1samx")
+inv = ExtResource("2_qxnh6")
+stick = ExtResource("3_l0uqe")
+rock = ExtResource("4_xmk5i")
+metal = ExtResource("5_262jj")
+goo = ExtResource("3_262jj")
 
 [node name="LaikaBattle" type="Sprite2D" parent="."]
 position = Vector2(165, 412)
@@ -32,7 +41,7 @@ text = "[FIGHT]"
 flat = false
 item_count = 3
 popup/item_0/text = "Scratch"
-popup/item_0/icon = ExtResource("4_i786v")
+popup/item_0/id = 0
 popup/item_1/text = "Bite"
 popup/item_1/id = 1
 popup/item_2/text = "Howl"
@@ -56,12 +65,6 @@ offset_bottom = 86.0
 theme_override_font_sizes/font_size = 32
 text = "[ITEMS]"
 flat = false
-item_count = 3
-popup/item_0/text = "Moon Rock"
-popup/item_1/text = "Iron Rod"
-popup/item_1/id = 1
-popup/item_2/text = "Dog Treat"
-popup/item_2/id = 2
 
 [node name="Flee" type="Button" parent="."]
 unique_name_in_owner = true

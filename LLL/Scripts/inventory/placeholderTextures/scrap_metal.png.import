@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck27pgh5p5jm4"
-path="res://.godot/imported/type_2_alien.png-ee9772f610bcf2a0d12fe55eb0c88193.ctex"
+uid="uid://b5dji7oo40xat"
+path="res://.godot/imported/scrap_metal.png-3fab60955560a7ec1528356e34805ae1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art+Font/type_2_alien.png"
-dest_files=["res://.godot/imported/type_2_alien.png-ee9772f610bcf2a0d12fe55eb0c88193.ctex"]
+source_file="res://Scripts/inventory/placeholderTextures/scrap_metal.png"
+dest_files=["res://.godot/imported/scrap_metal.png-3fab60955560a7ec1528356e34805ae1.ctex"]
 
 [params]
 

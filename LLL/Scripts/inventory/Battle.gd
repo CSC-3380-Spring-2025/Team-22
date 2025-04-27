@@ -1,7 +1,7 @@
 extends Node2D
 
 # Defining stats
-var laikaAttack : int = 6;
+var laikaAttack : int = 5;
 var laikaMaxHealth : int = 20;
 var laikaHealth : int = laikaMaxHealth;
 var enemyLevel : int
@@ -32,6 +32,7 @@ var learnedStealth : bool = false;
 var learnedLick : bool = false;
 var learnedBurn : bool = false;
 
+# Defining scene elements (buttons, sprites, and sound effects)
 var Fight : MenuButton
 var Defend : Button
 var Items : MenuButton
@@ -47,6 +48,7 @@ var EnemySprite : Sprite2D
 var HealSound : AudioStreamPlayer
 var DamageSound : AudioStreamPlayer
 
+# Signal for clicking + timer
 signal clicked
 var canClick : bool
 var time : int
@@ -54,14 +56,21 @@ var day : int
 var mins : int
 var secs : int
 
+@export var inv: Inv
+@export var stick : Item
+@export var rock : Item
+@export var metal : Item
+@export var goo : Item
+
 func _ready(): 
 	LaikaSprite = get_node("LaikaBattle")
 	EnemySprite = get_node("AlienBattle")
 	
+	day = GlobalTimer.day
 	var rand : RandomNumberGenerator = RandomNumberGenerator.new()
 	var levelDecider : int = 1
-	if(GlobalTimer.day > 2):
-		levelDecider = rand.randi_range(GlobalTimer.day, 20)
+	if(day > 2):
+		levelDecider = rand.randi_range(day, 20)
 	print(levelDecider)
 	if(levelDecider < 15):
 		enemyLevel = 1
@@ -103,6 +112,15 @@ func _ready():
 		FightPopup.add_item("Lick")
 	if(learnedBurn == true):
 		FightPopup.add_item("Burn")
+		
+	if inv.getCount(stick) > 0:
+		ItemsPopup.add_item("Stick x" + str(inv.getCount(stick)), 0)
+	if inv.getCount(rock) > 0:
+		ItemsPopup.add_item("Rock x" + str(inv.getCount(rock)), 1)
+	if inv.getCount(metal) > 0:
+		ItemsPopup.add_item("Metal x" + str(inv.getCount(metal)), 2)
+	if inv.getCount(goo) > 0:
+		ItemsPopup.add_item("Goo x" + str(inv.getCount(goo)), 3)
 	
 	canClick = true
 
@@ -285,26 +303,67 @@ func _Items(id: int) -> void:
 		id = -1;
 	match id:
 		-1:
-			Text.text = ("Laika tries to use an item, but she can't reach her pockets!");
+			Text.text = ("Laika tries to use an item, but she can't reach her pockets!")
 			await clicked
 		0:
-			Text.text = ("Laika throws out a moon rock, hitting the enemy for 10 attack!");
+			Text.text = ("Laika throws out a stick, hitting the enemy for 5 damage!")
 			alienEffect("damage")
-			enemyHealth = enemyHealth - 10;
+			enemyHealth = enemyHealth - 5
+			inv.remove(stick)
+			if(inv.getCount(stick) > 0):
+				ItemsPopup.set_item_text(ItemsPopup.get_item_index(0), "Stick x" + str(inv.getCount(stick)))
+			else:
+				ItemsPopup.remove_item(ItemsPopup.get_item_index(0))
 			await clicked
 		1:
-			Text.text = ("Laika swings a rod, hitting the enemy for " + str(laikaAttack * 2) + " attack!");
+			Text.text = ("Laika throws out a moon rock, hitting the enemy for 10 damage!")
 			alienEffect("damage")
-			enemyHealth = enemyHealth - (laikaAttack * 2);
+			enemyHealth = enemyHealth - 10
+			inv.remove(rock)
+			if(inv.getCount(rock) > 0):
+				ItemsPopup.set_item_text(ItemsPopup.get_item_index(1), "Rock x" + str(inv.getCount(rock)))
+			else:
+				ItemsPopup.remove_item(ItemsPopup.get_item_index(1))
 			await clicked
 		2:
-			Text.text = ("Laika eats a treat, healing herself for 10 health!");
-			laikaEffect("heal")
-			if (laikaHealth + 10 <= laikaMaxHealth):
-				laikaHealth = laikaHealth + 10;
+			Text.text = ("Laika hits the enemy with scrap metal, hitting the enemy for 15 damage!")
+			alienEffect("damage")
+			enemyHealth = enemyHealth - 15
+			inv.remove(metal)
+			if(inv.getCount(metal) > 0):
+				ItemsPopup.set_item_text(ItemsPopup.get_item_index(2), "Metal x" + str(inv.getCount(metal)))
 			else:
-				laikaHealth = laikaMaxHealth;
+				ItemsPopup.remove_item(ItemsPopup.get_item_index(2))
 			await clicked
+		3:
+			Text.text = ("Laika slathers the enemy in goo, weakening it for some time!")
+			alienEffect("damage")
+			# Needs to be implemented
+			inv.remove(goo)
+			if(inv.getCount(goo) > 0):
+				ItemsPopup.set_item_text(ItemsPopup.get_item_index(3), "Goo x" + str(inv.getCount(goo)))
+			else:
+				ItemsPopup.remove_item(ItemsPopup.get_item_index(3))
+			await clicked
+		4:
+			Text.text = ("Laika bites into a lunar lily, healing herself for 15 health!")
+			laikaEffect("heal")
+			if (laikaHealth + 15 <= laikaMaxHealth):
+				laikaHealth = laikaHealth + 15
+			else:
+				laikaHealth = laikaMaxHealth
+			await clicked
+		5:
+			Text.text = ("Laika uses the mesmerizing effects of the crystal to hypnotize the enemy!")
+			alienEffect("damage")
+			# Needs to be implemented
+			await clicked
+		6:
+			Text.text = ("Laika fires the superpowered raygun, dealing a major " + str(laikaAttack * 3) + " damage!")
+			alienEffect("damage")
+			enemyHealth = enemyHealth - (laikaAttack * 3)
+			await clicked
+
 	waiting = false;
 	afterTurn();
 
@@ -363,21 +422,24 @@ func afterTurn() -> void:
 	
 	# If the enemy's health gets too low, they die and you win; otherwise, they get to keep moving
 	if(enemyHealth <= 0):
-		Text.text = ("The alien attacking you falls over, unconscious...");
+		Text.text = ("The alien attacking you falls over, unconscious...")
 		await clicked
-		Text.text = ("You win!");
+		Text.text = ("You win!")
 		await clicked
-		get_tree().change_scene_to_file("res://Scenes/Overworld.tscn");
+		
+		Text.text = rewards()
+		await clicked
+		get_tree().change_scene_to_file("res://Scenes/Overworld.tscn")
 	elif(enemyHealth > 0 && waiting == false):
 		alienMove();
 	
 	# If your health gets too low, you collapse and you lose
 	if(laikaHealth <= 0):
-		Text.text = ("You collapse, the space's endless night consuming you...");
+		Text.text = ("You collapse, the space's endless night consuming you...")
 		await clicked
-		Text.text = ("Game over!");
+		Text.text = ("Game over!")
 		await clicked
-		get_tree().change_scene_to_file("res://Scenes/gameover.tscn");
+		get_tree().change_scene_to_file("res://Scenes/gameover.tscn")
 	
 	if(waiting == true):	# If the alien's turn just ended, enables Laika's buttons once again
 		Text.text = ("[YOUR TURN]");
@@ -487,3 +549,73 @@ func alienEffect(type: String) -> void:
 		EnemySprite.modulate = Color.GREEN
 		await get_tree().create_timer(0.5).timeout
 		EnemySprite.modulate = Color.WHITE
+
+func rewards() -> String:
+	var rand : RandomNumberGenerator = RandomNumberGenerator.new()
+	var gooReceived : int = 0
+	var rockReceived : int = 0
+	var metalReceived : int = 0
+	var crystalReceived : int = 0
+	var remaining : int = 0
+	var rewardString : String = ""
+	if(day == 1):
+		gooReceived = 1
+	elif(enemyLevel == 1):
+		gooReceived = rand.randi_range(0, 1)
+		rockReceived = rand.randi_range(0, 2)
+		metalReceived = rand.randi_range(0, 1)
+	elif(enemyLevel == 2):
+		gooReceived = rand.randi_range(0, 2)
+		rockReceived = rand.randi_range(1, 3)
+		metalReceived = rand.randi_range(0, 2)
+		crystalReceived = randi_range(0, 1)
+	
+	if(gooReceived == 0 && rockReceived == 0 && metalReceived == 0):
+		rewardString = "You didn't receive anything..."
+		return rewardString
+	else:
+		rewardString = "You received "
+		if(gooReceived > 0):
+			if(gooReceived == 1):
+				rewardString = rewardString + "1 ball of goo"
+			else:
+				rewardString = rewardString + str(gooReceived) + " balls of goo"
+			remaining = rockReceived + metalReceived + crystalReceived
+			if(remaining > 0 && (remaining == rockReceived || remaining == metalReceived || remaining == crystalReceived)):
+				rewardString = rewardString + " and "
+			elif(remaining > 0):
+				rewardString = rewardString + ", "
+			
+		if(rockReceived > 0):
+			if(rockReceived == 1):
+				rewardString = rewardString + "1 rock"
+			else:
+				rewardString = rewardString + str(rockReceived) + " rocks"
+			remaining = metalReceived + crystalReceived
+			if(remaining > 0 && (remaining == metalReceived || remaining == crystalReceived)):
+				rewardString = rewardString + " and "
+			elif(remaining > 0):
+				rewardString = rewardString + ", "
+
+		if(metalReceived > 0):
+			if(metalReceived == 1):
+				rewardString = rewardString + "1 scrap of metal"
+			else:
+				rewardString = rewardString + str(metalReceived) + " scraps of metal"
+			if(crystalReceived > 0 && (gooReceived > 0 || rockReceived > 0)):
+				rewardString = rewardString + ", and "
+			elif(crystalReceived > 0):
+				rewardString = rewardString + " and "
+		
+		if(crystalReceived > 0):
+			rewardString = rewardString + "1 crystal"
+		
+		rewardString = rewardString + "."
+		for n in gooReceived:
+			inv.insert(goo)
+		for n in rockReceived:
+			inv.insert(rock)
+		for n in metalReceived:
+			inv.insert(metal)
+		# Need to implement crystals
+		return rewardString

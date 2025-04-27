@@ -1,9 +1,12 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://ysxt37he7j37"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ysxt37he7j37"]
 
-[ext_resource type="Script" path="res://Scripts/inventory/inventory_item.gd" id="1_i3l8q"]
 [ext_resource type="Texture2D" uid="uid://cju6vv3nldsie" path="res://Scripts/inventory/placeholderTextures/rock.png" id="2_ki0si"]
+[ext_resource type="Script" uid="uid://d3k2ypvcy3het" path="res://Scripts/inventory/Item.gd" id="2_ud1sb"]
 
 [resource]
-script = ExtResource("1_i3l8q")
+script = ExtResource("2_ud1sb")
+icon = ExtResource("2_ki0si")
 name = "rock"
-texture = ExtResource("2_ki0si")
+recipe = Array[ExtResource("2_ud1sb")]([])
+type = "Material"
+description = ""

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://kmpmgtb0is6w"]
+
+[ext_resource type="Texture2D" uid="uid://dwb2gjc0r28l0" path="res://Scripts/inventory/placeholderTextures/goo.png" id="1_nfx6g"]
+[ext_resource type="Script" uid="uid://d3k2ypvcy3het" path="res://Scripts/inventory/Item.gd" id="2_im3fu"]
+
+[resource]
+script = ExtResource("2_im3fu")
+icon = ExtResource("1_nfx6g")
+name = "goo"
+recipe = Array[ExtResource("2_im3fu")]([])
+type = "Material"
+description = ""
