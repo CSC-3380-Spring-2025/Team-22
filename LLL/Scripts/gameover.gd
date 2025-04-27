@@ -1,7 +1,7 @@
 extends Node2D
 
 # Constant variable for switching back to main menu
-const MAINMENU_SCN: String = "res://Scenes/main_menu.tscn"
+const MAIN_MENU: String = "res://Scenes/main_menu.tscn"
 
 # Variables for music and sprite
 var main_music: AudioStreamPlayer
@@ -25,20 +25,17 @@ func _ready() -> void:
 func play_music() -> void:
 	main_music.stop()
 	game_over_music.play()
-
-# Button sounds play when button pressed and calls switch scene function
-func _on_play_again_button_pressed() -> void:
-	button_music.play()
-	switch_scenes()
-
-# Siwtches scene to main menu and starts main menu music again
-func switch_scenes() -> void:
-	main_music.play()
-	get_tree().change_scene_to_file(MAINMENU_SCN)
-
+	
 # Starts sprite animation for game over screen
 func start_sprite_animation() -> void:
 	gameover_sprite.play("endgame")
 
 func _process(delta: float) -> void:
 	pass
+
+# Button sounds play when button pressed and calls switch scene function
+func _on_play_again_button_pressed() -> void:
+	button_music.play()
+	await get_tree().create_timer(0.8).timeout
+	get_tree().change_scene_to_file(MAIN_MENU)
+	main_music.play()

@@ -31,13 +31,13 @@ func play_music(main_music: AudioStreamPlayer, new_music: AudioStreamPlayer) -> 
 	if new_music:
 		new_music.play()
 
-func timepass()-> void:
+func timepass():
 	time = time + 1 #makes the time increase every time the player moves
 	if (time < 1):
-		
+		print("PMI")
 		$Background.texture = ResourceLoader.load(BKG_NORMAL)
 	if (time > 1):
-		
+		print("PMI")
 		$Background.texture = ResourceLoader.load(BKG_NIGHT)
 
 

@@ -15,7 +15,7 @@ func _ready() -> void:
 	start_y = position.y
 
 # Moving up and down 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if going_up:
 		position.y -= float_speed
 		if position.y < start_y - float_height:

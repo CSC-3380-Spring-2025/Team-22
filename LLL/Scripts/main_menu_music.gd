@@ -4,6 +4,6 @@ var menu_music = load("res://Audio/Philip Aldous - RPG Title Screen Music Pack -
 func _ready() -> void:
 	pass # Replace with function body.
 	
-func play_music()-> void: 
+func play_music(): 
 	$Music.stream = menu_music
 	$Music.play()

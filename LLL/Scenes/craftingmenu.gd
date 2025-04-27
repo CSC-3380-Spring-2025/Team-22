@@ -6,7 +6,7 @@ extends Sprite2D
 var havestick = false
 var haverock = false
 
-func _input(event: InputEvent) -> void:
+func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if get_rect().has_point(to_local(event.position)):
 			for i in range(min(inv.slots.size(), slots.size())):

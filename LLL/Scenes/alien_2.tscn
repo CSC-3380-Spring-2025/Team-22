@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://db4jnl2mdx3pp"]
+
+[ext_resource type="Script" path="res://Scenes/alien1.gd" id="1_evknn"]
+[ext_resource type="Texture2D" uid="uid://xb4r4lujktst" path="res://Art+Font/alien_2.png" id="2_187ai"]
+[ext_resource type="AudioStream" uid="uid://cqxrjkol34xo" path="res://Audio/sound of danger.wav" id="3_ypm1e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qa6e0"]
+radius = 179.547
+
+[node name="alien_2" type="StaticBody2D"]
+scale = Vector2(0.93695, 0.799773)
+script = ExtResource("1_evknn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.60581, 0.674923)
+texture = ExtResource("2_187ai")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+z_index = 100
+position = Vector2(-25.5598, 26.0136)
+scale = Vector2(2.0077, 3.08963)
+shape = SubResource("CircleShape2D_qa6e0")
+
+[node name="battle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ypm1e")
+
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
