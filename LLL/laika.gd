@@ -1,5 +1,5 @@
 extends Area2D
-@export var speed = 400
+@export var speed = 600
 var screen_size
 
 
@@ -10,19 +10,19 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float ) -> void:
 	var velocity = Vector2.ZERO 
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
 		position.x += 300 * delta
 		$AnimatedSprite2D.animation = "walk_right"
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
 		position.x -= 300 * delta
 		$AnimatedSprite2D.animation = "walk_left"
-	if Input.is_action_pressed("move_down"):
+	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
 		position.y += 300 * delta
 		$AnimatedSprite2D.animation = "walk_down"
-	if Input.is_action_pressed("move_up"):
+	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 		position.y -= 300 * delta
 		$AnimatedSprite2D.animation = "walk_up"

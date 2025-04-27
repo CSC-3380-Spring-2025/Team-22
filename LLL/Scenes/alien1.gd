@@ -1,40 +1,22 @@
-extends Area2D
+extends StaticBody2D
 
-@export var speed = 70
-@export var moveDistance = 10
+const BATTLE := "res://Scenes/Battle.tscn"
+var battle : AudioStreamPlayer
 
-@onready var startX = position.x 
+func _ready() -> void:
+	#$Sprite2D.z_index = 100
+	#battle = $battle
+	pass
 
-@onready var targetX = position.x + moveDistance
+# This function is called when the player enters the area
+#func _on_area_2d_area_entered(area: Area2D) -> void:
+	#_start_battle()
 
-func _process(delta):
-	position.x = move_to_x(position.x, targetX, speed*delta)
+# Goes to battle scene
+#func _start_battle() -> void:
+	#await get_tree().create_timer(1.0).timeout
+	#get_tree().change_scene_to_file(BATTLE)
 	
-	if position.x == targetX:
-		if targetX == startX:
-			targetX = position.x + moveDistance
-		else:
-			targetX = startX
-
-func move_to_x(currentPos, newPos, steps):
-	var new = currentPos
-	
-	if new < newPos:
-		new += steps
-		
-		if new > newPos:
-			new = newPos
-			
-	else: 
-		new -= steps
-		if new < newPos:
-			new = newPos
-	return new
-		
-		
-
-func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Laika":
-		get_tree().change_scene_to_file("res://Scenes/battle_stage.tscn")
-	
-	pass # Replace with function body.
+	# Play the battle music or sound after transitioning
+	#battle.volume_db = -20
+	#battle.play()
