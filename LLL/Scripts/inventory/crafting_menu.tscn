@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://4w3w6kyy87u2"]
+
+[ext_resource type="Script" path="res://Scenes/crafting_menu.gd" id="1_capib"]
+[ext_resource type="Texture2D" uid="uid://tt1n8276v7vv" path="res://Scripts/inventory/placeholderTextures/inventorySlot.png" id="2_e15mt"]
+[ext_resource type="Texture2D" uid="uid://cbkqwhsqdl7r4" path="res://Art+Font/Raygun.png" id="3_1eewv"]
+[ext_resource type="Texture2D" uid="uid://hwtxca8k2jbx" path="res://Scripts/inventory/placeholderTextures/plus.png" id="4_elu86"]
+[ext_resource type="Texture2D" uid="uid://cju6vv3nldsie" path="res://Scripts/inventory/placeholderTextures/rock.png" id="5_i46ck"]
+[ext_resource type="Texture2D" uid="uid://d3eb78y6exrt3" path="res://Scripts/inventory/placeholderTextures/stick.png" id="6_q87nw"]
+
+[node name="crafting menu" type="Control"]
+layout_mode = 3
+anchor_left = 0.261
+anchor_top = 0.164
+anchor_right = 0.261
+anchor_bottom = 0.164
+offset_left = -299.672
+offset_top = -105.272
+offset_right = 299.328
+offset_bottom = 105.728
+script = ExtResource("1_capib")
+
+[node name="InventorySlot" type="Sprite2D" parent="."]
+position = Vector2(146.188, 120.5)
+scale = Vector2(1.6725, 1.54)
+texture = ExtResource("2_e15mt")
+
+[node name="Raygun" type="Sprite2D" parent="."]
+position = Vector2(140.25, 109.875)
+scale = Vector2(0.229638, 0.268237)
+texture = ExtResource("3_1eewv")
+
+[node name="InventorySlot3" type="Sprite2D" parent="."]
+position = Vector2(428.375, 115.75)
+scale = Vector2(1.745, 1.61)
+texture = ExtResource("2_e15mt")
+
+[node name="InventorySlot2" type="Sprite2D" parent="."]
+position = Vector2(282.188, 117.5)
+scale = Vector2(1.6325, 1.62)
+texture = ExtResource("2_e15mt")
+
+[node name="Plus" type="Sprite2D" parent="."]
+position = Vector2(349, 111)
+scale = Vector2(0.142188, 0.120443)
+texture = ExtResource("4_elu86")
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(281, 113)
+scale = Vector2(1.35455, 1.21818)
+texture = ExtResource("5_i46ck")
+
+[node name="Stick" type="Sprite2D" parent="."]
+position = Vector2(427, 114)
+scale = Vector2(1.08636, 1.10455)
+texture = ExtResource("6_q87nw")
