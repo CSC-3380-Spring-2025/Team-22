@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://csoy8h7ho070t"]
+
+[ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art+Font/backdrop.png" id="1_06gy8"]
+[ext_resource type="Texture2D" uid="uid://bj4kwpedlmyft" path="res://Art+Font/back_button.png" id="2_qiub5"]
+[ext_resource type="Texture2D" uid="uid://doytyj882tp2k" path="res://Art+Font/back_button_pressed.png" id="4_j1krk"]
+[ext_resource type="AudioStream" uid="uid://d0n1cw4ykptrq" path="res://Audio/Menu Selection Click.mp3" id="5_8el3s"]
+
+[sub_resource type="GDScript" id="GDScript_yltkx"]
+script/source = "extends Control
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_texture_button_pressed() -> void:
+	$TextureButton/click_back.play()
+	get_tree().change_scene_to_file(\"res://Scenes/main_menu.tscn\")
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvk0f"]
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0.152941, 0.65098)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.384314)
+shadow_size = 1
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_yltkx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.724035, 0.652278)
+texture = ExtResource("1_06gy8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 51.0
+offset_right = 930.0
+offset_bottom = 501.0
+scale = Vector2(1.06685, 1.06349)
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvk0f")
+bbcode_enabled = true
+text = "[font=res://Art+Font/Fredoka.ttf][font_size=50] 									HOW TO PLAY:
+[font=res://Art+Font/Fredoka.ttf][font_size=28]Laika has a mission. She is here to collect samples to bring back to Earth. Some of these items she can use to craft new items, as well as restore health, and use as weapons to fight off aliens that she may encounter. As the days progress, she will have oppurtunities to increase XP and level up. On the final day, she will be faced with the ultimate challenge. Can she survive the ultimate challenge and return the Earth?
+ [/font_size][/font]"
+scroll_active = false
+tab_size = 5
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 345.0
+offset_right = 711.0
+offset_bottom = 504.0
+scale = Vector2(1.10714, 1.01483)
+texture_normal = ExtResource("2_qiub5")
+texture_pressed = ExtResource("4_j1krk")
+texture_hover = ExtResource("4_j1krk")
+
+[node name="click_back" type="AudioStreamPlayer" parent="TextureButton"]
+stream = ExtResource("5_8el3s")
+volume_db = 24.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
