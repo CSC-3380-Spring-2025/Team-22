@@ -1,23 +1,51 @@
 [gd_scene load_steps=5 format=3 uid="uid://b4tue58jok5gf"]
 
 [ext_resource type="Texture2D" uid="uid://mrueglhn2xyy" path="res://type_1_alien.png" id="1_c4ngb"]
-[ext_resource type="Script" path="res://Scenes/alien1.gd" id="1_dulk3"]
 [ext_resource type="AudioStream" uid="uid://cqxrjkol34xo" path="res://Audio/sound of danger.wav" id="3_lv6mv"]
+
+[sub_resource type="GDScript" id="GDScript_4ac4a"]
+script/source = "extends StaticBody2D
+
+const BATTLE := \"res://Scenes/Battle.tscn\"
+var battle : AudioStreamPlayer
+
+func _ready() -> void:
+	#$Sprite2D.z_index = 100
+	#battle = $battle
+	pass
+
+# This function is called when the player enters the area
+#func _on_area_2d_area_entered(area: Area2D) -> void:
+	#_start_battle()
+
+# Goes to battle scene
+#func _start_battle() -> void:
+	#await get_tree().create_timer(1.0).timeout
+	#get_tree().change_scene_to_file(BATTLE)
+	
+	# Play the battle music or sound after transitioning
+	#battle.volume_db = -20
+	#battle.play()
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qa6e0"]
 radius = 179.547
 
 [node name="alien_1" type="StaticBody2D"]
+visible = false
 scale = Vector2(1.98891, 1.6044)
-script = ExtResource("1_dulk3")
+script = SubResource("GDScript_4ac4a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.25054, 0.288392)
 texture = ExtResource("1_c4ngb")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+visible = false
 z_index = 100
 position = Vector2(11.9741, -3.4675)
 scale = Vector2(1.52868, 1.68757)

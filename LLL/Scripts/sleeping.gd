@@ -1,6 +1,6 @@
 extends Node2D
 
-const MAIN_STAGE: String = "res://Scenes/Main_Stage.tscn"
+const MAIN_STAGE: String = "res://Scenes/Overworld.tscn"
 const MUSIC_STAGE : String = "res://Audio/through space.ogg"
 
 var lullaby: AudioStreamPlayer

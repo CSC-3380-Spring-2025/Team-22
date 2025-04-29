@@ -25,4 +25,4 @@ func _on_music_off_pressed() -> void:
 # Turns on music when pressed
 func _on_music_on_pressed() -> void:
 	back_sound.play()
-	#get_node("/root/MainMenuMusic").play()
+	get_node("/root/MainMenuMusic").play()

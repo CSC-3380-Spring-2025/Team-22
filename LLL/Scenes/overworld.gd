@@ -13,7 +13,7 @@ func _ready() -> void:
 	overworld_music = AudioStreamPlayer.new()
 	add_child(overworld_music)
 	overworld_music.stream = load(OVERWORLD_MSC)
-	overworld_music.volume_db = -30
+	overworld_music.volume_db = -10
 	overworld_music.play()
 
 	spawn_resources()
@@ -43,3 +43,15 @@ func spawn_resources():
 			instance.z_index = 20  
 			#instance.position = tile_layer.map_to_local(tile_pos) + Vector2(tile_size) / 2
 			add_child(instance)
+
+
+func _on_texture_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/sleeping.tscn")
+
+
+func _on_main_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+
+func _on_texture_button_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Battle.tscn")
