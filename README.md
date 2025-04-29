@@ -21,9 +21,9 @@ Styles Guide(s): [C# Style Guide](https://docs.godotengine.org/en/stable/tutoria
 
 ## Dependencies
 - List all dependencies here
-- Don't forget to include versions
+- Godot 4.4.1
 ### Downloading Dependencies
-Describe where to download the dependencies here. Some will likely require a web download. Provide links here. For IDE extensions, make sure your project works with the free version of them, and detail which IDE(s) these are available in. 
+You can download Godot from the download tab on the official website. It is optimized for use in 4.4.1: https://godotengine.org/download/windows/
 
 ## Commands
 Describe how the commands and process to launch the project on the main branch in such a way that anyone working on the project knows how to check the affects of any code they add.
