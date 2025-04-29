@@ -20,10 +20,6 @@ config/icon="res://icon.svg"
 GlobalTimer="*res://Scripts/GlobalTimer.gd"
 MainMenuMusic="*res://Scenes/main_menu_music.tscn"
 
-[dotnet]
-
-project/assembly_name="LLL"
-
 [display]
 
 window/size/mode=2
