@@ -6,15 +6,6 @@
 [ext_resource type="Resource" uid="uid://b43ubqjy7jpcs" path="res://Scripts/inventory/playerInv.tres" id="3_s3goe"]
 [ext_resource type="PackedScene" uid="uid://q3bepshshj86" path="res://Scripts/inventory/inv_ui.tscn" id="4_rrsf3"]
 [ext_resource type="PackedScene" uid="uid://cmdy18dbjwgvq" path="res://Scripts/inventory/blank_collectible.tscn" id="5_8vtbk"]
-[ext_resource type="Texture2D" uid="uid://cincmm3s4uoji" path="res://Art+Font/den.png" id="7_ifx3y"]
-[ext_resource type="Texture2D" uid="uid://cejvaf7efdgj8" path="res://Art+Font/main__menu_button.png" id="8_5eh7k"]
-[ext_resource type="Texture2D" uid="uid://edvuwjplvpmw" path="res://Art+Font/main_menu_button_pressed.png" id="9_jcotv"]
-[ext_resource type="Texture2D" uid="uid://bwv8mq0qvf3xa" path="res://Art+Font/pause.png" id="10_k3bs7"]
-[ext_resource type="AudioStream" uid="uid://d0n1cw4ykptrq" path="res://Audio/Menu Selection Click.mp3" id="10_kbtd2"]
-[ext_resource type="Texture2D" uid="uid://cqmuegpxmgkwi" path="res://Art+Font/pause_pressed.png" id="11_uqt5t"]
-[ext_resource type="Texture2D" uid="uid://cjhgr27usnnx3" path="res://Art+Font/den_pressed.png" id="13_307m8"]
-[ext_resource type="Texture2D" uid="uid://dwes4cr5akr58" path="res://Art+Font/play.png" id="14_2fu6j"]
-[ext_resource type="Texture2D" uid="uid://84m4fvt3w46q" path="res://Art+Font/play_pressed.png" id="15_irx7j"]
 [ext_resource type="Texture2D" uid="uid://duwh1jhaehsdf" path="res://tile_formatting.png" id="12_n63tp"]
 [ext_resource type="Texture2D" uid="uid://cqpcpyrvm6447" path="res://Art+Font/lunar_lily.png" id="16_4lj5t"]
 [ext_resource type="Texture2D" uid="uid://bcnmsikoo4odk" path="res://Art+Font/scrap_metal.png" id="17_i6jft"]
@@ -216,8 +207,6 @@ offset_bottom = 1130.0
 scale = Vector2(0.207967, 0.216528)
 texture_normal = ExtResource("20_1ukgh")
 
-[connection signal="pressed" from="Laika/main_menu_button" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="Laika/TextureButton" to="." method="_on_texture_button_pressed"]
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -10
 tile_set = SubResource("TileSet_n672r")
