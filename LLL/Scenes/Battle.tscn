@@ -1,13 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://b24ch16f77652"]
+[gd_scene load_steps=11 format=3 uid="uid://b24ch16f77652"]
 
-[ext_resource type="Script" path="res://Battle.cs" id="1_2h7oj"]
 [ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://Art+Font/laikaBattle.png" id="1_lul25"]
+[ext_resource type="Script" path="res://Scripts/inventory/Battle.gd" id="1_x7kvj"]
+[ext_resource type="Resource" uid="uid://b43ubqjy7jpcs" path="res://Scripts/inventory/playerInv.tres" id="2_lij4x"]
 [ext_resource type="Texture2D" uid="uid://ddn357joo3plf" path="res://Art+Font/type_1_alien.png" id="2_yh5fh"]
+[ext_resource type="Resource" uid="uid://do2yu3d637bkf" path="res://Scripts/inventory/items/stick.tres" id="3_v4oss"]
 [ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art+Font/backdrop.png" id="4_1samx"]
+[ext_resource type="Resource" uid="uid://ysxt37he7j37" path="res://Scripts/inventory/items/rock.tres" id="4_70rxy"]
+[ext_resource type="Resource" uid="uid://c2i8tbytjauel" path="res://Scripts/inventory/items/metal.tres" id="5_2edy2"]
 [ext_resource type="AudioStream" uid="uid://xbi2wj51gcrl" path="res://Audio/n-Dimensions (Main Theme - Retro Ver.mp3" id="5_gr70f"]
+[ext_resource type="Resource" uid="uid://kmpmgtb0is6w" path="res://Scripts/inventory/items/goo.tres" id="6_vpg3t"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_2h7oj")
+script = ExtResource("1_x7kvj")
+inv = ExtResource("2_lij4x")
+stick = ExtResource("3_v4oss")
+rock = ExtResource("4_70rxy")
+metal = ExtResource("5_2edy2")
+goo = ExtResource("6_vpg3t")
 
 [node name="LaikaBattle" type="Sprite2D" parent="."]
 position = Vector2(165, 412)
@@ -15,8 +25,9 @@ scale = Vector2(0.322469, 0.322469)
 texture = ExtResource("1_lul25")
 
 [node name="Alien1Battle" type="Sprite2D" parent="."]
-position = Vector2(1006, 413)
-scale = Vector2(0.437143, 0.437143)
+visible = false
+position = Vector2(1003, 411)
+scale = Vector2(0.615206, 0.362164)
 texture = ExtResource("2_yh5fh")
 
 [node name="Fight" type="MenuButton" parent="."]
@@ -95,6 +106,14 @@ volume_db = -4.952
 [node name="battle_music2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_gr70f")
 volume_db = -4.952
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 888.0
+offset_top = 257.0
+offset_right = 1888.0
+offset_bottom = 1387.0
+scale = Vector2(0.396256, 0.466117)
+texture_normal = ExtResource("2_yh5fh")
 
 [connection signal="pressed" from="Defend" to="." method="_Defend"]
 [connection signal="pressed" from="Flee" to="." method="_Flee"]

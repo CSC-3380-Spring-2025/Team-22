@@ -1,5 +1,7 @@
 extends Node2D
 
+const BATTLE_MSC : String = "res://Audio/n-Dimensions (Main Theme - Retro Ver.mp3"
+
 # Defining stats
 var laikaAttack : int = 5;
 var laikaMaxHealth : int = 20;
@@ -55,6 +57,7 @@ var time : int
 var day : int
 var mins : int
 var secs : int
+var battle_music: AudioStreamPlayer
 
 @export var inv: Inv
 @export var stick : Item
@@ -63,10 +66,16 @@ var secs : int
 @export var goo : Item
 
 func _ready(): 
+	battle_music = AudioStreamPlayer.new()
+	add_child(battle_music)
+	battle_music.stream = load(BATTLE_MSC)
+	battle_music.volume_db = -25
+	battle_music.play()
+	battle_music.play()
 	LaikaSprite = get_node("LaikaBattle")
-	EnemySprite = get_node("AlienBattle")
+	EnemySprite = get_node("Alien1Battle")
 	
-	day = GlobalTimer.day
+	day = 2
 	var rand : RandomNumberGenerator = RandomNumberGenerator.new()
 	var levelDecider : int = 1
 	if(day > 2):
@@ -94,9 +103,7 @@ func _ready():
 	Text = get_node("Text")
 	LaikaStats = get_node("LaikaStats")
 	AlienStats = get_node("AlienStats")
-	TimeText = get_node("Time")
-	HealSound = get_node("HealSound")
-	DamageSound = get_node("DamageSound")
+	
 	
 	FightPopup = Fight.get_popup()
 	ItemsPopup = Items.get_popup()
@@ -124,21 +131,6 @@ func _ready():
 	
 	canClick = true
 
-func _process(delta: float) -> void:
-	time = GlobalTimer.timer.get_time_left()
-	if(time <= 3):
-		canClick = false
-		Fight.disabled = true
-		Defend.disabled = true
-		Items.disabled = true
-		Flee.disabled = true
-		Text.text = "Out of time for today!"
-	if(time <= 0):
-		get_tree().change_scene_to_file("res://Scenes/Overworld.tscn");
-	mins = time / 60
-	time -= mins * 60
-	secs = time
-	TimeText.text = "%02d:%02d" % [mins, secs]
 	
 func _Fight(id: int) -> void:
 	match id:
@@ -528,24 +520,20 @@ func _input(event) -> void:
 
 func laikaEffect(type: String) -> void:
 	if(type == "damage"):
-		DamageSound.play()
 		LaikaSprite.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		LaikaSprite.modulate = Color.WHITE
 	if(type == "heal"):
-		HealSound.play()
 		LaikaSprite.modulate = Color.GREEN
 		await get_tree().create_timer(0.5).timeout
 		LaikaSprite.modulate = Color.WHITE
 		
 func alienEffect(type: String) -> void:
 	if(type == "damage"):
-		DamageSound.play()
 		EnemySprite.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		EnemySprite.modulate = Color.WHITE
 	if(type == "heal"):
-		HealSound.play()
 		EnemySprite.modulate = Color.GREEN
 		await get_tree().create_timer(0.5).timeout
 		EnemySprite.modulate = Color.WHITE
