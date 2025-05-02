@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bqycgfqgm3i4w" path="res://laika_up.png" id="9_uwyk8"]
 [ext_resource type="Texture2D" uid="uid://cm4p2vnlbbto0" path="res://laika_up_walk.png" id="10_frf75"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hypsk"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bn1jn"]
 texture = ExtResource("1_gxokj")
 texture_region_size = Vector2i(340, 340)
 0:0/0 = 0
@@ -55,7 +55,7 @@ texture_region_size = Vector2i(340, 340)
 tile_size = Vector2i(340, 340)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_hypsk")
+sources/0 = SubResource("TileSetAtlasSource_bn1jn")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_glipk"]
 animations = [{
