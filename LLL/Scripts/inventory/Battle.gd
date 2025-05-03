@@ -72,7 +72,6 @@ func _ready():
 	battle_music.stream = load(BATTLE_MSC)
 	battle_music.volume_db = -25
 	battle_music.play()
-	battle_music.play()
 	LaikaSprite = get_node("LaikaBattle")
 	EnemySprite = get_node("Alien1Battle")
 	
