@@ -12,15 +12,16 @@ var enemyHealth : int
 var enemyMaxHealth : int
 	
 # Defining status effects
-var poison : int = 0;
-var acid : int = 0;
-var screech : int = 0;
-var sing : bool = false;
-var stealth : bool = false;
-var lick : bool = false;
-var burned : bool = false;
-var defending : bool = false;
-var waiting : bool = true;
+var poison : int = 0
+var acid : int = 0
+var screech : int = 0
+var sing : bool = false
+var stealth : bool = false
+var burned : bool = false
+var defending : bool = false
+var waiting : bool = true
+var enemyWeak : bool = false
+var enemyStun : bool = false
 	
 # Defining cooldowns
 var biteCooldown : int = 0;
@@ -423,7 +424,7 @@ func afterTurn() -> void:
 		await clicked
 		get_tree().change_scene_to_file("res://Scenes/Overworld.tscn")
 	elif(enemyHealth > 0 && waiting == false):
-		alienMove();
+		alienMove()
 	
 	# If your health gets too low, you collapse and you lose
 	if(laikaHealth <= 0):
@@ -442,7 +443,14 @@ func afterTurn() -> void:
 
 func alienMove() -> void:
 	var rand : RandomNumberGenerator = RandomNumberGenerator.new()
-	var enemyOption : int = 0;
+	var enemyOption : int = 0 
+	if(enemyStun == true):
+		Text.text = ("The alien, stunned, can't do anything...")
+		await clicked
+		waiting = true 
+		afterTurn() 
+		return
+		
 	if(enemyLevel == 1):
 		enemyOption = rand.randi_range(0, 5)
 	elif(enemyLevel == 2):
@@ -476,13 +484,12 @@ func alienMove() -> void:
 			laikaEffect("damage")
 			await clicked
 			if(defending == true):
-				Text.text = ("You defend it, only receiving " + str(enemyAttack - (laikaAttack/2)) + " damage!");
-				defending = false;
-				laikaHealth = laikaHealth - (enemyAttack - (laikaAttack/2));
-			elif (lick == true):
-				Text.text = ("Weakened, the enemy only deals " + str(enemyAttack/2) + " damage!");
-				lick = false;
-				laikaHealth = laikaHealth - (enemyAttack/2);
+				Text.text = ("You defend it, only receiving " + str(enemyAttack - (laikaAttack/2)) + " damage!") 
+				laikaHealth = laikaHealth - (enemyAttack - (laikaAttack/2)) 
+			elif (enemyWeak == true):
+				Text.text = ("Weakened, the enemy only deals " + str(enemyAttack/2) + " damage!") 
+				enemyWeak = false 
+				laikaHealth = laikaHealth - (enemyAttack/2) 
 			else:
 				Text.text = ("You receive " + str(enemyAttack) + " damage!");
 				laikaHealth = laikaHealth - enemyAttack;
@@ -511,8 +518,9 @@ func alienMove() -> void:
 			else:
 				Text.text = ("But it doesn't work!");
 			await clicked
-	waiting = true;
-	afterTurn();
+	defending = false
+	waiting = true 
+	afterTurn() 
 
 func _input(event) -> void:
 	if(event.is_action_pressed("click") && canClick):
