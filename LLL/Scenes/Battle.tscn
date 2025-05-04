@@ -33,9 +33,8 @@ scale = Vector2(0.322469, 0.322469)
 texture = ExtResource("1_lul25")
 
 [node name="AlienBattle" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1003, 411)
-scale = Vector2(0.615206, 0.362164)
+position = Vector2(1022.5, 381.644)
+scale = Vector2(0.455238, 0.462872)
 texture = ExtResource("2_yh5fh")
 
 [node name="Fight" type="MenuButton" parent="."]
@@ -113,14 +112,6 @@ stream = ExtResource("5_gr70f")
 volume_db = -25.0
 autoplay = true
 parameters/looping = false
-
-[node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 888.0
-offset_top = 257.0
-offset_right = 1888.0
-offset_bottom = 1387.0
-scale = Vector2(0.396256, 0.466117)
-texture_normal = ExtResource("2_yh5fh")
 
 [node name="HealSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_6xsll")

@@ -84,6 +84,12 @@ func _ready():
 		enemyAttack = 7
 		enemyHealth = 25
 		enemyMaxHealth = 25
+	if(enemyLevel == 3):
+		var texture = load("res://Art+Font/final_boss.png")
+		EnemySprite.texture = texture
+		enemyAttack = 9
+		enemyHealth = 50
+		enemyMaxHealth = 50
 	
 	# Assign scene variables to respective nodes
 	Fight = get_node("Fight")
@@ -124,7 +130,7 @@ func _ready():
 	if inv.getCount(goo) > 0:
 		ItemsPopup.add_item("Goo x" + str(inv.getCount(goo)), 3)
 	if inv.getCount(lily) > 0:
-		ItemsPopup.add_item(" x" + str(inv.getCount(lily)), 4)
+		ItemsPopup.add_item("Lily x" + str(inv.getCount(lily)), 4)
 	if inv.getCount(crystal) > 0:
 		ItemsPopup.add_item("Crystal x" + str(inv.getCount(crystal)), 5)
 	if inv.getCount(raygun) > 0:
@@ -328,6 +334,7 @@ func _Items(id: int) -> void:
 		3:	# Goo (lowers alien's attack stat)
 			Text.text = ("Laika slathers the enemy in goo, lowering how much its attacks hurt!")
 			alienEffect("damage")
+			enemyWeak = true
 			if(enemyAttack >= 0):
 				enemyAttack = enemyAttack - 1
 			inv.remove(goo)
@@ -432,8 +439,6 @@ func afterTurn() -> void:
 		Text.text = rewards()
 		await clicked
 		get_tree().change_scene_to_file("res://Scenes/Overworld.tscn")
-	elif(enemyStun == true):
-		enemyStun = false
 	elif(enemyHealth > 0 && waiting == false):
 		alienMove()
 	
@@ -458,13 +463,14 @@ func alienMove() -> void:
 	if(enemyStun == true):
 		Text.text = ("The alien, stunned, can't do anything...")
 		await clicked
-		waiting = true 
-		afterTurn() 
+		enemyStun = false
+		waiting = true
+		afterTurn()
 		return
 
 	if(enemyLevel == 1):
 		enemyOption = rand.randi_range(0, 5)
-	elif(enemyLevel == 2):
+	elif(enemyLevel >= 2):
 		enemyOption = rand.randi_range(0, 10)
 	match enemyOption:
 		0:	# Screech: 1/6 chance
@@ -484,7 +490,7 @@ func alienMove() -> void:
 			if(stealth == true):
 				Text.text = ("The alien spits out a gross acid, but it misses!") 
 			elif(enemyWeak == true):
-				Text.text = ("The alien weakly spits out acid, only managing to deal " + str(enemyAttack/2) + " once!")
+				Text.text = ("The alien weakly spits out acid, only managing to deal " + str(enemyAttack/2) + " damage once!")
 				laikaEffect("damage")
 				laikaHealth = laikaHealth - enemyAttack/2
 			else:
@@ -508,7 +514,7 @@ func alienMove() -> void:
 				Text.text = ("You receive " + str(enemyAttack) + " damage!") 
 				laikaHealth = laikaHealth - enemyAttack 
 			await clicked
-		6, 7, 8:	# Steal: 3/10 chance for Alien 2
+		6, 7, 8:	# Steal: 3/10 chance for Alien 2/boss
 			Text.text = ("The alien rummages through your inventory!") 
 			await clicked
 			if(enemyWeak == true):
@@ -525,7 +531,7 @@ func alienMove() -> void:
 			else:
 				Text.text = ("But your inventory was already empty!") 
 			await clicked
-		9, 10:		# Whistle: 2/10 chance for Alien 2
+		9, 10:		# Whistle: 2/10 chance for Alien 2/boss
 			Text.text = ("The alien whistles a lovely tune...") 
 			await clicked
 			var singChance = rand.randi_range(0, 3) 
