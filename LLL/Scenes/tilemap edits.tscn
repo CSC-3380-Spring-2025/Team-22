@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=4 uid="uid://dycw4nklokpay"]
 
 [ext_resource type="Texture2D" uid="uid://duwh1jhaehsdf" path="res://tile_formatting.png" id="1_gxokj"]
-[ext_resource type="Script" path="res://Scenes/tilemap_edits.gd" id="1_ofjeh"]
-[ext_resource type="Script" path="res://laika.gd" id="2_14cnr"]
+[ext_resource type="Script" uid="uid://wf45x6joy7p2" path="res://Scenes/tilemap_edits.gd" id="1_ofjeh"]
+[ext_resource type="Script" uid="uid://dvhdg03vpjbxu" path="res://laika.gd" id="2_14cnr"]
 [ext_resource type="Texture2D" uid="uid://cc13baa18jgpl" path="res://laika_down.png" id="3_v8scw"]
 [ext_resource type="Texture2D" uid="uid://jde4ikfmq2tl" path="res://laika_down_walk.png" id="4_x5ydh"]
 [ext_resource type="Texture2D" uid="uid://pvwr00ckm04w" path="res://laika_left.png" id="5_bris4"]

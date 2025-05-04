@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://dh52fsj7trojy"]
 
-[ext_resource type="Script" path="res://Scripts/gameover.gd" id="1_tjh16"]
+[ext_resource type="Script" uid="uid://dknmxxyfkvt2n" path="res://Scripts/gameover.gd" id="1_tjh16"]
 [ext_resource type="AudioStream" uid="uid://bi6l5o8qqtpqs" path="res://Audio/space rock (1).ogg" id="2_h4fgq"]
 [ext_resource type="Texture2D" uid="uid://cnwrenilyx5k" path="res://Art+Font/gameover_stars.png" id="2_mde64"]
 [ext_resource type="Texture2D" uid="uid://cxbskt170krga" path="res://Art+Font/play_again_button.png" id="4_6ri11"]

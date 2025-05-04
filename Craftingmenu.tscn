@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://4w3w6kyy87u2"]
+
+[ext_resource type="Texture2D" uid="uid://tt1n8276v7vv" path="res://Scripts/inventory/placeholderTextures/inventorySlot.png" id="1_egpic"]
+[ext_resource type="Texture2D" uid="uid://cbkqwhsqdl7r4" path="res://Art+Font/Raygun.png" id="2_agk0o"]
+[ext_resource type="Texture2D" uid="uid://hwtxca8k2jbx" path="res://Scripts/inventory/placeholderTextures/plus.png" id="3_3pa42"]
+[ext_resource type="Script" uid="uid://b4jag5xji2ae4" path="res://Scenes/craftingmenu.gd" id="3_sk442"]
+[ext_resource type="Texture2D" uid="uid://cju6vv3nldsie" path="res://Scripts/inventory/placeholderTextures/rock.png" id="4_6xgld"]
+[ext_resource type="Texture2D" uid="uid://d3eb78y6exrt3" path="res://Scripts/inventory/placeholderTextures/stick.png" id="5_ptupv"]
+
+[node name="Craftingmenu" type="Node2D"]
+
+[node name="InventorySlot" type="Sprite2D" parent="."]
+position = Vector2(178, 151)
+scale = Vector2(3.06, 2.96)
+texture = ExtResource("1_egpic")
+
+[node name="Raygun" type="Sprite2D" parent="."]
+position = Vector2(174, 146)
+scale = Vector2(0.382353, 0.487842)
+texture = ExtResource("2_agk0o")
+script = ExtResource("3_sk442")
+
+[node name="InventorySlot2" type="Sprite2D" parent="."]
+position = Vector2(435, 152)
+scale = Vector2(3.06, 2.96)
+texture = ExtResource("1_egpic")
+
+[node name="InventorySlot3" type="Sprite2D" parent="."]
+position = Vector2(678, 149)
+scale = Vector2(3.06, 2.96)
+texture = ExtResource("1_egpic")
+
+[node name="Plus" type="Sprite2D" parent="."]
+position = Vector2(557, 152)
+scale = Vector2(0.221875, 0.214844)
+texture = ExtResource("3_3pa42")
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(434.5, 152)
+scale = Vector2(2.09091, 1.81818)
+texture = ExtResource("4_6xgld")
+
+[node name="Stick" type="Sprite2D" parent="."]
+position = Vector2(675, 152)
+scale = Vector2(1.73636, 1.66364)
+texture = ExtResource("5_ptupv")
