@@ -1,0 +1,15 @@
+res://default_bus_layout.tres
+res://Scenes/Battle_final_boss.tscn
+res://Scripts/inventory/playerInv.tres
+res://Scenes/Battle_alien_type2.tscn
+res://Scenes/Overworld.tscn
+res://Scenes/hard_alien.gd
+res://Scenes/easy_alien.gd
+res://Scenes/final_boss_connection.gd
+res://Scenes/main_menu.tscn
+res://Scenes/Craftingmenu.tscn
+res://Scenes/final_boss.tscn
+res://Scenes/gameover.tscn
+res://Scenes/GameWon.tscn
+res://Scenes/Battle.tscn
+res://Scripts/inventory/blank_collectible.tscn
