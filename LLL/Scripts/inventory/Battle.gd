@@ -21,8 +21,8 @@ var stealth : bool = false
 var burned : bool = false
 var defending : bool = false
 var waiting : bool = true
-var enemyWeak : bool = true
-var enemyStun : bool = true
+var enemyWeak : bool = false
+var enemyStun : bool = false
 	
 # Defining cooldowns
 var biteCooldown : int = 0
@@ -436,7 +436,6 @@ func afterTurn() -> void:
 		enemyStun = false
 	elif(enemyHealth > 0 && waiting == false):
 		alienMove()
-		defending = false
 	
 	# If your health gets too low, you collapse and you lose
 	if(laikaHealth <= 0):
@@ -456,6 +455,13 @@ func afterTurn() -> void:
 func alienMove() -> void:
 	var rand : RandomNumberGenerator = RandomNumberGenerator.new()
 	var enemyOption : int = 0 
+	if(enemyStun == true):
+		Text.text = ("The alien, stunned, can't do anything...")
+		await clicked
+		waiting = true 
+		afterTurn() 
+		return
+
 	if(enemyLevel == 1):
 		enemyOption = rand.randi_range(0, 5)
 	elif(enemyLevel == 2):
@@ -496,7 +502,7 @@ func alienMove() -> void:
 				laikaHealth = laikaHealth - (enemyAttack - (laikaAttack/2)) 
 			elif (enemyWeak == true):
 				Text.text = ("Weakened, the enemy only deals " + str(enemyAttack/2) + " damage!") 
-				enemyWeak == false 
+				enemyWeak = false 
 				laikaHealth = laikaHealth - (enemyAttack/2) 
 			else:
 				Text.text = ("You receive " + str(enemyAttack) + " damage!") 
@@ -531,6 +537,7 @@ func alienMove() -> void:
 			else:
 				Text.text = ("But it doesn't work!") 
 			await clicked
+	defending = false
 	waiting = true 
 	afterTurn() 
 
