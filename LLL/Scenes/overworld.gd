@@ -1,13 +1,17 @@
 extends Node2D
 
+# Declare constants 
 const OVERWORLD_MSC : String = "res://Audio/through space.ogg"
+const SLEEP_SCN : String = "res://Scenes/sleeping.tscn"
+const BATTLE_SCN : String = "res://Scenes/Battle.tscn"
+const MAINMENU_SCN : String = "res://Scenes/main_menu.tscn"
+const RESOURCES : String = "res://Scripts/Resource_scripts/resource_data.gd"
 
 var overworld_music: AudioStreamPlayer
 var click: AudioStreamPlayer
 
 # This was for testing, need to figure out how to implement level system across scenes.
 var level_name = "level_5"
-
 
 # Plays music for overworld scene and calls spawn resources function
 func _ready() -> void:
@@ -22,7 +26,7 @@ func _ready() -> void:
 
 # Function that pulls from resource_data.gd that has all the different days resources per outline
 func spawn_resources():
-	var resource_config = preload("res://Scripts/Resource_scripts/resource_data.gd").new()
+	var resource_config = preload(RESOURCES).new()
 	var level_data = resource_config.levels.get(level_name, [])
 	var tile_layer = $TileMap/tilemap
 	var tile_size = tile_layer.tile_set.tile_size
@@ -43,25 +47,19 @@ func spawn_resources():
 			instance.z_index = 100  
 			instance.position = tile_layer.map_to_local(tile_pos) + Vector2(tile_size) / 2
 			add_child(instance)
-
-
-func _on_texture_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/sleeping.tscn")
-
-
-
-	get_tree().change_scene_to_file("res://Scenes/Battle.tscn")
-
+			
+# Changes scene to main menu
 func _on_main_menu_pressed() -> void:
 	click.play()
 	await get_tree().create_timer(0.8).timeout
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	get_tree().change_scene_to_file(MAINMENU_SCN)
 
+# Changes scene to sleep scene
 func _on_den_pressed() -> void:
 	await get_tree().create_timer(0.8).timeout
-	get_tree().change_scene_to_file("res://Scenes/sleeping.tscn")
+	get_tree().change_scene_to_file(SLEEP_SCN)
 
-
-
+# If we can't trigger battle scene with collision, we can use this button
 func _on_battle_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file(BATTLE_SCN)
+	
