@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var tilemap = $TileMap
+
 # Declare constants 
 const OVERWORLD_MSC : String = "res://Audio/through space.ogg"
 const SLEEP_SCN : String = "res://Scenes/sleeping.tscn"
@@ -28,24 +30,31 @@ func _ready() -> void:
 func spawn_resources():
 	var resource_config = preload(RESOURCES).new()
 	var level_data = resource_config.levels.get(level_name, [])
-	var tile_layer = $TileMap/tilemap
-	var tile_size = tile_layer.tile_set.tile_size
+	var tilemap = $TileMap
+	var tile_size = tilemap.tile_set.tile_size
 	
 	# Spawn resources
-	for resource in level_data.get("resources", []):
-		for tile_pos in resource.positions:
-			var instance = resource.scene.instantiate()
-			instance.z_index = 100
-			var world_pos = tile_layer.map_to_local(tile_pos) + Vector2(tile_size) / 2
-			instance.position = world_pos
+	for resource_data in level_data.get("resources", []):
+		var scene = resource_data.scene
+		for tile_pos in resource_data.positions:
+			print("Spawning", scene, "at", tile_pos)
+
+			var instance = scene.instantiate()
+			instance.z_index = -1
+			var local_pos = tilemap.map_to_local(tile_pos)
+			instance.position = local_pos + Vector2(tile_size) / 2
 			add_child(instance)
 	
 	# Spawn aliens 1, 2, and final boss depending on level
-	for aliens in level_data.get("aliens", []):
-		for tile_pos in aliens.positions:
-			var instance = aliens.scene.instantiate()
-			instance.z_index = 100  
-			instance.position = tile_layer.map_to_local(tile_pos) + Vector2(tile_size) / 2
+	for alien_data in level_data.get("aliens", []):
+		var scene = alien_data.scene
+		for tile_pos in alien_data.positions:
+			print("Spawning", scene, "at", tile_pos)
+
+			var instance = scene.instantiate()
+			instance.z_index = -1
+			var local_pos = tilemap.map_to_local(tile_pos)
+			instance.position = local_pos + Vector2(tile_size) / 2
 			add_child(instance)
 			
 # Changes scene to main menu

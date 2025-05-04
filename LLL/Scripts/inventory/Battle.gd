@@ -468,7 +468,7 @@ func alienMove() -> void:
 		waiting = true
 		afterTurn()
 		return
-    
+	
 	if(enemyLevel == 1):
 		enemyOption = rand.randi_range(0, 5)
 	elif(enemyLevel >= 2):

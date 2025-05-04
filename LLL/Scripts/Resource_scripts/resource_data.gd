@@ -82,17 +82,17 @@ var levels = {
 		"resources": [
 			{
 				"scene": preload(ROCK),
-				"positions": [Vector2i(2, 4), Vector2i(6, 10), Vector2i(18, 12), Vector2i(24, 6)]
+				"positions": [ Vector2i(-2, 0), Vector2i(0, 3), Vector2i(1, -3), Vector2i(-3, 1)]
 			}
 		],
 		"aliens": [
 			{
 				"scene": preload(ALIEN_1),
-				"positions": [Vector2i(3,4)]
+				"positions": [Vector2i(3,1)]
 			},
 			{
 				"scene": preload(ALIEN_2),
-				"positions": [Vector2i(2, 11), Vector2i(1, 7), Vector2i(10,4)]
+				"positions": [Vector2i(-1, 1), Vector2i(-2, -1), Vector2i(4,2)]
 			}
 		]
 	},

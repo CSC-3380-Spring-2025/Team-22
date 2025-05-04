@@ -1,8 +1,8 @@
 [gd_scene load_steps=29 format=4 uid="uid://be52tlp3pcmy5"]
 
 [ext_resource type="Texture2D" uid="uid://dn16yjiap4rh5" path="res://Art+Font/laika.png" id="1_k4g30"]
-[ext_resource type="Script" uid="uid://cbmnfwci3ycrn" path="res://Scenes/laika.gd" id="1_kmpr2"]
-[ext_resource type="Script" uid="uid://c5hskes168u5i" path="res://Scenes/overworld.gd" id="1_llg6e"]
+[ext_resource type="Script" path="res://Scenes/laika.gd" id="1_kmpr2"]
+[ext_resource type="Script" path="res://Scenes/overworld.gd" id="1_llg6e"]
 [ext_resource type="Resource" uid="uid://b43ubqjy7jpcs" path="res://Scripts/inventory/playerInv.tres" id="3_s3goe"]
 [ext_resource type="PackedScene" uid="uid://q3bepshshj86" path="res://Scripts/inventory/inv_ui.tscn" id="4_rrsf3"]
 [ext_resource type="PackedScene" uid="uid://cmdy18dbjwgvq" path="res://Scripts/inventory/blank_collectible.tscn" id="5_8vtbk"]

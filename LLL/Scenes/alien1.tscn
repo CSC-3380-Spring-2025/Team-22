@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://b4tue58jok5gf"]
 
 [ext_resource type="Texture2D" uid="uid://mrueglhn2xyy" path="res://type_1_alien.png" id="1_c4ngb"]
-[ext_resource type="Script" uid="uid://dsd7q4mr6k3a4" path="res://Scenes/alien1.gd" id="1_dulk3"]
+[ext_resource type="Script" path="res://Scenes/alien1.gd" id="1_dulk3"]
 [ext_resource type="AudioStream" uid="uid://cqxrjkol34xo" path="res://Audio/sound of danger.wav" id="3_lv6mv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qa6e0"]
 radius = 179.547
 
 [node name="alien_1" type="StaticBody2D"]
-scale = Vector2(1.98891, 1.6044)
+scale = Vector2(1.0158, 0.987808)
 script = ExtResource("1_dulk3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
