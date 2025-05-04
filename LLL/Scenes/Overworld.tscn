@@ -170,6 +170,14 @@ position = Vector2(443, 524)
 script = ExtResource("1_kmpr2")
 inv = ExtResource("3_s3goe")
 
+[node name="LevelLabel" type="Label" parent="Laika"]
+offset_left = 516.0
+offset_top = 25.0
+offset_right = 561.0
+offset_bottom = 48.0
+scale = Vector2(1.21633, 1.18827)
+text = "Day"
+
 [node name="Camera2D" type="Camera2D" parent="Laika"]
 position = Vector2(581, 326)
 

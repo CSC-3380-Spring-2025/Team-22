@@ -27,6 +27,6 @@ func stop_overworld_music() -> void:
 
 func back_to_overworld() -> void:
 	#Adds a pause a brief pause before returning to the overworld and restarts overworld music 
-	await get_tree().create_timer(6.8).timeout
-	get_tree().change_scene_to_file("res://Scenes/Overworld.tscn")
-	overworld_music.play()
+	await get_tree().create_timer(0.8).timeout
+	#overworld_music.play()
+	get_tree().change_scene_to_file(OVERWORLD_SCN)

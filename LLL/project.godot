@@ -11,14 +11,15 @@ config_version=5
 [application]
 
 config/name="LLL"
-run/main_scene="res://Scenes/Overworld.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+run/main_scene="res://Scenes/main_menu.tscn"
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalTimer="*res://Scripts/GlobalTimer.gd"
 MainMenuMusic="*res://Scenes/main_menu_music.tscn"
+resource_data="*res://Scripts/Resource_scripts/resource_data.gd"
 
 [display]
 
