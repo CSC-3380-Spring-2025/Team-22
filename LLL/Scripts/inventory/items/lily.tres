@@ -1,11 +1,9 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d567oua8pmc5"]
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://d567oua8pmc5"]
 
-[ext_resource type="Texture2D" uid="uid://x035ml6dqlfb" path="res://Scripts/inventory/placeholderTextures/lunar_lily.png" id="1_qhlsl"]
-[ext_resource type="Script" uid="uid://d3k2ypvcy3het" path="res://Scripts/inventory/Item.gd" id="2_ovpw8"]
+[ext_resource type="Script" path="res://Scripts/inventory/Item.gd" id="2_ovpw8"]
 
 [resource]
 script = ExtResource("2_ovpw8")
-icon = ExtResource("1_qhlsl")
 name = "lily"
 recipe = Array[ExtResource("2_ovpw8")]([])
 type = "Material"
