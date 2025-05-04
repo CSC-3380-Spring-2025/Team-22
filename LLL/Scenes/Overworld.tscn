@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://be52tlp3pcmy5"]
+[gd_scene load_steps=30 format=4 uid="uid://be52tlp3pcmy5"]
 
 [ext_resource type="Texture2D" uid="uid://dn16yjiap4rh5" path="res://Art+Font/laika.png" id="1_k4g30"]
 [ext_resource type="Script" path="res://Scenes/laika.gd" id="1_kmpr2"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://duwh1jhaehsdf" path="res://tile_formatting.png" id="12_n63tp"]
 [ext_resource type="PackedScene" uid="uid://ddgaxvuvtvqpw" path="res://static_body_2d.tscn" id="13_f8jr0"]
 [ext_resource type="Texture2D" uid="uid://cqpcpyrvm6447" path="res://Art+Font/lunar_lily.png" id="16_4lj5t"]
+[ext_resource type="Texture2D" uid="uid://cincmm3s4uoji" path="res://Art+Font/den.png" id="17_dwwld"]
 [ext_resource type="Texture2D" uid="uid://bcnmsikoo4odk" path="res://Art+Font/scrap_metal.png" id="17_i6jft"]
 [ext_resource type="Texture2D" uid="uid://bf6ueanr21jce" path="res://Art+Font/photolysis_crystal.png" id="18_pqlw1"]
 [ext_resource type="Texture2D" uid="uid://xb4r4lujktst" path="res://Art+Font/alien_2.png" id="19_b2iwt"]
@@ -239,7 +240,17 @@ tile_map_data = PackedByteArray("AAAAAAAAAAABAAQAAAABAAEAAAABAAQAAAACAAEAAAADAAM
 tile_set = SubResource("TileSet_n672r")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("13_f8jr0")]
+visible = false
+
+[node name="Den" type="TextureButton" parent="."]
+offset_left = 718.0
+offset_top = 115.0
+offset_right = 1407.0
+offset_bottom = 559.0
+scale = Vector2(0.408298, 0.425445)
+texture_normal = ExtResource("17_dwwld")
 
 [connection signal="pressed" from="Laika/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="gameover" to="." method="_on_gameover_pressed"]
+[connection signal="pressed" from="Den" to="." method="_on_den_pressed"]
