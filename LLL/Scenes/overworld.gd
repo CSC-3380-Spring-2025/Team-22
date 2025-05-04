@@ -61,3 +61,7 @@ func _on_main_menu_pressed() -> void:
 	click.play()
 	await get_tree().create_timer(0.8).timeout
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+
+func _on_den_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/sleeping.tscn")
