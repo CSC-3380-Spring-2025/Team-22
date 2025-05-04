@@ -8,7 +8,7 @@
 radius = 179.547
 
 [node name="final_boss" type="StaticBody2D"]
-scale = Vector2(0.720771, 0.58137)
+scale = Vector2(1.52678, 1.46367)
 script = ExtResource("1_0yk7q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
