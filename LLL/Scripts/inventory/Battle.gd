@@ -370,6 +370,7 @@ func _Items(id: int) -> void:
 		6:	# Raygun (deals 15 damage, doesn't get consumed but oan only be used once per battle)
 			Text.text = ("Laika fires the superpowered raygun, dealing a major 15 damage!")
 			alienEffect("damage")
+			$raygun.visible = true
 			enemyHealth = enemyHealth - 15
 			ItemsPopup.set_item_disabled(ItemsPopup.get_item_index(6), true)
 			await clicked
@@ -387,6 +388,7 @@ func _Flee() -> void:
 		get_tree().change_scene_to_file("res://Scenes/Overworld.tscn") 
 	
 func afterTurn() -> void:
+	$raygun.visible = false
 	if(waiting == false):	# If Laika's turn just ended, disables her ability to make another turn
 		Fight.disabled = true
 		Defend.disabled = true

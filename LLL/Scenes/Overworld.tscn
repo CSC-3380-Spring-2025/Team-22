@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=4 uid="uid://be52tlp3pcmy5"]
+[gd_scene load_steps=31 format=4 uid="uid://be52tlp3pcmy5"]
 
 [ext_resource type="Texture2D" uid="uid://dn16yjiap4rh5" path="res://Art+Font/laika.png" id="1_k4g30"]
 [ext_resource type="Script" path="res://Scenes/laika.gd" id="1_kmpr2"]
 [ext_resource type="Script" path="res://Scenes/overworld.gd" id="1_llg6e"]
+[ext_resource type="PackedScene" uid="uid://cgiihu4ckhrrs" path="res://Scripts/inventory/blank_collectiblerock.tscn" id="2_okjj5"]
 [ext_resource type="Resource" uid="uid://b43ubqjy7jpcs" path="res://Scripts/inventory/playerInv.tres" id="3_s3goe"]
 [ext_resource type="PackedScene" uid="uid://q3bepshshj86" path="res://Scripts/inventory/inv_ui.tscn" id="4_rrsf3"]
 [ext_resource type="PackedScene" uid="uid://cmdy18dbjwgvq" path="res://Scripts/inventory/blank_collectible.tscn" id="5_8vtbk"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cqpcpyrvm6447" path="res://Art+Font/lunar_lily.png" id="16_4lj5t"]
 [ext_resource type="Texture2D" uid="uid://cincmm3s4uoji" path="res://Art+Font/den.png" id="17_dwwld"]
 [ext_resource type="Texture2D" uid="uid://bcnmsikoo4odk" path="res://Art+Font/scrap_metal.png" id="17_i6jft"]
+[ext_resource type="PackedScene" uid="uid://dpg7bnptxif71" path="res://Scripts/inventory/blank_collectiblecrystal.tscn" id="18_5otil"]
 [ext_resource type="Texture2D" uid="uid://bf6ueanr21jce" path="res://Art+Font/photolysis_crystal.png" id="18_pqlw1"]
 [ext_resource type="Texture2D" uid="uid://xb4r4lujktst" path="res://Art+Font/alien_2.png" id="19_b2iwt"]
 [ext_resource type="Texture2D" uid="uid://p18p0x4uvshm" path="res://Art+Font/final_boss.png" id="20_1ukgh"]
@@ -148,6 +150,12 @@ sources/0 = SubResource("TileSetAtlasSource_yu45p")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_llg6e")
+
+[node name="blank_collectible5" parent="." instance=ExtResource("18_5otil")]
+position = Vector2(1027, 548)
+
+[node name="blank_collectible4" parent="." instance=ExtResource("2_okjj5")]
+position = Vector2(709, 539)
 
 [node name="blank_collectible" parent="." instance=ExtResource("5_8vtbk")]
 position = Vector2(157, 439)

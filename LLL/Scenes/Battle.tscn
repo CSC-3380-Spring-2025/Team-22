@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b24ch16f77652"]
+[gd_scene load_steps=17 format=3 uid="uid://b24ch16f77652"]
 
 [ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://Art+Font/laikaBattle.png" id="1_lul25"]
 [ext_resource type="Script" path="res://Scripts/inventory/Battle.gd" id="1_x7kvj"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://coookpvo3q01" path="res://Scripts/inventory/items/raygun.tres" id="9_jr0ro"]
 [ext_resource type="AudioStream" uid="uid://8j8ymhl3akja" path="res://Audio/heal.mp3" id="14_6xsll"]
 [ext_resource type="AudioStream" uid="uid://c7sejna3x5ef2" path="res://Audio/damage.mp3" id="15_imcj7"]
+[ext_resource type="Texture2D" uid="uid://c5dxfvbe2ijie" path="res://Scripts/inventory/placeholderTextures/Raygun.png" id="16_1juog"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_x7kvj")
@@ -117,6 +118,12 @@ stream = ExtResource("14_6xsll")
 
 [node name="DamageSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_imcj7")
+
+[node name="raygun" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(338, 413)
+scale = Vector2(2.9458, 3.55719)
+texture = ExtResource("16_1juog")
 
 [connection signal="pressed" from="Defend" to="." method="_Defend"]
 [connection signal="pressed" from="Flee" to="." method="_Flee"]

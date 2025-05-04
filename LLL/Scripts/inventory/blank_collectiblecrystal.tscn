@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpg7bnptxif71"]
+
+[ext_resource type="Script" path="res://blank_collectible.gd" id="1_iwyap"]
+[ext_resource type="Resource" uid="uid://c274btad37xqr" path="res://Scripts/inventory/items/crystal.tres" id="2_70v5g"]
+[ext_resource type="Texture2D" uid="uid://cu2fikw4keyuu" path="res://Scripts/inventory/placeholderTextures/photolysis_crystal.png" id="3_dsse5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8i84w"]
+radius = 67.3647
+
+[node name="blank_collectible" type="StaticBody2D"]
+script = ExtResource("1_iwyap")
+item = ExtResource("2_70v5g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_dsse5")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+shape = SubResource("CircleShape2D_8i84w")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]
