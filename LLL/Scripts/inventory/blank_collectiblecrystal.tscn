@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpg7bnptxif71"]
 
-[ext_resource type="Script" uid="uid://cpe78tqq58d62" path="res://blank_collectible.gd" id="1_iwyap"]
+[ext_resource type="Script" path="res://blank_collectible.gd" id="1_iwyap"]
 [ext_resource type="Resource" uid="uid://c274btad37xqr" path="res://Scripts/inventory/items/crystal.tres" id="2_70v5g"]
 [ext_resource type="Texture2D" uid="uid://cu2fikw4keyuu" path="res://Scripts/inventory/placeholderTextures/photolysis_crystal.png" id="3_dsse5"]
 
