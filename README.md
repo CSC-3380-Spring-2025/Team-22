@@ -37,9 +37,14 @@ You can download Godot from the download tab on the official website. It is opti
 	- Click "import" in the Project Manager
  	- Browse to the cloned folder and select the project.godot file
   	- Click "Import & Edit" to open the project
+   
 ![Screenshot 2025-05-07 125948](https://github.com/user-attachments/assets/73adf2c2-f280-4821-952f-79c8c9803874)
 
+
+
 5] Once open, click**play** in the editor.
+
+
 ![Screenshot 2025-05-07 130129](https://github.com/user-attachments/assets/ff034434-0f3c-4d39-b310-05abc03ae4bd)
 
 ## Dependencies
