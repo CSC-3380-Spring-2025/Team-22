@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://db4jnl2mdx3pp"]
 
-[ext_resource type="Script" uid="uid://dsd7q4mr6k3a4" path="res://Scenes/alien1.gd" id="1_evknn"]
+[ext_resource type="Script" path="res://Scenes/alien1.gd" id="1_evknn"]
 [ext_resource type="Texture2D" uid="uid://xb4r4lujktst" path="res://Art+Font/alien_2.png" id="2_187ai"]
 [ext_resource type="AudioStream" uid="uid://cqxrjkol34xo" path="res://Audio/sound of danger.wav" id="3_ypm1e"]
 
