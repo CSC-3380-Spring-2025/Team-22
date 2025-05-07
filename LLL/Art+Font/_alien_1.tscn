@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca0iqip5hckqj"]
+
+[ext_resource type="Texture2D" uid="uid://ddn357joo3plf" path="res://Art+Font/type_1_alien.png" id="1_c8hgw"]
+[ext_resource type="Script" path="res://_alien_1.gd" id="2_wusiw"]
+
+[node name="_alien_1" type="TextureButton"]
+offset_left = 2.99998
+offset_top = 16.0
+offset_right = 528.0
+offset_bottom = 599.0
+scale = Vector2(0.269716, 0.271397)
+texture_normal = ExtResource("1_c8hgw")
+script = ExtResource("2_wusiw")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

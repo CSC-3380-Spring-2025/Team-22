@@ -56,7 +56,6 @@ func spawn_resources(level_key: String) -> void:
 			instance.z_index = -10
 			var local_pos = Vector2(tile_pos.x * 64, tile_pos.y * 64)
 			instance.position = local_pos + Vector2(tile_size) / 2
-
 			add_child(instance)
 			
 # Changes scene to main menu
@@ -75,10 +74,6 @@ func _on_den_pressed() -> void:
 		get_tree().change_scene_to_file(SLEEP_SCN)
 		return
 		
-
-# If we can't trigger battle scene with collision, we can use this button
-func _on_battle_pressed() -> void:
-	get_tree().change_scene_to_file(BATTLE_SCN)
 	
 func update_level_label() -> void:
 	if resource_data.current_level <= 10:
