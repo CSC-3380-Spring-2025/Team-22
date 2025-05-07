@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cynd6umraiw0"
-path="res://.godot/imported/laika_right.png-5d9ce3b41b287f33a3e13af69a17d60a.ctex"
+uid="uid://bfarpo7oiwuf4"
+path="res://.godot/imported/final_scene_completed_2.png-598bd4dc124653377b509705ba3de810.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://laika_right.png"
-dest_files=["res://.godot/imported/laika_right.png-5d9ce3b41b287f33a3e13af69a17d60a.ctex"]
+source_file="res://import/final_scene_completed_2.png"
+dest_files=["res://.godot/imported/final_scene_completed_2.png-598bd4dc124653377b509705ba3de810.ctex"]
 
 [params]
 
