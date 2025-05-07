@@ -6,6 +6,7 @@
 [node name="_alien_2" type="TextureButton"]
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(0.201183, 0.180556)
 texture_normal = ExtResource("1_oky5o")
 script = ExtResource("2_u2wyc")
 
