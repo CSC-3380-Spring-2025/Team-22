@@ -7,8 +7,8 @@ var current_level: int = 1
 const ROCK := "res://Scenes/Resource_scenes/rock.tscn"
 const SCRAP_METAL := "res://Scenes/Resource_scenes/scrap_metal.tscn"
 const LUNAR_LILY := "res://Scenes/Resource_scenes/lunar_lily.tscn"
-const ALIEN_1 := "res://Scenes/alien1.tscn"
-const ALIEN_2 := "res://Scenes/alien_2.tscn"
+const ALIEN_1 := "res://Art+Font/_alien_1.tscn"
+const ALIEN_2 := "res://_alien_2.tscn"
 const FINAL_BOSS := "res://Scenes/final_boss.tscn"
 
 # Each level (day) has different resources and alien

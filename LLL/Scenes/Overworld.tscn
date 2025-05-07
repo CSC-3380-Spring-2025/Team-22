@@ -149,6 +149,7 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_yu45p")
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(-7, 0)
 script = ExtResource("1_llg6e")
 
 [node name="blank_collectible5" parent="." instance=ExtResource("18_5otil")]
