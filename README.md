@@ -1,3 +1,6 @@
+
+![Screenshot 2025-05-07 135129](https://github.com/user-attachments/assets/c765aa37-abe1-40b8-8bcd-5829c38530f0)
+
 # Laika Lunar Landing : 22
 # Members
 Project Manager: **Emery Jones** [elj174]
@@ -8,7 +11,7 @@ Git Master: **Khoa Vu** [kvu21]
 
 Design Lead: **Katherine Winchester** [kwinch]
 
-Quality Assurance Tester: **Christian Frazier**[cfraz18]
+Quality Assurance Tester: **Christian Frazier** [cfraz18]
 
 # About Our Software
 
@@ -24,8 +27,8 @@ Laika is able to collect resources from her environment and from defeated aliens
 -  **Piskel** for pixel art creation
 
 # Important Links
-- **Kanban Board:** [Jira](https://3108team22.atlassian.net/jira/software/projects/LLL/boards/1?atlOrigin=eyJpIjoiYjFkYzc5NmEwNGNjNDkwMTk4OWQyNTNiOTc4MWJjNDgiLCJwIjoiaiJ9)\
-- **Design Outline:** [link](https://lsumail2-my.sharepoint.com/:w:/r/personal/kwinch3_lsu_edu/Documents/Spring%202025/CSC%203380/Design%20Outline.docx?d=wb067e339ce00470aa6096ef1205f7dcb&csf=1&web=1&e=XQcuNl)\
+- **Kanban Board:** [Jira](https://3108team22.atlassian.net/jira/software/projects/LLL/boards/1?atlOrigin=eyJpIjoiYjFkYzc5NmEwNGNjNDkwMTk4OWQyNTNiOTc4MWJjNDgiLCJwIjoiaiJ9)
+- **Design Outline:** [link](https://lsumail2-my.sharepoint.com/:w:/r/personal/kwinch3_lsu_edu/Documents/Spring%202025/CSC%203380/Design%20Outline.docx?d=wb067e339ce00470aa6096ef1205f7dcb&csf=1&web=1&e=XQcuNl)
 
 ### Downloading Dependencies
 You can download Godot from the download tab on the official website. It is optimized for use in 4.4.1: [https://godotengine.org/download/windows/]
@@ -46,7 +49,7 @@ You can download Godot from the download tab on the official website. It is opti
 
 
 
-5] Once open, click**play** in the editor.
+5] Once open, click **play** in the editor.
 
 
 ![Screenshot 2025-05-07 130129](https://github.com/user-attachments/assets/ff034434-0f3c-4d39-b310-05abc03ae4bd)
