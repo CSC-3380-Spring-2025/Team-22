@@ -439,6 +439,9 @@ func afterTurn() -> void:
 		Text.text = ("You win!")
 		await clicked
 		
+		if(enemyLevel == 3):
+			get_tree().change_scene_to_file("res://Scenes/GameWon.tscn")
+		
 		Text.text = rewards()
 		await clicked
 		var level : int
