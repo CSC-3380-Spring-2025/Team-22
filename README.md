@@ -1,5 +1,5 @@
 
-![Screenshot 2025-05-07 135129](https://github.com/user-attachments/assets/c765aa37-abe1-40b8-8bcd-5829c38530f0)
+<img src= ![Screenshot 2025-05-07 135129](https://github.com/user-attachments/assets/c765aa37-abe1-40b8-8bcd-5829c38530f0) alt="Opening scene" width="400" />
 
 # Laika Lunar Landing : 22
 # Members
