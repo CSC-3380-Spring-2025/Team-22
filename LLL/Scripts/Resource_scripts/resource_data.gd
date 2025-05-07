@@ -4,7 +4,7 @@ extends Node
 var current_level: int = 1
 
 # Constants for preloading resource/alien scenes
-const ROCK := "res://rock.tscn"
+const ROCK := "res://Scenes/Resource_scenes/rock.tscn"
 const SCRAP_METAL := "res://Scenes/Resource_scenes/scrap_metal.tscn"
 const LUNAR_LILY := "res://Scenes/Resource_scenes/lunar_lily.tscn"
 const ALIEN_1 := "res://Scenes/alien1.tscn"
