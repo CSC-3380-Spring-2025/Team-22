@@ -54,7 +54,7 @@ You can download Godot from the download tab on the official website. It is opti
 
 
 
-5] Once open, click **play** in the editor.
+4] Once open, click **play** in the editor.
 
 
 ![Screenshot 2025-05-07 130129](https://github.com/user-attachments/assets/ff034434-0f3c-4d39-b310-05abc03ae4bd)
