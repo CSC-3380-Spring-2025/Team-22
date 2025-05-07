@@ -1,7 +1,7 @@
 
 ![Screenshot 2025-05-07 135129](https://github.com/user-attachments/assets/c765aa37-abe1-40b8-8bcd-5829c38530f0)
 
-# Laika Lunar Landing
+# Lunar Landar Laika
 # Team 22
 
 # Members
@@ -35,14 +35,17 @@ Laika is able to collect resources from her environment and from defeated aliens
 ### Downloading Dependencies
 You can download Godot from the download tab on the official website. It is optimized for use in 4.4.1: [https://godotengine.org/download/windows/]
 
-# How to Run Dev and Test Environment
+## Dependencies
+- Godot 4.4.1
+
+# How to Run Game
 1] **Install Godot**
 	- You can download Godot from the download tab on the official website. 
  It is optimized for use in 4.4.1: [ https://godotengine.org/download/windows/ ] 
 
 2] **Clone the repository** [ https://github.com/CSC-3380-Spring-2025/Team-22.git ]
 
-3]**Launch Godot Game Engine**
+3] **Launch Godot Game Engine**
 	- Click "import" in the Project Manager
  	- Browse to the cloned folder and select the project.godot file
   	- Click "Import & Edit" to open the project
@@ -56,17 +59,9 @@ You can download Godot from the download tab on the official website. It is opti
 
 ![Screenshot 2025-05-07 130129](https://github.com/user-attachments/assets/ff034434-0f3c-4d39-b310-05abc03ae4bd)
 
-## Dependencies
-- Godot 4.4.1
 
-## Commands
-Describe how the commands and process to launch the project on the main branch in such a way that anyone working on the project knows how to check the affects of any code they add.
-
-```sh
-Example terminal command syntax
-```
-
-It is very common in these sections to see code in peculiar boxes to help them stand out. Check the markdown section of the Project Specifications to see how to add more / customize these.
+## Directions for the Game
+- Once launched following directions from above, the game begins with the main menu scene. This is where you can read a brief tutorial and turn the music on or off. When ready to play, click the play button. This begins the game on Day 1 out of 10. Each day has different resources and aliens that spawn on the tilemap. To check which resources the player has collected, press the **Tab** key on the keyboard. Once the player has collected all resources and battled all enemies, they can click the den and Laika will sleep. Each time Laika sleeps, the next day begins. It is not necessary to fight all the aliens each day, but the player chooses. By the final the day, she should be strong enough to fight and defeat the final boss, which if defeated, will win the game.
 
 
 
