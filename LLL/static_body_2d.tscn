@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ddgaxvuvtvqpw"]
 
 [ext_resource type="Texture2D" uid="uid://cincmm3s4uoji" path="res://Art+Font/den.png" id="1_cvw0b"]
-[ext_resource type="Script" path="res://static_body_2d.gd" id="1_tvx7g"]
+[ext_resource type="Script" uid="uid://bh5pcn5qcrx8m" path="res://static_body_2d.gd" id="1_tvx7g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wh4s5"]
 radius = 95.0

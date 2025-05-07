@@ -3,8 +3,8 @@ extends Node2D
 const BATTLE_MSC : String = "res://Audio/n-Dimensions (Main Theme - Retro Ver.mp3"
 
 # Defining stats
-var laikaAttack : int = 5
-var laikaMaxHealth : int = 20
+var laikaAttack : int = GlobalStats.attack
+var laikaMaxHealth : int = GlobalStats.health
 var laikaHealth : int = laikaMaxHealth
 var enemyLevel : int
 var enemyAttack : int
@@ -31,10 +31,10 @@ var stealthCooldown : int = 0
 var lickCooldown : int = 0
 var burnCooldown : int = 0
 	
-# Defining learned moves (will change to plug in data from another scene)
-var learnedStealth : bool = false
-var learnedLick : bool = false
-var learnedBurn : bool = false
+# Defining learned moves
+var learnedStealth : bool = GlobalStats.learnedStealth
+var learnedLick : bool = GlobalStats.learnedLick
+var learnedBurn : bool = GlobalStats.learnedBurn
 
 # Defining scene elements (buttons, sprites, and sound effects)
 var Fight : MenuButton
@@ -441,6 +441,27 @@ func afterTurn() -> void:
 		
 		Text.text = rewards()
 		await clicked
+		var level : int
+		if(enemyLevel == 1):
+			Text.text = ("You've earned 1 XP.")
+			level = GlobalStats.raiseXP(1)
+			await clicked
+		if(enemyLevel == 2):
+			Text.text = ("You've earned 2 XP.")
+			level = GlobalStats.raiseXP(2)
+			await clicked
+		if(level != 0):
+			Text.text = ("You are now level " + str(level) + "!")
+			await clicked
+			if(level == 2):
+				Text.text = ("You've learned the move Stealth!")
+				await clicked
+			if(level == 3):
+				Text.text = ("You've learned the move Lick!")
+				await clicked
+			if(level == 4):
+				Text.text = ("You've learned the move Burn!")
+				await clicked
 		get_tree().change_scene_to_file("res://Scenes/Overworld.tscn")
 	elif(enemyHealth > 0 && waiting == false):
 		alienMove()
