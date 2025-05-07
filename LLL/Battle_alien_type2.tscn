@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cin1xxf4uwo1"]
 
-[ext_resource type="Script" uid="uid://doav6utvnmsnn" path="res://Scripts/inventory/Battle.gd" id="1_j8uqg"]
+[ext_resource type="Script" path="res://Scripts/inventory/Battle.gd" id="1_j8uqg"]
 [ext_resource type="Resource" uid="uid://b43ubqjy7jpcs" path="res://Scripts/inventory/playerInv.tres" id="2_h62px"]
 [ext_resource type="Resource" uid="uid://do2yu3d637bkf" path="res://Scripts/inventory/items/stick.tres" id="3_f1y4f"]
 [ext_resource type="Resource" uid="uid://ysxt37he7j37" path="res://Scripts/inventory/items/rock.tres" id="4_ai824"]
@@ -40,7 +40,6 @@ text = "[FIGHT]"
 flat = false
 item_count = 3
 popup/item_0/text = "Scratch"
-popup/item_0/id = 0
 popup/item_1/text = "Bite"
 popup/item_1/id = 1
 popup/item_2/text = "Howl"

@@ -72,7 +72,7 @@ func _ready():
 	EnemySprite = get_node("AlienBattle")
 	
 	day = 2
-	enemyLevel = 1
+	enemyLevel = GlobalStats.currentlyFighting
 	if(enemyLevel == 1):
 		var texture = load("res://Art+Font/type_1_alien.png")
 		EnemySprite.texture = texture
