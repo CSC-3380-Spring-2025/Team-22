@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b24ch16f77652"]
+[gd_scene load_steps=11 format=3 uid="uid://pyvlagj7gboy"]
 
 [ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://Art+Font/laikaBattle.png" id="1_lul25"]
-[ext_resource type="Script" uid="uid://doav6utvnmsnn" path="res://Scripts/inventory/Battle.gd" id="1_x7kvj"]
+[ext_resource type="Script" path="res://Scripts/inventory/Battle.gd" id="1_x7kvj"]
 [ext_resource type="Resource" uid="uid://b43ubqjy7jpcs" path="res://Scripts/inventory/playerInv.tres" id="2_lij4x"]
 [ext_resource type="Texture2D" uid="uid://ddn357joo3plf" path="res://Art+Font/type_1_alien.png" id="2_yh5fh"]
 [ext_resource type="Resource" uid="uid://do2yu3d637bkf" path="res://Scripts/inventory/items/stick.tres" id="3_v4oss"]
@@ -24,8 +24,7 @@ position = Vector2(165, 412)
 scale = Vector2(0.322469, 0.322469)
 texture = ExtResource("1_lul25")
 
-[node name="Alien1Battle" type="Sprite2D" parent="."]
-visible = false
+[node name="AlienBattle" type="Sprite2D" parent="."]
 position = Vector2(1003, 411)
 scale = Vector2(0.615206, 0.362164)
 texture = ExtResource("2_yh5fh")
@@ -40,7 +39,6 @@ text = "[FIGHT]"
 flat = false
 item_count = 3
 popup/item_0/text = "Scratch"
-popup/item_0/id = 0
 popup/item_1/text = "Bite"
 popup/item_1/id = 1
 popup/item_2/text = "Howl"

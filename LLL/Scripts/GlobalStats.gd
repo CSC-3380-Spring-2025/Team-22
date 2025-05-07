@@ -9,6 +9,8 @@ var learnedStealth : bool = false
 var learnedLick : bool = false
 var learnedBurn : bool = false
 
+var currentlyFighting : int = 1
+
 func raiseXP(xpEarned: int) -> int:
 	xp = xp + xpEarned
 	if(xp >= 10):
