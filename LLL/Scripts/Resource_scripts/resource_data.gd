@@ -17,7 +17,7 @@ var levels = {
 		"resources": [
 			{
 				"scene": preload(ROCK),
-				"positions": [Vector2i(4, 5), Vector2i(8, 3), Vector2i(-10, 10), Vector2i(15, 12), Vector2i(-20, 8)]
+				"positions": [Vector2i(4, 5), Vector2i(8, 3), Vector2i(-10, 10), Vector2i(15, 12), Vector2i(-15, 8)]
 			}
 		],
 		"aliens": [

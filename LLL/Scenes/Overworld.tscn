@@ -1,6 +1,5 @@
-[gd_scene load_steps=31 format=4 uid="uid://be52tlp3pcmy5"]
+[gd_scene load_steps=30 format=4 uid="uid://be52tlp3pcmy5"]
 
-[ext_resource type="Texture2D" uid="uid://dn16yjiap4rh5" path="res://Art+Font/laika.png" id="1_k4g30"]
 [ext_resource type="Script" path="res://Scenes/laika.gd" id="1_kmpr2"]
 [ext_resource type="Script" path="res://Scenes/overworld.gd" id="1_llg6e"]
 [ext_resource type="PackedScene" uid="uid://cgiihu4ckhrrs" path="res://Scripts/inventory/blank_collectiblerock.tscn" id="2_okjj5"]
@@ -8,9 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://q3bepshshj86" path="res://Scripts/inventory/inv_ui.tscn" id="4_rrsf3"]
 [ext_resource type="PackedScene" uid="uid://cmdy18dbjwgvq" path="res://Scripts/inventory/blank_collectible.tscn" id="5_8vtbk"]
 [ext_resource type="Texture2D" uid="uid://cejvaf7efdgj8" path="res://Art+Font/main__menu_button.png" id="7_326yt"]
+[ext_resource type="Texture2D" uid="uid://b2wrf7kw55rss" path="res://laika/laika_down.png" id="7_yiqwu"]
+[ext_resource type="Texture2D" uid="uid://2g2n4d5e7al3" path="res://laika/laika_down_walk.png" id="8_3nrrg"]
 [ext_resource type="Texture2D" uid="uid://edvuwjplvpmw" path="res://Art+Font/main_menu_button_pressed.png" id="8_ocgbe"]
+[ext_resource type="Texture2D" uid="uid://r1cnsosg3ykw" path="res://laika/laika_left.png" id="9_3jr51"]
 [ext_resource type="AudioStream" uid="uid://d0n1cw4ykptrq" path="res://Audio/Menu Selection Click.mp3" id="9_h6egk"]
+[ext_resource type="Texture2D" uid="uid://brpimpxt15dpv" path="res://laika/laika_left_walk.png" id="10_tvf3p"]
+[ext_resource type="Texture2D" uid="uid://c6w7daxsuxkvo" path="res://laika/laika_right.png" id="11_wlln0"]
+[ext_resource type="Texture2D" uid="uid://druy5v30h6h0i" path="res://laika/laika_right_walk.png" id="12_bgdwm"]
 [ext_resource type="Texture2D" uid="uid://duwh1jhaehsdf" path="res://tile_formatting.png" id="12_n63tp"]
+[ext_resource type="Texture2D" uid="uid://cmubo8vshkh7j" path="res://laika/laika_up_walk.png" id="13_8ivoa"]
+[ext_resource type="Texture2D" uid="uid://bsktrhn6rmaq" path="res://laika/laika_up.png" id="14_l4v2a"]
 [ext_resource type="Texture2D" uid="uid://cqpcpyrvm6447" path="res://Art+Font/lunar_lily.png" id="16_4lj5t"]
 [ext_resource type="Texture2D" uid="uid://cincmm3s4uoji" path="res://Art+Font/den.png" id="17_dwwld"]
 [ext_resource type="Texture2D" uid="uid://bcnmsikoo4odk" path="res://Art+Font/scrap_metal.png" id="17_i6jft"]
@@ -19,46 +26,14 @@
 [ext_resource type="Texture2D" uid="uid://xb4r4lujktst" path="res://Art+Font/alien_2.png" id="19_b2iwt"]
 [ext_resource type="Texture2D" uid="uid://p18p0x4uvshm" path="res://Art+Font/final_boss.png" id="20_1ukgh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rl45k"]
-atlas = ExtResource("1_k4g30")
-region = Rect2(867, 719, 867, 719)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x8dfh"]
-atlas = ExtResource("1_k4g30")
-region = Rect2(1734, 719, 867, 719)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sgbce"]
-atlas = ExtResource("1_k4g30")
-region = Rect2(0, 0, 867, 719)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v8q5d"]
-atlas = ExtResource("1_k4g30")
-region = Rect2(867, 0, 867, 719)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bbq2x"]
-atlas = ExtResource("1_k4g30")
-region = Rect2(1734, 0, 867, 719)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w4tub"]
-atlas = ExtResource("1_k4g30")
-region = Rect2(0, 719, 867, 719)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rmrvc"]
-atlas = ExtResource("1_k4g30")
-region = Rect2(0, 1438, 867, 719)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o65s7"]
-atlas = ExtResource("1_k4g30")
-region = Rect2(867, 1438, 867, 719)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_rkx53"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rl45k")
+"texture": ExtResource("7_yiqwu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x8dfh")
+"texture": ExtResource("8_3nrrg")
 }],
 "loop": true,
 "name": &"Down",
@@ -66,10 +41,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sgbce")
+"texture": ExtResource("9_3jr51")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v8q5d")
+"texture": ExtResource("10_tvf3p")
 }],
 "loop": true,
 "name": &"Left",
@@ -77,10 +52,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bbq2x")
+"texture": ExtResource("11_wlln0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w4tub")
+"texture": ExtResource("12_bgdwm")
 }],
 "loop": true,
 "name": &"Right",
@@ -88,10 +63,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rmrvc")
+"texture": ExtResource("13_8ivoa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o65s7")
+"texture": ExtResource("14_l4v2a")
 }],
 "loop": true,
 "name": &"Up",
@@ -171,22 +146,39 @@ position = Vector2(443, 524)
 script = ExtResource("1_kmpr2")
 inv = ExtResource("3_s3goe")
 
+[node name="MainMenu" type="TextureButton" parent="Laika"]
+offset_left = 14.9998
+offset_top = 583.0
+offset_right = 284.0
+offset_bottom = 742.0
+scale = Vector2(0.377484, 0.388776)
+texture_normal = ExtResource("7_326yt")
+texture_pressed = ExtResource("8_ocgbe")
+texture_hover = ExtResource("8_ocgbe")
+
+[node name="Click" type="AudioStreamPlayer" parent="Laika/MainMenu"]
+stream = ExtResource("9_h6egk")
+
 [node name="LevelLabel" type="Label" parent="Laika"]
-offset_left = 516.0
-offset_top = 25.0
-offset_right = 561.0
-offset_bottom = 48.0
+offset_left = 547.0
+offset_top = 14.0
+offset_right = 592.0
+offset_bottom = 37.0
 scale = Vector2(1.21633, 1.18827)
 text = "Day"
 
 [node name="Camera2D" type="Camera2D" parent="Laika"]
 position = Vector2(581, 326)
+limit_left = -925
+limit_top = -1175
+limit_right = 2075
+limit_bottom = 1525
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Laika"]
 position = Vector2(589, 337)
 scale = Vector2(0.240264, 0.240264)
 sprite_frames = SubResource("SpriteFrames_rkx53")
-animation = &"Down"
+animation = &"Up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Laika"]
 position = Vector2(589.5, 334)
@@ -196,19 +188,6 @@ shape = SubResource("RectangleShape2D_u4rwi")
 [node name="CanvasLayer" type="CanvasLayer" parent="Laika"]
 
 [node name="inv_UI" parent="Laika/CanvasLayer" instance=ExtResource("4_rrsf3")]
-
-[node name="MainMenu" type="TextureButton" parent="Laika"]
-offset_left = 4.99994
-offset_top = 579.0
-offset_right = 274.0
-offset_bottom = 738.0
-scale = Vector2(0.42305, 0.434376)
-texture_normal = ExtResource("7_326yt")
-texture_pressed = ExtResource("8_ocgbe")
-texture_hover = ExtResource("8_ocgbe")
-
-[node name="Click" type="AudioStreamPlayer" parent="Laika/MainMenu"]
-stream = ExtResource("9_h6egk")
 
 [node name="lunar_lily" type="Sprite2D" parent="."]
 visible = false
