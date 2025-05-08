@@ -66,18 +66,18 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_cvk0f")
 bbcode_enabled = true
 text = "[font=res://Art+Font/Fredoka.ttf][font_size=50] 									HOW TO PLAY:
-[font=res://Art+Font/Fredoka.ttf][font_size=28]Laika has a mission. She is here to collect samples to bring back to Earth. Some of these items she can use to craft new items, as well as restore health, and use as weapons to fight off aliens that she may encounter. As the days progress, she will have oppurtunities to increase XP and level up. On the final day, she will be faced with the ultimate challenge. Can she survive the ultimate challenge and return the Earth?
+[font=res://Art+Font/Fredoka.ttf][font_size=28]Laika has a mission, return safely home.  She can collect items and add them to her invenotry while she explores the surface of the moon. Some of these items she can use as weapons to fight off aliens that she may encounter and some can heal her. As the days progress, she will have oppurtunities to increase XP and level up. On the final day, she will be faced with the ultimate challenge. Can she survive the ultimate challenge and return the Earth? Click the den to sleep and continue to the next day, click aliens to fight them, and press tab on the keyboard to check inventory.  Good luck!
  [/font_size][/font]"
 scroll_active = false
 tab_size = 5
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 442.0
-offset_top = 345.0
-offset_right = 711.0
-offset_bottom = 504.0
-scale = Vector2(1.10714, 1.01483)
+offset_left = 479.0
+offset_top = 423.0
+offset_right = 748.0
+offset_bottom = 582.0
+scale = Vector2(0.785712, 0.631672)
 texture_normal = ExtResource("2_qiub5")
 texture_pressed = ExtResource("4_j1krk")
 texture_hover = ExtResource("4_j1krk")
