@@ -21,6 +21,7 @@ GlobalTimer="*res://Scripts/GlobalTimer.gd"
 MainMenuMusic="*res://Scenes/main_menu_music.tscn"
 resource_data="*res://Scripts/Resource_scripts/resource_data.gd"
 GlobalStats="*res://Scripts/GlobalStats.gd"
+Transition="*res://Scenes/Transition.tscn"
 
 [display]
 
