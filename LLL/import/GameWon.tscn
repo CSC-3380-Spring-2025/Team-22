@@ -1,11 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://bj06cd2xtq2ey"]
 
-[ext_resource type="Texture2D" uid="uid://e7dlsrrlalet" path="res://final_scene_completed.png" id="1_bwxrk"]
-[ext_resource type="Script" uid="uid://bmbcinxjbd41j" path="res://Scenes/game_won.gd" id="1_cvtau"]
-[ext_resource type="Texture2D" uid="uid://bfarpo7oiwuf4" path="res://final_scene_completed_2.png" id="2_cvtau"]
+[ext_resource type="Texture2D" uid="uid://e7dlsrrlalet" path="res://Scenes/import/final_scene_completed.png" id="1_bwxrk"]
+[ext_resource type="Texture2D" uid="uid://bfarpo7oiwuf4" path="res://Scenes/import/final_scene_completed_2.png" id="2_cvtau"]
 [ext_resource type="Texture2D" uid="uid://cxbskt170krga" path="res://Art+Font/play_again_button.png" id="3_71nlm"]
 [ext_resource type="Texture2D" uid="uid://b8mme127g0pqe" path="res://Art+Font/play_again_button_pressed.png" id="4_g4i1i"]
 [ext_resource type="AudioStream" uid="uid://d0n1cw4ykptrq" path="res://Audio/Menu Selection Click.mp3" id="5_g8p0c"]
+
+[sub_resource type="Resource" id="Resource_btxu7"]
+metadata/__load_path__ = "res://Scenes/game_won.gd"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gcd6j"]
 animations = [{
@@ -22,7 +24,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_cvtau")
+script = SubResource("Resource_btxu7")
 
 [node name="GameWon_sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(580, 313)

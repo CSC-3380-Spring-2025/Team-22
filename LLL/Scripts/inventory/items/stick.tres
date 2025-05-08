@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://do2yu3d637bkf"]
 
-[ext_resource type="Texture2D" uid="uid://d3eb78y6exrt3" path="res://Scripts/inventory/placeholderTextures/stick.png" id="2_3ybl5"]
+[ext_resource type="Texture2D" uid="uid://disfsj0hpfeke" path="res://Scripts/inventory/placeholderTextures/stick2.png" id="1_mbwol"]
 [ext_resource type="Script" uid="uid://d3k2ypvcy3het" path="res://Scripts/inventory/Item.gd" id="2_mbwol"]
 
 [resource]
 script = ExtResource("2_mbwol")
-icon = ExtResource("2_3ybl5")
+icon = ExtResource("1_mbwol")
 name = "stick"
 recipe = Array[ExtResource("2_mbwol")]([])
 type = "Material"

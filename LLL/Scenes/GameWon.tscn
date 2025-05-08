@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bj06cd2xtq2ey"]
 
-[ext_resource type="Script" path="res://Scripts/game_won.gd" id="1_5mt5k"]
+[ext_resource type="Script" uid="uid://c6nd452x3p8v1" path="res://Scripts/game_won.gd" id="1_5mt5k"]
 [ext_resource type="Texture2D" uid="uid://e7dlsrrlalet" path="res://Scenes/import/final_scene_completed.png" id="2_qlmjv"]
 [ext_resource type="Texture2D" uid="uid://bfarpo7oiwuf4" path="res://Scenes/import/final_scene_completed_2.png" id="3_bma1n"]
 [ext_resource type="Texture2D" uid="uid://cxbskt170krga" path="res://Art+Font/play_again_button.png" id="4_jmgwg"]
