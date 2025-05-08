@@ -2,7 +2,7 @@ extends Node2D
 
 # References scene nodes
 @onready var tilemap = $TileMap
-@onready var level_label = $Laika/LevelLabel
+@onready var level_label = $CanvasLayer/LevelLabel
 
 # Constants 
 const OVERWORLD_MSC : String = "res://Audio/through space.ogg"
@@ -17,7 +17,7 @@ var click: AudioStreamPlayer
 
 # Plays music for overworld scene and calls spawn resources function
 func _ready() -> void:
-	click = $Laika/MainMenu/Click
+	click = $CanvasLayer/MainMenu/Click
 	
 	overworld_music = AudioStreamPlayer.new()
 	add_child(overworld_music)
