@@ -1,32 +1,24 @@
 extends Node2D
 
-const MAIN_STAGE: String = "res://Scenes/Main_Stage.tscn"
-const MUSIC_STAGE : String = "res://Audio/through space.ogg"
+# Declare constants
+const OVERWORLD_SCN: String = "res://Scenes/Overworld.tscn"
 
+# Variable for music/audio
 var lullaby: AudioStreamPlayer
-var mainstage_music: AudioStreamPlayer
 
-# Called when the node enters the scene tree for the first time.
+# Stops main menu music and references lullaby music node
 func _ready() -> void:
 	$"/root/MainMenuMusic".stop()
-	mainstage_music = AudioStreamPlayer.new()
-	add_child(mainstage_music)
-	mainstage_music.stream = load(MUSIC_STAGE)
-	
+
 	lullaby = $lullaby
 	play_lullaby_and_return()
 
+# Plays music for lullaby and calls function to return to overworld 
 func play_lullaby_and_return() -> void:
-	stop_mainstage_music()
 	lullaby.play()
-	await back_to_mainstage()
-	
-# Function to stop main menu music when switching to battle scene
-func stop_mainstage_music() -> void:
-	mainstage_music.stop()
+	await back_to_overworld()
 
-func back_to_mainstage() -> void:
-	#Adds a pause a brief pause before returning to the main stage and restarts main stage music 
-	await get_tree().create_timer(6.8).timeout
-	get_tree().change_scene_to_file(MAIN_STAGE)
-	mainstage_music.play()
+# Returns to over world with a brief timer
+func back_to_overworld() -> void:
+	await get_tree().create_timer(2.8).timeout
+	get_tree().change_scene_to_file(OVERWORLD_SCN)

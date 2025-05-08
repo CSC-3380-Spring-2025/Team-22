@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bj06cd2xtq2ey"]
+
+[ext_resource type="Texture2D" uid="uid://e7dlsrrlalet" path="res://final_scene_completed.png" id="1_bwxrk"]
+[ext_resource type="Script" uid="uid://bmbcinxjbd41j" path="res://Scenes/game_won.gd" id="1_cvtau"]
+[ext_resource type="Texture2D" uid="uid://bfarpo7oiwuf4" path="res://final_scene_completed_2.png" id="2_cvtau"]
+[ext_resource type="Texture2D" uid="uid://cxbskt170krga" path="res://Art+Font/play_again_button.png" id="3_71nlm"]
+[ext_resource type="Texture2D" uid="uid://b8mme127g0pqe" path="res://Art+Font/play_again_button_pressed.png" id="4_g4i1i"]
+[ext_resource type="AudioStream" uid="uid://d0n1cw4ykptrq" path="res://Audio/Menu Selection Click.mp3" id="5_g8p0c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gcd6j"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_bwxrk")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_cvtau")
+}],
+"loop": true,
+"name": &"gamewon",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_cvtau")
+
+[node name="GameWon_sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(580, 313)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_gcd6j")
+animation = &"gamewon"
+frame_progress = 0.762174
+
+[node name="play_again_button" type="TextureButton" parent="."]
+offset_left = 45.0
+offset_top = 546.0
+offset_right = 330.0
+offset_bottom = 705.0
+scale = Vector2(0.838379, 0.759742)
+texture_normal = ExtResource("3_71nlm")
+texture_pressed = ExtResource("4_g4i1i")
+texture_hover = ExtResource("4_g4i1i")
+
+[node name="music" type="AudioStreamPlayer" parent="play_again_button"]
+stream = ExtResource("5_g8p0c")
+volume_db = 24.0
+
+[connection signal="pressed" from="play_again_button" to="." method="_on_play_again_button_pressed"]

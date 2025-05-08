@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgiihu4ckhrrs"]
+
+[ext_resource type="Script" uid="uid://cpe78tqq58d62" path="res://blank_collectible.gd" id="1_gplmg"]
+[ext_resource type="Resource" uid="uid://ysxt37he7j37" path="res://Scripts/inventory/items/rock.tres" id="2_3yyki"]
+[ext_resource type="Texture2D" uid="uid://cju6vv3nldsie" path="res://Scripts/inventory/placeholderTextures/rock.png" id="3_bg8j2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8i84w"]
+radius = 67.3647
+
+[node name="blank_collectible" type="StaticBody2D"]
+script = ExtResource("1_gplmg")
+item = ExtResource("2_3yyki")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_bg8j2")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+shape = SubResource("CircleShape2D_8i84w")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

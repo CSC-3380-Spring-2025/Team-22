@@ -7,6 +7,7 @@
 radius = 179.547
 
 [node name="lunar_lily" type="StaticBody2D"]
+scale = Vector2(0.441343, 0.351821)
 script = ExtResource("1_3iwr3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

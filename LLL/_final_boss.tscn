@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://elsxum86ijy1"]
+
+[ext_resource type="Texture2D" uid="uid://p18p0x4uvshm" path="res://Art+Font/final_boss.png" id="1_jjir0"]
+[ext_resource type="Script" path="res://_final_boss.gd" id="2_e518o"]
+
+[node name="_final_boss" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.147368, 0.151007)
+texture_normal = ExtResource("1_jjir0")
+script = ExtResource("2_e518o")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

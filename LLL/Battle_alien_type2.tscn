@@ -1,0 +1,119 @@
+[gd_scene load_steps=11 format=3 uid="uid://cin1xxf4uwo1"]
+
+[ext_resource type="Script" path="res://Scripts/inventory/Battle.gd" id="1_j8uqg"]
+[ext_resource type="Resource" uid="uid://b43ubqjy7jpcs" path="res://Scripts/inventory/playerInv.tres" id="2_h62px"]
+[ext_resource type="Resource" uid="uid://do2yu3d637bkf" path="res://Scripts/inventory/items/stick.tres" id="3_f1y4f"]
+[ext_resource type="Resource" uid="uid://ysxt37he7j37" path="res://Scripts/inventory/items/rock.tres" id="4_ai824"]
+[ext_resource type="Resource" uid="uid://c2i8tbytjauel" path="res://Scripts/inventory/items/metal.tres" id="5_l5wwi"]
+[ext_resource type="Resource" uid="uid://kmpmgtb0is6w" path="res://Scripts/inventory/items/goo.tres" id="6_wpbyt"]
+[ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://Art+Font/laikaBattle.png" id="7_8qjjl"]
+[ext_resource type="Texture2D" uid="uid://xb4r4lujktst" path="res://Art+Font/alien_2.png" id="8_j8uqg"]
+[ext_resource type="Texture2D" uid="uid://dhn53k27qf58j" path="res://Art+Font/backdrop.png" id="9_67cnc"]
+[ext_resource type="AudioStream" uid="uid://xbi2wj51gcrl" path="res://Audio/n-Dimensions (Main Theme - Retro Ver.mp3" id="10_l5p30"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_j8uqg")
+inv = ExtResource("2_h62px")
+stick = ExtResource("3_f1y4f")
+rock = ExtResource("4_ai824")
+metal = ExtResource("5_l5wwi")
+goo = ExtResource("6_wpbyt")
+
+[node name="LaikaBattle" type="Sprite2D" parent="."]
+position = Vector2(165, 412)
+scale = Vector2(0.322469, 0.322469)
+texture = ExtResource("7_8qjjl")
+
+[node name="Alien1Battle" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1003, 411)
+scale = Vector2(0.615206, 0.362164)
+texture = ExtResource("8_j8uqg")
+
+[node name="Fight" type="MenuButton" parent="."]
+unique_name_in_owner = true
+offset_top = 20.0
+offset_right = 250.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
+text = "[FIGHT]"
+flat = false
+item_count = 3
+popup/item_0/text = "Scratch"
+popup/item_1/text = "Bite"
+popup/item_1/id = 1
+popup/item_2/text = "Howl"
+popup/item_2/id = 2
+
+[node name="Defend" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 300.0
+offset_top = 20.0
+offset_right = 550.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
+text = "[DEFEND]"
+
+[node name="Items" type="MenuButton" parent="."]
+unique_name_in_owner = true
+offset_left = 600.0
+offset_top = 21.0
+offset_right = 850.0
+offset_bottom = 86.0
+theme_override_font_sizes/font_size = 32
+text = "[ITEMS]"
+flat = false
+
+[node name="Flee" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 900.0
+offset_top = 20.0
+offset_right = 1150.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
+text = "[FLEE]"
+
+[node name="Backdrop" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 322)
+scale = Vector2(0.800568, 0.800568)
+texture = ExtResource("9_67cnc")
+
+[node name="Text" type="RichTextLabel" parent="."]
+offset_left = 3.0
+offset_top = 536.0
+offset_right = 1154.0
+offset_bottom = 646.0
+theme_override_font_sizes/normal_font_size = 35
+
+[node name="LaikaStats" type="RichTextLabel" parent="."]
+offset_top = 222.0
+offset_right = 263.0
+offset_bottom = 298.0
+theme_override_font_sizes/normal_font_size = 20
+
+[node name="AlienStats" type="RichTextLabel" parent="."]
+offset_left = 888.0
+offset_top = 222.0
+offset_right = 1151.0
+offset_bottom = 298.0
+theme_override_font_sizes/normal_font_size = 20
+
+[node name="battle_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_l5p30")
+volume_db = -4.952
+
+[node name="battle_music2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_l5p30")
+volume_db = -4.952
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 840.0
+offset_top = 205.0
+offset_right = 1640.0
+offset_bottom = 1268.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("8_j8uqg")
+
+[connection signal="pressed" from="Defend" to="." method="_Defend"]
+[connection signal="pressed" from="Flee" to="." method="_Flee"]
