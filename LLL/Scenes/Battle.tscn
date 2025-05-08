@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://b24ch16f77652"]
 
 [ext_resource type="Texture2D" uid="uid://dct7ss3doiac7" path="res://Art+Font/laikaBattle.png" id="1_lul25"]
-[ext_resource type="Script" path="res://Scripts/inventory/Battle.gd" id="1_x7kvj"]
+[ext_resource type="Script" uid="uid://cs1d7edd5rni7" path="res://Scripts/inventory/Battle.gd" id="1_x7kvj"]
 [ext_resource type="Resource" uid="uid://b43ubqjy7jpcs" path="res://Scripts/inventory/playerInv.tres" id="2_lij4x"]
 [ext_resource type="Texture2D" uid="uid://ddn357joo3plf" path="res://Art+Font/type_1_alien.png" id="2_yh5fh"]
 [ext_resource type="Resource" uid="uid://do2yu3d637bkf" path="res://Scripts/inventory/items/stick.tres" id="3_v4oss"]
