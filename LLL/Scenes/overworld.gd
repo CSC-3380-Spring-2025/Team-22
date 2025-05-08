@@ -1,33 +1,32 @@
 extends Node2D
 
-
+# References scene nodes
 @onready var tilemap = $TileMap
 @onready var level_label = $Laika/LevelLabel
 
-# Declare constants 
+# Constants 
 const OVERWORLD_MSC : String = "res://Audio/through space.ogg"
 const SLEEP_SCN : String = "res://Scenes/sleeping.tscn"
 const BATTLE_SCN : String = "res://Scenes/Battle.tscn"
 const MAINMENU_SCN : String = "res://Scenes/main_menu.tscn"
 const RESOURCES : String = "res://Scripts/Resource_scripts/resource_data.gd"
 
+# Variables for scene music/audio
 var overworld_music: AudioStreamPlayer
 var click: AudioStreamPlayer
-
-# This was for testing, need to figure out how to implement level system across scenes.
-#var level_name = "level_5"
 
 # Plays music for overworld scene and calls spawn resources function
 func _ready() -> void:
 	click = $Laika/MainMenu/Click
+	
 	overworld_music = AudioStreamPlayer.new()
 	add_child(overworld_music)
 	overworld_music.stream = load(OVERWORLD_MSC)
-	overworld_music.volume_db = -30
+	overworld_music.volume_db = -20
 	overworld_music.play()
 
+# Spawn level resources and update level label
 	var level_key = "level_%d" % resource_data.current_level
-	
 	spawn_resources(level_key)
 	update_level_label()
 
@@ -58,23 +57,22 @@ func spawn_resources(level_key: String) -> void:
 			instance.position = local_pos + Vector2(tile_size) / 2
 			add_child(instance)
 			
-# Changes scene to main menu
+# Button that changes scene to main menu
 func _on_main_menu_pressed() -> void:
 	click.play()
 	await get_tree().create_timer(0.8).timeout
 	get_tree().change_scene_to_file(MAINMENU_SCN)
 
-# Changes scene to sleep scene
+# Den button that changes scene to sleep scene and increments each day (level)
 func _on_den_pressed() -> void:
-	resource_data.current_level += 1  # Increment the level
+	resource_data.current_level += 1 
 	update_level_label()
-
+	
+	# Keeps the game from passing 10 days
 	if resource_data.current_level <= 10:
-		print("Now loading level_%d" % resource_data.current_level)
 		get_tree().change_scene_to_file(SLEEP_SCN)
 		return
-		
-	
+# Updates Day label 
 func update_level_label() -> void:
 	if resource_data.current_level <= 10:
 		level_label.text = "Day: %d" % resource_data.current_level
