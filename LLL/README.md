@@ -67,6 +67,3 @@ You can download Godot from the download tab on the official website. It is opti
 - To check which resources the player has collected, press the **Tab** key on the keyboard. Once the player has collected all resources and battled all enemies, they can click the den and Laika will sleep. Each time Laika sleeps, the next day begins. It is not necessary to fight all the aliens each day, but the player might choose to spend the extra time to become stronger. By the final the day, she should be strong enough to fight and defeat the final boss, which if defeated, will win the game.
 
 - The player can battle enemies that appear on the map! Click an alien with your mouse to initiate a battle with them. You must also click the den to sleep, which will increment to the next day. When you wake up, there will be a fresh set of aliens to battle and items to collect. 
-
-
-
