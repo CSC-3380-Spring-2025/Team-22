@@ -70,7 +70,7 @@ texture_hover = ExtResource("4_in5hx")
 
 [node name="click_back" type="AudioStreamPlayer" parent="back_button"]
 stream = ExtResource("5_hakci")
-volume_db = 24.0
+volume_db = -25.0
 
 [node name="music_off" type="TextureButton" parent="."]
 layout_mode = 0
@@ -83,6 +83,7 @@ texture_normal = ExtResource("7_51f1x")
 
 [node name="click_back" type="AudioStreamPlayer" parent="music_off"]
 stream = ExtResource("5_hakci")
+volume_db = -25.0
 
 [node name="music_on" type="TextureButton" parent="."]
 layout_mode = 0
@@ -95,8 +96,9 @@ texture_normal = ExtResource("6_84184")
 
 [node name="click_back" type="AudioStreamPlayer" parent="music_on"]
 stream = ExtResource("5_hakci")
+volume_db = -25.0
 
-[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="back_button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="music_off" to="." method="_on_music_off_pressed"]
 [connection signal="pressed" from="music_on" to="." method="_on_music_on_pressed"]

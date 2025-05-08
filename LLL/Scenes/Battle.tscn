@@ -48,6 +48,7 @@ text = "[FIGHT]"
 flat = false
 item_count = 3
 popup/item_0/text = "Scratch"
+popup/item_0/id = 0
 popup/item_1/text = "Bite"
 popup/item_1/id = 1
 popup/item_2/text = "Howl"
@@ -115,9 +116,11 @@ parameters/looping = false
 
 [node name="HealSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_6xsll")
+volume_db = -16.865
 
 [node name="DamageSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_imcj7")
+volume_db = -12.18
 
 [node name="raygun" type="Sprite2D" parent="."]
 visible = false
