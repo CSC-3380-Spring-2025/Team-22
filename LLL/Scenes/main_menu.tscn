@@ -21,12 +21,12 @@
 [sub_resource type="GDScript" id="GDScript_qdvli"]
 script/source = "extends Control
 
-
-#Constants for switching scenes
+# Constants for switching scenes
 const OVERWORLD_SCN := \"res://Scenes/Overworld.tscn\"
 const TUTORIAL_SCN := \"res://Scenes/tutorial.tscn\"
 const SETTINGS_SCN := \"res://Scenes/settings.tscn\"
 
+# Variables for audio
 var rocket: AudioStreamPlayer
 var click: AudioStreamPlayer
 
@@ -34,16 +34,15 @@ var click: AudioStreamPlayer
 #@onready var fade = get_node('transition/AnimationPlayer')
 #@onready var black = get_node('transition/ColorRect')
 
+
+# Plays main menu music and references audio for buttons
 func _ready() -> void:
-	$\"/root/MainMenuMusic\".volume_db = -20
+	$\"/root/MainMenuMusic\".volume_db = -10
 	$\"/root/MainMenuMusic\".play()
 	
 	rocket = $play_button/start_rocket_launch
 	click = $tutorial_button/click
 	#black.visible = false
-
-func _process(delta: float) -> void:
-	pass
 	
 # Plays button sound and switches to the overworld scene
 func _on_texture_button_pressed() -> void:

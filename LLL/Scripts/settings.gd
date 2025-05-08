@@ -1,13 +1,10 @@
 extends Control
 
+# Declare constant
 const MAIN_MENU: String = "res://Scenes/main_menu.tscn"
 
 # Declare variable for sound 
 var back_sound: AudioStreamPlayer
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
 
 func _process(delta: float) -> void:
 	back_sound = $back_button/click_back
@@ -25,4 +22,3 @@ func _on_music_off_pressed() -> void:
 # Turns on music when pressed
 func _on_music_on_pressed() -> void:
 	back_sound.play()
-	#get_node("/root/MainMenuMusic").play()
