@@ -1,24 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://s1qtqrpgmusk"]
+[gd_scene load_steps=5 format=3 uid="uid://s1qtqrpgmusk"]
 
-[ext_resource type="Script" uid="uid://bh5pcn5qcrx8m" path="res://static_body_2d.gd" id="1_dnx86"]
+[ext_resource type="Script" uid="uid://cpe78tqq58d62" path="res://blank_collectible.gd" id="1_15y6n"]
+[ext_resource type="Resource" uid="uid://ysxt37he7j37" path="res://Scripts/inventory/items/rock.tres" id="2_37af4"]
 [ext_resource type="Texture2D" uid="uid://c4iy70kdc0b30" path="res://Art+Font/rock.png" id="2_cgo0g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_085ub"]
 radius = 179.547
 
 [node name="rock" type="StaticBody2D"]
-script = ExtResource("1_dnx86")
+script = ExtResource("1_15y6n")
+item = ExtResource("2_37af4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 100
 scale = Vector2(0.242068, 0.232748)
 texture = ExtResource("2_cgo0g")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="interactable_area" type="Area2D" parent="."]
 z_index = 100
 scale = Vector2(0.242068, 0.232748)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
 visibility_layer = 2
 position = Vector2(2, 6)
 shape = SubResource("CircleShape2D_085ub")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

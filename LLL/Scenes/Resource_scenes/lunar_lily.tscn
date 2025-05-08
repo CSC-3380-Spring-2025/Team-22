@@ -1,25 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1kps86qcpaae"]
+[gd_scene load_steps=5 format=3 uid="uid://d1kps86qcpaae"]
 
-[ext_resource type="Script" uid="uid://bh5pcn5qcrx8m" path="res://static_body_2d.gd" id="1_3iwr3"]
+[ext_resource type="Script" uid="uid://cpe78tqq58d62" path="res://blank_collectible.gd" id="1_7f5kh"]
 [ext_resource type="Texture2D" uid="uid://cqpcpyrvm6447" path="res://Art+Font/lunar_lily.png" id="2_aejm4"]
+[ext_resource type="Resource" uid="uid://d567oua8pmc5" path="res://Scripts/inventory/items/lily.tres" id="2_h8g2t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2w5x2"]
 radius = 179.547
 
 [node name="lunar_lily" type="StaticBody2D"]
 scale = Vector2(0.441343, 0.351821)
-script = ExtResource("1_3iwr3")
+script = ExtResource("1_7f5kh")
+item = ExtResource("2_h8g2t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 100
 scale = Vector2(0.25054, 0.288392)
 texture = ExtResource("2_aejm4")
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
+[node name="interactable_area" type="Area2D" parent="Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/interactable_area"]
 position = Vector2(2, 6)
 scale = Vector2(0.864919, 0.849335)
 shape = SubResource("CircleShape2D_2w5x2")
 
-[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Sprite2D/interactable_area" to="." method="_on_interactable_area_body_entered"]

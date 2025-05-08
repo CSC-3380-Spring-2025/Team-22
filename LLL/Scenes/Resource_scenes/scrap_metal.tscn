@@ -1,23 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjoir0kmh0t58"]
+[gd_scene load_steps=5 format=3 uid="uid://bjoir0kmh0t58"]
 
-[ext_resource type="Script" uid="uid://bh5pcn5qcrx8m" path="res://static_body_2d.gd" id="1_7yjh8"]
+[ext_resource type="Script" uid="uid://cpe78tqq58d62" path="res://blank_collectible.gd" id="1_xaq8j"]
 [ext_resource type="Texture2D" uid="uid://bcnmsikoo4odk" path="res://Art+Font/scrap_metal.png" id="2_fn2kj"]
+[ext_resource type="Resource" uid="uid://c2i8tbytjauel" path="res://Scripts/inventory/items/metal.tres" id="2_v7eur"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mw6ye"]
-radius = 179.547
+radius = 157.338
 
 [node name="scrap_metal" type="StaticBody2D"]
-script = ExtResource("1_7yjh8")
+script = ExtResource("1_xaq8j")
+item = ExtResource("2_v7eur")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 100
 scale = Vector2(0.252852, 0.242643)
 texture = ExtResource("2_fn2kj")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="interactable_area" type="Area2D" parent="."]
 scale = Vector2(0.270746, 0.182742)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
 position = Vector2(2, 6)
 scale = Vector2(1.98561, -1.97386)
 shape = SubResource("CircleShape2D_mw6ye")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]
