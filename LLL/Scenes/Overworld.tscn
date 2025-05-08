@@ -142,30 +142,32 @@ position = Vector2(926, 417)
 [node name="blank_collectible3" parent="." instance=ExtResource("5_8vtbk")]
 position = Vector2(443, 524)
 
-[node name="Laika" type="CharacterBody2D" parent="."]
-script = ExtResource("1_kmpr2")
-inv = ExtResource("3_s3goe")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="MainMenu" type="TextureButton" parent="Laika"]
-offset_left = 14.9998
+[node name="MainMenu" type="TextureButton" parent="CanvasLayer"]
+offset_left = 7.9998
 offset_top = 583.0
-offset_right = 284.0
+offset_right = 277.0
 offset_bottom = 742.0
 scale = Vector2(0.377484, 0.388776)
 texture_normal = ExtResource("7_326yt")
 texture_pressed = ExtResource("8_ocgbe")
 texture_hover = ExtResource("8_ocgbe")
 
-[node name="Click" type="AudioStreamPlayer" parent="Laika/MainMenu"]
+[node name="Click" type="AudioStreamPlayer" parent="CanvasLayer/MainMenu"]
 stream = ExtResource("9_h6egk")
 
-[node name="LevelLabel" type="Label" parent="Laika"]
-offset_left = 547.0
+[node name="LevelLabel" type="Label" parent="CanvasLayer"]
+offset_left = 540.0
 offset_top = 14.0
-offset_right = 592.0
+offset_right = 585.0
 offset_bottom = 37.0
 scale = Vector2(1.21633, 1.18827)
 text = "Day"
+
+[node name="Laika" type="CharacterBody2D" parent="."]
+script = ExtResource("1_kmpr2")
+inv = ExtResource("3_s3goe")
 
 [node name="Camera2D" type="Camera2D" parent="Laika"]
 position = Vector2(581, 326)
@@ -243,7 +245,7 @@ offset_bottom = 559.0
 scale = Vector2(0.408298, 0.425445)
 texture_normal = ExtResource("17_dwwld")
 
-[connection signal="pressed" from="Laika/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="battle" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="gameover" to="." method="_on_gameover_pressed"]
 [connection signal="pressed" from="Den" to="." method="_on_den_pressed"]
