@@ -24,6 +24,10 @@ func _ready() -> void:
 	overworld_music.stream = load(OVERWORLD_MSC)
 	overworld_music.volume_db = -20
 	overworld_music.play()
+	
+	print(Transition)
+	print(Transition.has_method("start_transition"))
+
 
 # Spawn level resources and update level label
 	var level_key = "level_%d" % resource_data.current_level
