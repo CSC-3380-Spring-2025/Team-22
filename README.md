@@ -43,6 +43,7 @@ You can download Godot from the download tab on the official website. It is opti
  It is optimized for use in 4.4.1: [ https://godotengine.org/download/windows/ ] 
 
 2] **Clone the repository** [ https://github.com/CSC-3380-Spring-2025/Team-22.git ] or download the zip folder and extract all files.
+
 ![Screenshot 2025-05-07 201041](https://github.com/user-attachments/assets/37f19008-5aeb-4ee9-8e9f-cfa200d364f4)
 
 
