@@ -37,7 +37,7 @@ var click: AudioStreamPlayer
 
 # Plays main menu music and references audio for buttons
 func _ready() -> void:
-	$\"/root/MainMenuMusic\".volume_db = -10
+	$\"/root/MainMenuMusic\".volume_db = -17
 	$\"/root/MainMenuMusic\".play()
 	
 	rocket = $play_button/start_rocket_launch
@@ -126,7 +126,7 @@ stretch_mode = 4
 
 [node name="start_rocket_launch" type="AudioStreamPlayer" parent="play_button"]
 stream = ExtResource("12_yhl1u")
-volume_db = -20.612
+volume_db = -23.0
 
 [node name="tutorial_button" type="TextureButton" parent="."]
 layout_mode = 0

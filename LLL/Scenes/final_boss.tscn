@@ -13,10 +13,10 @@ scale = Vector2(1.52678, 1.46367)
 scale = Vector2(0.25054, 0.288392)
 texture = ExtResource("2_2fq3y")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="interactable_area" type="Area2D" parent="."]
 scale = Vector2(0.25054, 0.288392)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
 z_index = 100
 position = Vector2(11.9741, -3.4675)
 scale = Vector2(2.78046, 3.24695)
