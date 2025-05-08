@@ -43,6 +43,7 @@ texture_hover = ExtResource("5_hkart")
 
 [node name="music" type="AudioStreamPlayer" parent="play_again_button"]
 stream = ExtResource("6_2ms3x")
+volume_db = -12.21
 autoplay = true
 
 [connection signal="pressed" from="play_again_button" to="." method="_on_play_again_button_pressed"]

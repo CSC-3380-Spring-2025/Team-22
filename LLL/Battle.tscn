@@ -39,6 +39,7 @@ text = "[FIGHT]"
 flat = false
 item_count = 3
 popup/item_0/text = "Scratch"
+popup/item_0/id = 0
 popup/item_1/text = "Bite"
 popup/item_1/id = 1
 popup/item_2/text = "Howl"

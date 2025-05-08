@@ -41,6 +41,7 @@ texture = ExtResource("3_ipbdx")
 
 [node name="lullaby" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_fd3y4")
+volume_db = -5.622
 
 [node name="zzz" type="Sprite2D" parent="."]
 position = Vector2(519, 232)

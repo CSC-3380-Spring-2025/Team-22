@@ -84,6 +84,6 @@ texture_hover = ExtResource("4_j1krk")
 
 [node name="click_back" type="AudioStreamPlayer" parent="TextureButton"]
 stream = ExtResource("5_8el3s")
-volume_db = 24.0
+volume_db = -25.0
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
