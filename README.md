@@ -48,8 +48,8 @@ You can download Godot from the download tab on the official website. It is opti
 
 
 3] **Launch Godot Game Engine**
-	- Click "import" in the Project Manager and navigate to the unzipped folder or cloned folder and select the folder labeled **LLL**. Inside LLL, select the project.godot file. 
-  	- Click "Import & Edit" to open the project.godot file.
+	- Click "import" in the Project Manager and navigate to the unzipped folder or cloned folder and select the folder labeled **LLL**. Inside LLL, select the **project.godot** file. 
+  	- Click **"Import & Edit"** to open the project.godot file.
    
 ![Screenshot 2025-05-07 125948](https://github.com/user-attachments/assets/73adf2c2-f280-4821-952f-79c8c9803874)
 
